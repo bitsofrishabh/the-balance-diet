@@ -80,7 +80,7 @@ export function Hero() {
                 
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Not Just Weight Loss—A Total Wellbeing Upgrade
+              Not Just Weight Loss—A Total Wellbeing Upgrade.
                 Transform your health with personalized nutrition plans, expert coaching, and sustainable lifestyle changes. Start your journey to optimal wellness today.
               </p>
             </div>
