@@ -1,7 +1,8 @@
 import { Hero } from '@/components/sections/Hero';
-import { Features } from '@/components/sections/Features';
 import { HowItWorks } from '@/components/sections/HowItWorks';
-import { Testimonials } from '@/components/sections/Testimonials';
+import { ClientTestimonials } from '@/components/sections/ClientTestimonials';
+import { Features } from '@/components/sections/Features';
+import { VideoTestimonials } from '@/components/sections/VideoTestimonials';
 import { CTA } from '@/components/sections/CTA';
 import { Stats } from '@/components/sections/Stats';
 
@@ -14,11 +15,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
-      <Features />
       <HowItWorks />
-      <Testimonials />
+      <ClientTestimonials />
+      <Features />
+      <VideoTestimonials />
       <CTA />
+      <Stats />
     </>
   );
 }

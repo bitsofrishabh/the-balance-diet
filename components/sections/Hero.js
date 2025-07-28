@@ -146,7 +146,7 @@ export function Hero() {
                         key={index}
                         src={image}
                         alt={`Client testimonial ${index + 1}`}
-                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out ${
+                        className={`absolute inset-0 w-full h-full object-contain bg-gradient-to-br from-gray-50 to-gray-100 transition-all duration-700 ease-in-out ${
                           index === currentImageIndex 
                             ? 'opacity-100 scale-100' 
                             : 'opacity-0 scale-105'
@@ -155,7 +155,7 @@ export function Hero() {
                     ))}
                     
                     {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                   </div>
 
                   {/* Navigation Arrows */}
