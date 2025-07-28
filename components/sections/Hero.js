@@ -21,11 +21,11 @@ export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Cloudinary images for the carousel
+  // Client testimonial images from Cloudinary
   const heroImages = [
-    'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg',
-    'https://res.cloudinary.com/demo/image/upload/v1312461204/sample2.jpg',
-    'https://res.cloudinary.com/demo/image/upload/v1312461204/sample3.jpg'
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/3_fhiqje.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1753728759/15_wwp1m1.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/6_u49nfp.png'
   ];
 
   useEffect(() => {
@@ -145,7 +145,7 @@ export function Hero() {
                       <img
                         key={index}
                         src={image}
-                        alt={`Health transformation ${index + 1}`}
+                        alt={`Client testimonial ${index + 1}`}
                         className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out ${
                           index === currentImageIndex 
                             ? 'opacity-100 scale-100' 
