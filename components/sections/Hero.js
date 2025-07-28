@@ -75,7 +75,7 @@ export function Hero() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Diets Don’t Work
                 <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block">
-                  Balance Does.
+                  Balance Does
                 </span>
                 
               </h1>
