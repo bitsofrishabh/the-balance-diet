@@ -77,7 +77,7 @@ export function Hero() {
                 <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block">
                   Balance Does.
                 </span>
-                With Expert Guidance
+                
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
                 Transform your health with personalized nutrition plans, expert coaching, and sustainable lifestyle changes. Start your journey to optimal wellness today.
