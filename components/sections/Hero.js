@@ -103,7 +103,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/programs">
                 <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl transition-all group h-14 px-8 text-lg">
-                  Start Your Transformation
+                Start Your Transformation Journey Now!
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
