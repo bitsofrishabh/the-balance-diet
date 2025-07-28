@@ -73,7 +73,7 @@ export function Hero() {
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Achieve Your
+                Unlock Your Best Self
                 <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block">
                   Perfect Balance
                 </span>
