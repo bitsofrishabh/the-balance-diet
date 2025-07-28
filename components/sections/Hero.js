@@ -129,7 +129,7 @@ export function Hero() {
                     </div>
                   ))}
                 </div>
-                <span className="text-sm text-gray-600">10,000+ transformations</span>
+                <span className="text-sm text-gray-600">300+ transformations</span>
               </div>
               <div className="flex items-center space-x-1">
                 <div className="flex space-x-1">
