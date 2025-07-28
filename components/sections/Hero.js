@@ -146,16 +146,13 @@ export function Hero() {
                         key={index}
                         src={image}
                         alt={`Client testimonial ${index + 1}`}
-                        className={`absolute inset-0 w-full h-full object-contain bg-gradient-to-br from-gray-50 to-gray-100 transition-all duration-700 ease-in-out ${
+                        className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${
                           index === currentImageIndex 
                             ? 'opacity-100 scale-100' 
                             : 'opacity-0 scale-105'
                         }`}
                       />
                     ))}
-                    
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                   </div>
 
                   {/* Navigation Arrows */}
@@ -185,31 +182,6 @@ export function Hero() {
                         }`}
                       />
                     ))}
-                  </div>
-                </div>
-                
-                {/* Floating Stats Cards */}
-                <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-lg animate-bounce-subtle">
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-primary-100 p-2 rounded-lg">
-                      <Heart className="w-6 h-6 text-primary-600" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-gray-900">Health Score</div>
-                      <div className="text-2xl font-bold text-primary-600">95%</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl p-4 shadow-lg animate-bounce-subtle" style={{ animationDelay: '0.5s' }}>
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-secondary-100 p-2 rounded-lg">
-                      <Trophy className="w-6 h-6 text-secondary-600" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-gray-900">Weight Lost</div>
-                      <div className="text-2xl font-bold text-secondary-600">25 lbs</div>
-                    </div>
                   </div>
                 </div>
               </div>
