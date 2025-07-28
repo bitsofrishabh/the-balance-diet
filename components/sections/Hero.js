@@ -112,10 +112,10 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" size="lg" className="border-2 hover:bg-gray-50 group h-14 px-8 text-lg">
-                  <MessageCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  WhatsApp Consultati
-                </Button>
+                // <Button variant="outline" size="lg" className="border-2 hover:bg-gray-50 group h-14 px-8 text-lg">
+                //   <MessageCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                //   WhatsApp
+                // </Button>
               </a>
             </div>
 
