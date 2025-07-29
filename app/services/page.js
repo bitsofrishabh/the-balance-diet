@@ -20,6 +20,7 @@ import {
   Briefcase,
   Dumbbell,
   ChevronRight,
+}
 export default function ServicesPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
