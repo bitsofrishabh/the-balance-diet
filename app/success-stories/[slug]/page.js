@@ -159,6 +159,8 @@ This journey taught me that motherhood doesn't mean sacrificing your own health 
       name: 'Vikram Joshi',
       weightLoss: '28 kg',
       timeframe: '7 months',
+    }
+  ]
   return (
     <SuccessStoryClientContent 
       currentStory={storyData['priya-lost-25kg']} // Default story for now
