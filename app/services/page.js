@@ -117,23 +117,28 @@ export default function ServicesPage() {
       gradient: 'from-blue-500 to-blue-600'
     },
     {
-      icon: Dumbbell,
-      title: 'Sports & Fitness Nutrition',
-      subtitle: 'Performance Optimization',
-      description: 'Tailored nutrition strategies for athletes, fitness enthusiasts, and active individuals to optimize performance and recovery.',
-      services: ['Athletic Performance', 'Fitness Goals', 'Recovery Nutrition', 'Body Composition'],
+      icon: Award,
+      title: 'Program Features',
+      subtitle: 'Comprehensive Support System',
+      description: 'Our programs include everything you need for successful transformation with comprehensive features and ongoing support.',
+      services: ['All Programs Include', 'Premium Support', 'Expert Guidance', 'Proven Methods'],
       features: [
-        'Pre/post workout nutrition',
-        'Performance meal timing',
-        'Hydration strategies',
-        'Supplement protocols',
-        'Body composition optimization'
+        'Personalized nutrition plans tailored to your needs',
+        'Weekly one-on-one coaching sessions with experts',
+        'Custom meal plans with shopping lists included',
+        '24/7 support through chat and messaging',
+        'Progress tracking tools and body composition analysis',
+        'Recipe database with 500+ healthy recipes',
+        'Supplement recommendations based on your goals',
+        'Habit tracking and behavioral coaching support',
+        'Group community access for motivation',
+        'Lifetime access to educational resources'
       ],
-      duration: '3-6 months',
+      duration: 'All Programs',
       popular: false,
-      results: 'Enhanced performance',
-      color: 'bg-orange-100 text-orange-600',
-      gradient: 'from-orange-500 to-orange-600'
+      results: 'Complete transformation support',
+      color: 'bg-indigo-100 text-indigo-600',
+      gradient: 'from-indigo-500 to-indigo-600'
     }
   ];
 

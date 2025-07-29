@@ -98,13 +98,33 @@ export function Navigation() {
               {isResourcesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2">
                   {resourcesItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
-                    >
-                      {item.name}
-                    </Link>
+                    <div key={item.name}>
+                      {item.subItems ? (
+                        <div className="relative group">
+                          <div className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors cursor-pointer">
+                            {item.name}
+                          </div>
+                          <div className="absolute left-full top-0 ml-1 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                            {item.subItems.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
@@ -146,6 +166,13 @@ export function Navigation() {
           <div className="lg:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-100 shadow-lg">
             <div className="px-4 py-2 space-y-1">
               <Link
+                href="/about"
+                className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link
                 href="/"
                 className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
@@ -172,14 +199,33 @@ export function Navigation() {
                 <div className="text-sm font-medium text-gray-900 mb-2">Resources</div>
                 <div className="pl-4 space-y-1">
                   {resourcesItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="block py-1 text-sm text-gray-600 hover:text-primary-600 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
+                    <div key={item.name}>
+                      {item.subItems ? (
+                        <div>
+                          <div className="py-1 text-sm text-gray-700 font-medium">{item.name}</div>
+                          <div className="pl-4 space-y-1">
+                            {item.subItems.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block py-1 text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className="block py-1 text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
