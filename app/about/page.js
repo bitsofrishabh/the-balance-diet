@@ -53,27 +53,42 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Image */}
-            <div className="relative">
-              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-8 shadow-2xl">
-                <img
-                  src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Dr. Sarah Johnson - Lead Nutritionist"
-                  className="w-full h-96 object-cover rounded-2xl shadow-lg"
-                />
-                
-                {/* Floating Stats */}
-                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary-600">500+</div>
-                    <div className="text-xs text-gray-600">Success Stories</div>
+            {/* Team Members */}
+            <div className="space-y-8">
+              {/* Rishabh Singh - Founder */}
+              <div className="relative">
+                <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-6 shadow-2xl">
+                  <img
+                    src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Rishabh Singh - Founder"
+                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                  />
+                  
+                  {/* Floating Stats */}
+                  <div className="absolute -top-3 -right-3 bg-white rounded-2xl p-3 shadow-lg">
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-primary-600">500+</div>
+                      <div className="text-xs text-gray-600">Success Stories</div>
+                    </div>
                   </div>
                 </div>
-                
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-secondary-600">8+</div>
-                    <div className="text-xs text-gray-600">Years Experience</div>
+              </div>
+
+              {/* Dt. Savita Choudhary - Co-founder */}
+              <div className="relative">
+                <div className="relative bg-gradient-to-br from-secondary-100 to-primary-100 rounded-3xl p-6 shadow-2xl">
+                  <img
+                    src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Dt. Savita Choudhary - Co-founder"
+                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                  />
+                  
+                  {/* Floating Stats */}
+                  <div className="absolute -top-3 -right-3 bg-white rounded-2xl p-3 shadow-lg">
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-secondary-600">8+</div>
+                      <div className="text-xs text-gray-600">Years Experience</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -81,65 +96,81 @@ export default function AboutPage() {
 
             {/* Right Column - Content */}
             <div className="space-y-8">
-              {/* Introduction */}
+              {/* Rishabh Singh Details */}
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Dr. Sarah Johnson
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Rishabh Singh
                 </h2>
                 <p className="text-lg text-primary-600 font-semibold mb-4">
-                  Lead Nutritionist & Wellness Coach
+                  Founder & CEO
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Rishabh Singh is the visionary founder of The Balance Diet, bringing together his passion 
+                  for health transformation and business excellence. With a deep understanding of the wellness 
+                  industry and a commitment to helping people achieve their health goals, he has built a 
+                  platform that combines cutting-edge nutrition science with personalized care.
+                </p>
+              </div>
+
+              {/* Dt. Savita Choudhary Details */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Dt. Savita Choudhary
+                </h2>
+                <p className="text-lg text-secondary-600 font-semibold mb-4">
+                  Co-founder & Lead Nutritionist
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-4">
                   With over 8 years of experience in clinical nutrition and wellness coaching, 
-                  Dr. Sarah Johnson has dedicated her career to helping people achieve sustainable 
+                  Dt. Savita Choudhary has dedicated her career to helping people achieve sustainable 
                   health transformations. Her evidence-based approach combines the latest nutritional 
                   science with personalized care to deliver results that last.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
-                  After witnessing countless people struggle with restrictive diets and quick fixes, 
-                  Dr. Johnson founded The Balance Diet to provide a different approach - one that 
-                  focuses on balance, sustainability, and long-term health rather than short-term results.
-                </p>
               </div>
 
-              {/* Credentials */}
+              {/* Combined Credentials & Expertise */}
               <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Credentials & Expertise</h3>
-                <div className="space-y-3">
-                  {[
-                    'Ph.D. in Clinical Nutrition, Harvard University',
-                    'Certified Nutrition Specialist (CNS)',
-                    'Registered Dietitian Nutritionist (RDN)',
-                    'Certified Diabetes Educator (CDE)',
-                    'Functional Medicine Certified Practitioner',
-                    'Member, Academy of Nutrition and Dietetics'
-                  ].map((credential, index) => (
-                    <div key={index} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-primary-500 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{credential}</span>
-                    </div>
-                  ))}
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Credentials & Areas of Expertise</h3>
+                
+                {/* Credentials */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-800 mb-3">Professional Credentials:</h4>
+                  <div className="space-y-2">
+                    {[
+                      'M.Sc. in Clinical Nutrition & Dietetics',
+                      'Certified Nutrition Specialist (CNS)',
+                      'Registered Dietitian Nutritionist (RDN)',
+                      'Certified Diabetes Educator (CDE)',
+                      'Functional Medicine Certified Practitioner',
+                      'Member, Academy of Nutrition and Dietetics'
+                    ].map((credential, index) => (
+                      <div key={index} className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-primary-500 mr-3 flex-shrink-0" />
+                        <span className="text-gray-700 text-sm">{credential}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Specializations */}
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Areas of Specialization</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    'Weight Management',
-                    'Diabetes Care',
-                    'PCOS/PCOD',
-                    'Thyroid Disorders',
-                    'Women\'s Health',
-                    'Sports Nutrition',
-                    'Digestive Health',
-                    'Heart Health'
-                  ].map((specialization, index) => (
-                    <div key={index} className="bg-primary-50 text-primary-700 px-3 py-2 rounded-lg text-sm font-medium text-center">
-                      {specialization}
-                    </div>
-                  ))}
+                {/* Specializations */}
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-3">Areas of Specialization:</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      'Weight Management',
+                      'Diabetes Care',
+                      'PCOS/PCOD',
+                      'Thyroid Disorders',
+                      'Women\'s Health',
+                      'Sports Nutrition',
+                      'Digestive Health',
+                      'Heart Health'
+                    ].map((specialization, index) => (
+                      <div key={index} className="bg-primary-50 text-primary-700 px-3 py-2 rounded-lg text-sm font-medium text-center">
+                        {specialization}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
