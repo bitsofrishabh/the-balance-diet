@@ -8,7 +8,9 @@ import {
   TrendingUp,
   ArrowRight,
   CheckCircle,
-  Sparkles
+  Sparkles,
+    ChevronRight,
+  ChevronLeft,
 } from 'lucide-react';
 
 export function HowItWorks() {
