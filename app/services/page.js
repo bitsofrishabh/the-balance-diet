@@ -118,6 +118,18 @@ export default function ServicesPage() {
     },
     {
       icon: Award,
+  const programFeatures = [
+    'Personalized nutrition plans tailored to your needs',
+    'Weekly one-on-one coaching sessions with experts',
+    'Custom meal plans with shopping lists included',
+    '24/7 support through chat and messaging',
+    'Progress tracking tools and body composition analysis',
+    'Recipe database with 500+ healthy recipes',
+    'Supplement recommendations based on your goals',
+    'Habit tracking and behavioral coaching support',
+    'Group community access for motivation',
+    'Lifetime access to educational resources'
+  ];</parameter>
       title: 'Program Features',
       subtitle: 'Comprehensive Support System',
       description: 'Our programs include everything you need for successful transformation with comprehensive features and ongoing support.',
@@ -519,6 +531,47 @@ export default function ServicesPage() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Program Features - Full Width Card */}
+          <div className="mt-16">
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 shadow-xl">
+              <div className="text-center mb-8">
+                <div className="bg-indigo-100 p-4 rounded-2xl inline-flex mb-4">
+                  <Award className="h-10 w-10 text-indigo-600" />
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                  What's Included in All Programs
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Every program comes with comprehensive support and features designed to ensure your success
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {programFeatures.map((feature, index) => (
+                  <div key={index} className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-indigo-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 leading-relaxed">{feature}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center mt-8">
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 px-8 py-4 text-lg">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Get Started with These Features
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

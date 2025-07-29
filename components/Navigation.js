@@ -96,10 +96,10 @@ export function Navigation() {
             {/* Resources Dropdown */}
             <div 
               className="relative"
+              onMouseEnter={() => setIsResourcesOpen(true)}
+              onMouseLeave={() => setIsResourcesOpen(false)}
             >
               <button
-                onMouseEnter={() => setIsResourcesOpen(true)}
-                onMouseLeave={() => setIsResourcesOpen(false)}
                 className={`flex items-center text-sm font-medium transition-colors hover:text-primary-600 ${
                   isScrolled ? 'text-gray-700' : 'text-gray-900'
                 }`}
@@ -110,9 +110,7 @@ export function Navigation() {
               
               {isResourcesOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2"
-                  onMouseEnter={() => setIsResourcesOpen(true)}
-                  onMouseLeave={() => setIsResourcesOpen(false)}
+                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50"
                 >
                   {resourcesItems.map((item) => (
                     <div key={item.name}>
@@ -121,7 +119,7 @@ export function Navigation() {
                           <div className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors cursor-pointer">
                             {item.name}
                           </div>
-                          <div className="absolute left-full top-0 ml-1 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                          <div className="absolute left-full top-0 ml-1 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60]">
                             {item.subItems.map((subItem) => (
                               <Link
                                 key={subItem.name}
