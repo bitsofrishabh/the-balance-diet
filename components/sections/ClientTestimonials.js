@@ -117,7 +117,86 @@ export function ClientTestimonials() {
 
         {/* Testimonials Grid */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* Mobile Horizontal Scroll */}
+          <div className="md:hidden mb-8">
+            <div className="flex space-x-6 overflow-x-auto pb-4 px-4 -mx-4 scrollbar-hide">
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={index}
+                  className="flex-shrink-0 w-80 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                >
+                  {/* Client Image */}
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover border-4 border-primary-100"
+                    />
+                    <div className="ml-4">
+                      <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
+                      <p className="text-sm text-gray-600">Age {testimonial.age}</p>
+                      <div className="flex items-center mt-1">
+                        <div className="flex space-x-1">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quote */}
+                  <div className="relative mb-4">
+                    <Quote className="absolute -top-2 -left-2 h-6 w-6 text-primary-200" />
+                    <p className="text-gray-700 leading-relaxed italic pl-4">
+                      "{testimonial.quote}"
+                    </p>
+                  </div>
+
+                  {/* Results */}
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-primary-600">-{testimonial.weightLoss}</div>
+                        <div className="text-xs text-gray-500">Weight Lost</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-secondary-600">{testimonial.timeframe}</div>
+                        <div className="text-xs text-gray-500">Duration</div>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {testimonial.results.slice(0, 4).map((result, resultIndex) => (
+                        <div key={resultIndex} className="flex items-center text-xs text-gray-600">
+                          <Heart className="h-3 w-3 text-primary-400 mr-1 flex-shrink-0" />
+                          {result}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Mobile Navigation Arrows */}
+            <div className="flex justify-center space-x-4">
+              <button
+                onClick={() => document.querySelector('.overflow-x-auto').scrollBy({ left: -320, behavior: 'smooth' })}
+                className="bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
+              >
+                <ChevronLeft className="h-5 w-5 text-gray-600" />
+              </button>
+              <button
+                onClick={() => document.querySelector('.overflow-x-auto').scrollBy({ left: 320, behavior: 'smooth' })}
+                className="bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
+              >
+                <ChevronRight className="h-5 w-5 text-gray-600" />
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8 mb-8">
             {visibleTestimonials.map((testimonial, index) => (
               <div 
                 key={`${currentIndex}-${index}`}
@@ -178,7 +257,7 @@ export function ClientTestimonials() {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-center space-x-4">
+          <div className="hidden md:flex items-center justify-center space-x-4">
             <Button
               variant="outline"
               size="sm"
