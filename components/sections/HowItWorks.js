@@ -141,7 +141,7 @@ export function HowItWorks() {
           </div>
 
           {/* Desktop Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-stretch">
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               const isVisible = visibleSteps.has(index);
@@ -165,7 +165,7 @@ export function HowItWorks() {
 
                   <div className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 relative overflow-hidden group ${
                     isActive ? 'border-primary-200 scale-105' : 'border-gray-100 hover:border-gray-200'
-                  }`}>
+                  } h-full flex flex-col`}>
                     {/* Animated Background */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 transition-opacity duration-500 ${
                       isActive ? 'opacity-5' : 'group-hover:opacity-5'
@@ -197,19 +197,21 @@ export function HowItWorks() {
                     </div>
 
                     {/* Content */}
-                    <h3 className={`text-lg font-semibold text-gray-900 mb-3 transition-colors duration-300 ${
+                    <div className="flex-grow">
+                      <h3 className={`text-lg font-semibold text-gray-900 mb-3 transition-colors duration-300 ${
                       isActive ? 'text-gray-800' : ''
-                    }`}>
+                      }`}>
                       {step.title}
-                    </h3>
-                    <p className={`text-gray-600 mb-4 leading-relaxed text-sm transition-colors duration-300 ${
+                      </h3>
+                      <p className={`text-gray-600 mb-4 leading-relaxed text-sm transition-colors duration-300 ${
                       isActive ? 'text-gray-700' : ''
-                    }`}>
+                      }`}>
                       {step.description}
-                    </p>
+                      </p>
+                    </div>
 
                     {/* Details with Stagger Animation */}
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mt-auto">
                       {step.details.map((detail, detailIndex) => (
                         <li 
                           key={detailIndex} 
