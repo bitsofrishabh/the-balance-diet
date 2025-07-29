@@ -245,7 +245,6 @@ export function HowItWorks() {
                 <ChevronRight className="h-5 w-5 text-gray-600" />
               </button>
             </div>
-          </div>
 
           {/* Desktop Grid */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-5 gap-8">
