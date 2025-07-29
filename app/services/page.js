@@ -25,11 +25,6 @@ import {
   Zap
 } from 'lucide-react';
 
-export const metadata = {
-  title: 'Our Services - Comprehensive Health & Nutrition Solutions',
-  description: 'Discover our range of personalized health services including weight management, disease management, women care, corporate wellness, and sports nutrition.',
-};
-
 export default function ServicesPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
