@@ -20,11 +20,6 @@ import {
   Briefcase,
   Dumbbell,
   ChevronRight,
-  User,
-  Calendar,
-  Zap
-} from 'lucide-react';
-
 export default function ServicesPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
