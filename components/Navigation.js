@@ -25,9 +25,14 @@ export function Navigation() {
   }, []);
 
   const resourcesItems = [
-    { name: 'Blog', href: '/blog' },
-    { name: 'Recipes', href: '/recipes' },
-    { name: 'Health Tools', href: '/health-tools' },
+    { 
+      name: 'Free Resources', 
+      subItems: [
+        { name: 'Blog', href: '/blog' },
+        { name: 'Recipes', href: '/recipes' },
+        { name: 'Health Tools', href: '/health-tools' }
+      ]
+    },
     { name: 'E-Book', href: '/ebook' },
   ];
 
@@ -55,6 +60,14 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
+            <Link
+              href="/about"
+              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+                isScrolled ? 'text-gray-700' : 'text-gray-900'
+              }`}
+            >
+              About Us
+            </Link>
             <Link
               href="/"
               className={`text-sm font-medium transition-colors hover:text-primary-600 ${
