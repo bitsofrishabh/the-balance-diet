@@ -20,7 +20,12 @@ import {
   Briefcase,
   Dumbbell,
   ChevronRight,
-}
+  ChevronLeft,
+  User,
+  TrendingUp,
+  Zap
+} from 'lucide-react';
+
 export default function ServicesPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
