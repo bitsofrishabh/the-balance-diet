@@ -24,12 +24,18 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   // Generate static params for all story slugs
   const slugs = [
     'priya-lost-25kg',
     'rahul-lost-30kg',
-    'sneha-lost-18kg'
+    'sneha-lost-18kg',
+    'amit-lost-22kg',
+    'kavya-lost-20kg',
+    'vikram-lost-28kg',
+    'meera-lost-15kg',
+    'arjun-lost-35kg',
+    'ritu-lost-24kg'
   ];
 
   return slugs.map((slug) => ({

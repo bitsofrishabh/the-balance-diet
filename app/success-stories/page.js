@@ -212,8 +212,8 @@ export default function SuccessStoriesPage() {
           {/* 3x3 Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {successStories.map((story, index) => (
-              <Link key={story.id} href={`/success-stories/${story.id}`}>
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden group">
+              <div key={story.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden group">
+                <Link href={`/success-stories/${story.id}`}>
                   {/* Image Container */}
                   <div className="relative overflow-hidden">
                     <img
@@ -273,8 +273,8 @@ export default function SuccessStoriesPage() {
                       </div>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
