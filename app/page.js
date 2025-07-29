@@ -15,11 +15,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <HowItWorks />
-      <ClientTestimonials />
-      <Features />
-      <VideoTestimonials />
       <Stats />
+      <HowItWorks />
+      <Features />
+      <ClientTestimonials />
+      <VideoTestimonials />
       <CTA />
     </>
   );
