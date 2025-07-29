@@ -24,6 +24,19 @@ import {
   ChevronRight
 } from 'lucide-react';
 
+export async function generateStaticParams() {
+  // Generate static params for all story slugs
+  const slugs = [
+    'priya-lost-25kg',
+    'rahul-lost-30kg',
+    'sneha-lost-18kg'
+  ];
+
+  return slugs.map((slug) => ({
+    slug: slug,
+  }));
+}
+
 export default function SuccessStoryDetailPage() {
   const params = useParams();
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
