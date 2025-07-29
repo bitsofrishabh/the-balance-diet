@@ -138,7 +138,6 @@ export function HowItWorks() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Mobile Horizontal Scroll Container */}
           <div className="md:hidden">
             <div className="flex space-x-6 overflow-x-auto pb-4 px-4 -mx-4 scrollbar-hide">
@@ -345,7 +344,6 @@ export function HowItWorks() {
               );
             })}
           </div>
-        </div>
 
         {/* Bottom CTA with Animation */}
         <div className="text-center mt-16">
