@@ -139,30 +139,6 @@ export default function ServicesPage() {
       results: 'Complete transformation support',
       color: 'bg-indigo-100 text-indigo-600',
       gradient: 'from-indigo-500 to-indigo-600'
-    },
-    {
-      icon: Award,
-      title: 'Program Features',
-      subtitle: 'Comprehensive Support System',
-      description: 'Our programs include everything you need for successful transformation with comprehensive features and ongoing support.',
-      services: ['All Programs Include', 'Premium Support', 'Expert Guidance', 'Proven Methods'],
-      features: [
-        'Personalized nutrition plans tailored to your needs',
-        'Weekly one-on-one coaching sessions with experts',
-        'Custom meal plans with shopping lists included',
-        '24/7 support through chat and messaging',
-        'Progress tracking tools and body composition analysis',
-        'Recipe database with 500+ healthy recipes',
-        'Supplement recommendations based on your goals',
-        'Habit tracking and behavioral coaching support',
-        'Group community access for motivation',
-        'Lifetime access to educational resources'
-      ],
-      duration: 'All Programs',
-      popular: false,
-      results: 'Complete transformation support',
-      color: 'bg-indigo-100 text-indigo-600',
-      gradient: 'from-indigo-500 to-indigo-600'
     }
   ];
 
