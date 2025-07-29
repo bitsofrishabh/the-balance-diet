@@ -23,7 +23,15 @@ import {
   ChevronLeft,
   User,
   TrendingUp,
-  Zap
+  Zap,
+  Clock,
+  Utensils,
+  Moon,
+  Droplets,
+  AlertCircle,
+  ThumbsUp,
+  Calendar,
+  BarChart3
 } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -46,9 +54,8 @@ export default function ServicesPage() {
         'Maintenance phase planning'
       ],
       duration: '3-12 months',
-      price: 'From ₹4,999/month',
       popular: true,
-      results: 'Average 2-4 lbs per week',
+      results: 'Average 1-2 kg per week',
       color: 'bg-primary-100 text-primary-600',
       gradient: 'from-primary-500 to-primary-600'
     },
@@ -66,7 +73,6 @@ export default function ServicesPage() {
         'Supplement recommendations'
       ],
       duration: '6-12 months',
-      price: 'From ₹6,999/month',
       popular: false,
       results: 'Improved health markers',
       color: 'bg-red-100 text-red-600',
@@ -86,7 +92,6 @@ export default function ServicesPage() {
         'Menopause symptom management'
       ],
       duration: '3-9 months',
-      price: 'From ₹5,499/month',
       popular: false,
       results: 'Optimal health through life stages',
       color: 'bg-pink-100 text-pink-600',
@@ -106,7 +111,6 @@ export default function ServicesPage() {
         'Wellness challenges'
       ],
       duration: '6-12 months',
-      price: 'Custom pricing',
       popular: false,
       results: 'Improved employee wellness',
       color: 'bg-blue-100 text-blue-600',
@@ -126,7 +130,6 @@ export default function ServicesPage() {
         'Body composition optimization'
       ],
       duration: '3-6 months',
-      price: 'From ₹5,999/month',
       popular: false,
       results: 'Enhanced performance',
       color: 'bg-orange-100 text-orange-600',
@@ -140,50 +143,82 @@ export default function ServicesPage() {
       question: 'What is your primary health goal?',
       type: 'single',
       options: [
-        { value: 'weight_loss', label: 'Weight Loss', icon: Scale },
-        { value: 'weight_gain', label: 'Weight Gain', icon: TrendingUp },
+        { value: 'weight_loss', label: 'Lose Weight', icon: Scale },
+        { value: 'weight_gain', label: 'Gain Weight', icon: TrendingUp },
         { value: 'disease_management', label: 'Manage Health Condition', icon: Heart },
         { value: 'women_care', label: 'Women\'s Health Support', icon: Baby },
         { value: 'fitness', label: 'Improve Fitness Performance', icon: Dumbbell },
-        { value: 'corporate', label: 'Corporate Wellness', icon: Briefcase }
+        { value: 'general_wellness', label: 'General Health & Wellness', icon: Target }
       ]
     },
     {
-      id: 'health_condition',
-      question: 'Do you have any of these health conditions?',
-      type: 'multiple',
-      condition: (answers) => answers.goal === 'disease_management',
-      options: [
-        { value: 'thyroid', label: 'Thyroid Issues' },
-        { value: 'pcos', label: 'PCOS/PCOD' },
-        { value: 'diabetes', label: 'Diabetes' },
-        { value: 'bp', label: 'High Blood Pressure' },
-        { value: 'cholesterol', label: 'High Cholesterol' },
-        { value: 'none', label: 'None of the above' }
-      ]
+      id: 'current_weight',
+      question: 'What is your current weight?',
+      type: 'input',
+      inputType: 'number',
+      placeholder: 'Enter weight in kg',
+      unit: 'kg'
     },
     {
-      id: 'women_stage',
-      question: 'Which stage best describes your current situation?',
-      type: 'single',
-      condition: (answers) => answers.goal === 'women_care',
-      options: [
-        { value: 'pregnancy', label: 'Pregnancy' },
-        { value: 'postpartum', label: 'Postpartum (After delivery)' },
-        { value: 'lactation', label: 'Breastfeeding/Lactation' },
-        { value: 'menopause', label: 'Menopause' }
-      ]
+      id: 'height',
+      question: 'What is your height?',
+      type: 'input',
+      inputType: 'number',
+      placeholder: 'Enter height in cm',
+      unit: 'cm'
+    },
+    {
+      id: 'target_weight',
+      question: 'What is your target weight?',
+      type: 'input',
+      inputType: 'number',
+      placeholder: 'Enter target weight in kg',
+      unit: 'kg',
+      condition: (answers) => ['weight_loss', 'weight_gain'].includes(answers.goal)
     },
     {
       id: 'activity_level',
       question: 'How would you describe your current activity level?',
       type: 'single',
       options: [
-        { value: 'sedentary', label: 'Sedentary (little to no exercise)' },
-        { value: 'light', label: 'Light (1-3 days/week)' },
-        { value: 'moderate', label: 'Moderate (3-5 days/week)' },
-        { value: 'active', label: 'Active (6-7 days/week)' },
-        { value: 'very_active', label: 'Very Active (2x/day or intense training)' }
+        { value: 'sedentary', label: 'Sedentary (little to no exercise)', icon: Moon },
+        { value: 'light', label: 'Light (1-3 days/week)', icon: Activity },
+        { value: 'moderate', label: 'Moderate (3-5 days/week)', icon: Activity },
+        { value: 'active', label: 'Active (6-7 days/week)', icon: Dumbbell },
+        { value: 'very_active', label: 'Very Active (2x/day or intense training)', icon: Zap }
+      ]
+    },
+    {
+      id: 'eating_habits',
+      question: 'How would you rate your current eating habits?',
+      type: 'single',
+      options: [
+        { value: 'poor', label: 'Poor - Mostly processed/fast food', icon: AlertCircle },
+        { value: 'fair', label: 'Fair - Mix of healthy and unhealthy', icon: Scale },
+        { value: 'good', label: 'Good - Mostly healthy choices', icon: ThumbsUp },
+        { value: 'excellent', label: 'Excellent - Very disciplined', icon: Award }
+      ]
+    },
+    {
+      id: 'water_intake',
+      question: 'How much water do you drink daily?',
+      type: 'single',
+      options: [
+        { value: 'less_1', label: 'Less than 1 liter', icon: Droplets },
+        { value: '1_2', label: '1-2 liters', icon: Droplets },
+        { value: '2_3', label: '2-3 liters', icon: Droplets },
+        { value: 'more_3', label: 'More than 3 liters', icon: Droplets }
+      ]
+    },
+    {
+      id: 'sleep_quality',
+      question: 'How would you rate your sleep quality?',
+      type: 'single',
+      options: [
+        { value: 'poor', label: 'Poor (less than 5 hours)', icon: AlertCircle },
+        { value: 'fair', label: 'Fair (5-6 hours)', icon: Moon },
+        { value: 'good', label: 'Good (7-8 hours)', icon: ThumbsUp },
+        { value: 'excellent', label: 'Excellent (8+ hours)', icon: Award }
       ]
     },
     {
@@ -191,88 +226,102 @@ export default function ServicesPage() {
       question: 'What is your preferred timeline for seeing results?',
       type: 'single',
       options: [
-        { value: '1_month', label: '1 Month' },
-        { value: '3_months', label: '3 Months' },
-        { value: '6_months', label: '6 Months' },
-        { value: '12_months', label: '12+ Months' }
-      ]
-    },
-    {
-      id: 'support_level',
-      question: 'How much support do you prefer?',
-      type: 'single',
-      options: [
-        { value: 'minimal', label: 'Minimal - Just give me a plan' },
-        { value: 'moderate', label: 'Moderate - Weekly check-ins' },
-        { value: 'intensive', label: 'Intensive - Daily support and guidance' }
+        { value: '1_month', label: '1 Month', icon: Calendar },
+        { value: '3_months', label: '3 Months', icon: Calendar },
+        { value: '6_months', label: '6 Months', icon: Calendar },
+        { value: '12_months', label: '12+ Months', icon: Calendar }
       ]
     }
   ];
 
-  const getRecommendation = () => {
-    const { goal, health_condition, women_stage, activity_level, timeline, support_level } = answers;
+  const calculateBMI = (weight, height) => {
+    if (!weight || !height) return null;
+    const heightInM = height / 100;
+    return (weight / (heightInM * heightInM)).toFixed(1);
+  };
+
+  const getBMICategory = (bmi) => {
+    if (bmi < 18.5) return { category: 'Underweight', color: 'text-blue-600', status: 'needs_attention' };
+    if (bmi < 25) return { category: 'Normal', color: 'text-green-600', status: 'healthy' };
+    if (bmi < 30) return { category: 'Overweight', color: 'text-yellow-600', status: 'needs_attention' };
+    return { category: 'Obese', color: 'text-red-600', status: 'needs_attention' };
+  };
+
+  const getHealthScore = () => {
+    let score = 0;
+    const { activity_level, eating_habits, water_intake, sleep_quality } = answers;
     
-    // Logic to determine recommended service and program
+    // Activity level scoring
+    const activityScores = { sedentary: 1, light: 2, moderate: 3, active: 4, very_active: 5 };
+    score += (activityScores[activity_level] || 0) * 2;
+    
+    // Eating habits scoring
+    const eatingScores = { poor: 1, fair: 2, good: 4, excellent: 5 };
+    score += (eatingScores[eating_habits] || 0) * 2;
+    
+    // Water intake scoring
+    const waterScores = { less_1: 1, '1_2': 2, '2_3': 4, more_3: 5 };
+    score += (waterScores[water_intake] || 0) * 1.5;
+    
+    // Sleep quality scoring
+    const sleepScores = { poor: 1, fair: 2, good: 4, excellent: 5 };
+    score += (sleepScores[sleep_quality] || 0) * 1.5;
+    
+    return Math.round((score / 35) * 100); // Convert to percentage
+  };
+
+  const getRecommendation = () => {
+    const { goal, current_weight, height, target_weight } = answers;
+    const currentBMI = calculateBMI(current_weight, height);
+    const targetBMI = target_weight ? calculateBMI(target_weight, height) : null;
+    const healthScore = getHealthScore();
+    
     let recommendedService = '';
     let recommendedProgram = '';
-    let price = '';
     let duration = '';
+    let weightChange = target_weight ? Math.abs(target_weight - current_weight) : 0;
     
     switch (goal) {
       case 'weight_loss':
       case 'weight_gain':
         recommendedService = 'Weight Management';
-        if (support_level === 'intensive') {
-          recommendedProgram = 'Premium Transform';
-          price = '₹8,999/month';
-          duration = '6 months';
-        } else if (support_level === 'moderate') {
-          recommendedProgram = 'Complete Transform';
-          price = '₹6,999/month';
-          duration = '4 months';
-        } else {
-          recommendedProgram = 'Essential Transform';
-          price = '₹4,999/month';
-          duration = '3 months';
-        }
+        recommendedProgram = 'Personalized Weight Management Program';
+        duration = weightChange > 10 ? '6-12 months' : '3-6 months';
         break;
         
       case 'disease_management':
         recommendedService = 'Disease Management';
         recommendedProgram = 'Medical Nutrition Therapy';
-        price = '₹7,999/month';
         duration = '6-12 months';
         break;
         
       case 'women_care':
         recommendedService = 'Women Care';
         recommendedProgram = 'Women\'s Health Program';
-        price = '₹6,499/month';
         duration = '6-9 months';
         break;
         
       case 'fitness':
         recommendedService = 'Sports & Fitness Nutrition';
         recommendedProgram = 'Performance Optimization';
-        price = '₹7,499/month';
         duration = '4-6 months';
-        break;
-        
-      case 'corporate':
-        recommendedService = 'Corporate Wellness';
-        recommendedProgram = 'Employee Wellness Program';
-        price = 'Custom pricing';
-        duration = '12 months';
         break;
         
       default:
         recommendedService = 'Weight Management';
-        recommendedProgram = 'Complete Transform';
-        price = '₹6,999/month';
-        duration = '4 months';
+        recommendedProgram = 'Complete Health Transformation';
+        duration = '4-6 months';
     }
     
-    return { recommendedService, recommendedProgram, price, duration };
+    return { 
+      recommendedService, 
+      recommendedProgram, 
+      duration, 
+      currentBMI, 
+      targetBMI, 
+      healthScore,
+      weightChange 
+    };
   };
 
   const handleAnswer = (questionId, value) => {
@@ -283,17 +332,20 @@ export default function ServicesPage() {
   };
 
   const nextQuestion = () => {
-    const currentQ = quizQuestions[currentQuestion];
-    const nextIndex = currentQuestion + 1;
+    let nextIndex = currentQuestion + 1;
     
     // Skip conditional questions that don't apply
-    if (nextIndex < quizQuestions.length) {
+    while (nextIndex < quizQuestions.length) {
       const nextQ = quizQuestions[nextIndex];
       if (nextQ.condition && !nextQ.condition(answers)) {
-        setCurrentQuestion(nextIndex + 1);
+        nextIndex++;
       } else {
-        setCurrentQuestion(nextIndex);
+        break;
       }
+    }
+    
+    if (nextIndex < quizQuestions.length) {
+      setCurrentQuestion(nextIndex);
     } else {
       setShowResult(true);
     }
@@ -301,7 +353,19 @@ export default function ServicesPage() {
 
   const prevQuestion = () => {
     if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
+      let prevIndex = currentQuestion - 1;
+      
+      // Skip conditional questions that don't apply
+      while (prevIndex >= 0) {
+        const prevQ = quizQuestions[prevIndex];
+        if (prevQ.condition && !prevQ.condition(answers)) {
+          prevIndex--;
+        } else {
+          break;
+        }
+      }
+      
+      setCurrentQuestion(Math.max(0, prevIndex));
     }
   };
 
@@ -312,11 +376,13 @@ export default function ServicesPage() {
   };
 
   const whatsappNumber = '+1234567890';
-  const whatsappMessage = 'Hi! I would like to know more about The Balance Diet services.';
+  const whatsappMessage = 'Hi! I would like to claim my free discovery call for The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   const currentQ = quizQuestions[currentQuestion];
-  const isAnswered = currentQ && answers[currentQ.id];
+  const isAnswered = currentQ && (
+    currentQ.type === 'input' ? answers[currentQ.id] : answers[currentQ.id]
+  );
   const recommendation = showResult ? getRecommendation() : null;
 
   return (
@@ -433,12 +499,17 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-100">
-                    <div className="text-2xl font-bold text-primary-600">{service.price}</div>
-                    <Button className={`bg-gradient-to-r ${service.gradient} hover:opacity-90`}>
-                      Get Started
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                  <div className="flex justify-center pt-6 border-t border-gray-100">
+                    <a 
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 px-8 py-3`}>
+                        <MessageCircle className="mr-2 h-4 w-4" />
+                        Claim Your Free Discovery Call Today
+                      </Button>
+                    </a>
                   </div>
                 </div>
               );
@@ -452,15 +523,15 @@ export default function ServicesPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-secondary-100 text-secondary-700">
-              <User className="w-4 h-4 mr-2" />
-              Personalized Assessment
+              <BarChart3 className="w-4 h-4 mr-2" />
+              Health Assessment
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Find Your Perfect Program
+              Discover Your Health Status
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Take our quick health assessment to get a personalized program recommendation 
-              tailored to your specific needs and goals.
+              Take our comprehensive health assessment to understand your current situation 
+              and visualize your transformation goals.
             </p>
           </div>
 
@@ -473,7 +544,7 @@ export default function ServicesPage() {
                       Health Assessment Quiz
                     </CardTitle>
                     <div className="text-sm text-gray-500">
-                      {currentQuestion + 1} of {quizQuestions.length}
+                      {currentQuestion + 1} of {quizQuestions.filter(q => !q.condition || q.condition(answers)).length}
                     </div>
                   </div>
                   
@@ -481,7 +552,7 @@ export default function ServicesPage() {
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div 
                       className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
+                      style={{ width: `${((currentQuestion + 1) / quizQuestions.filter(q => !q.condition || q.condition(answers)).length) * 100}%` }}
                     />
                   </div>
                 </CardHeader>
@@ -493,56 +564,55 @@ export default function ServicesPage() {
                         {currentQ.question}
                       </h3>
 
-                      <div className="space-y-3">
-                        {currentQ.options.map((option, index) => {
-                          const IconComponent = option.icon;
-                          const isSelected = currentQ.type === 'single' 
-                            ? answers[currentQ.id] === option.value
-                            : answers[currentQ.id]?.includes(option.value);
+                      {currentQ.type === 'input' ? (
+                        <div className="space-y-4">
+                          <div className="relative">
+                            <input
+                              type={currentQ.inputType}
+                              value={answers[currentQ.id] || ''}
+                              onChange={(e) => handleAnswer(currentQ.id, e.target.value)}
+                              placeholder={currentQ.placeholder}
+                              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none text-lg"
+                            />
+                            <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">
+                              {currentQ.unit}
+                            </span>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-3">
+                          {currentQ.options.map((option, index) => {
+                            const IconComponent = option.icon;
+                            const isSelected = answers[currentQ.id] === option.value;
 
-                          return (
-                            <button
-                              key={index}
-                              onClick={() => {
-                                if (currentQ.type === 'single') {
-                                  handleAnswer(currentQ.id, option.value);
-                                } else {
-                                  const current = answers[currentQ.id] || [];
-                                  if (option.value === 'none') {
-                                    handleAnswer(currentQ.id, ['none']);
-                                  } else {
-                                    const filtered = current.filter(v => v !== 'none');
-                                    if (current.includes(option.value)) {
-                                      handleAnswer(currentQ.id, filtered.filter(v => v !== option.value));
-                                    } else {
-                                      handleAnswer(currentQ.id, [...filtered, option.value]);
-                                    }
-                                  }
-                                }
-                              }}
-                              className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 hover:shadow-md ${
-                                isSelected 
-                                  ? 'border-primary-500 bg-primary-50 shadow-md' 
-                                  : 'border-gray-200 hover:border-gray-300'
-                              }`}
-                            >
-                              <div className="flex items-center space-x-3">
-                                {IconComponent && (
-                                  <div className={`p-2 rounded-lg ${isSelected ? 'bg-primary-100' : 'bg-gray-100'}`}>
-                                    <IconComponent className={`h-5 w-5 ${isSelected ? 'text-primary-600' : 'text-gray-600'}`} />
-                                  </div>
-                                )}
-                                <span className={`font-medium ${isSelected ? 'text-primary-700' : 'text-gray-700'}`}>
-                                  {option.label}
-                                </span>
-                                {isSelected && (
-                                  <CheckCircle className="h-5 w-5 text-primary-500 ml-auto" />
-                                )}
-                              </div>
-                            </button>
-                          );
-                        })}
-                      </div>
+                            return (
+                              <button
+                                key={index}
+                                onClick={() => handleAnswer(currentQ.id, option.value)}
+                                className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 hover:shadow-md ${
+                                  isSelected 
+                                    ? 'border-primary-500 bg-primary-50 shadow-md' 
+                                    : 'border-gray-200 hover:border-gray-300'
+                                }`}
+                              >
+                                <div className="flex items-center space-x-3">
+                                  {IconComponent && (
+                                    <div className={`p-2 rounded-lg ${isSelected ? 'bg-primary-100' : 'bg-gray-100'}`}>
+                                      <IconComponent className={`h-5 w-5 ${isSelected ? 'text-primary-600' : 'text-gray-600'}`} />
+                                    </div>
+                                  )}
+                                  <span className={`font-medium ${isSelected ? 'text-primary-700' : 'text-gray-700'}`}>
+                                    {option.label}
+                                  </span>
+                                  {isSelected && (
+                                    <CheckCircle className="h-5 w-5 text-primary-500 ml-auto" />
+                                  )}
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )}
 
                       <div className="flex justify-between pt-6">
                         <Button
@@ -551,6 +621,7 @@ export default function ServicesPage() {
                           disabled={currentQuestion === 0}
                           className="px-6"
                         >
+                          <ChevronLeft className="mr-2 h-4 w-4" />
                           Previous
                         </Button>
                         <Button
@@ -558,7 +629,7 @@ export default function ServicesPage() {
                           disabled={!isAnswered}
                           className="px-6 bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600"
                         >
-                          {currentQuestion === quizQuestions.length - 1 ? 'Get Recommendation' : 'Next'}
+                          {currentQuestion === quizQuestions.filter(q => !q.condition || q.condition(answers)).length - 1 ? 'Get Results' : 'Next'}
                           <ChevronRight className="ml-2 h-4 w-4" />
                         </Button>
                       </div>
@@ -570,35 +641,132 @@ export default function ServicesPage() {
               <CardContent className="p-8">
                 <div className="text-center mb-8">
                   <div className="bg-gradient-to-r from-primary-500 to-secondary-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="h-8 w-8 text-white" />
+                    <BarChart3 className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    Your Personalized Recommendation
+                    Your Health Assessment Results
                   </h3>
                   <p className="text-gray-600">
-                    Based on your responses, here's the perfect program for you:
+                    Here's your current health status and transformation potential:
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 mb-6">
-                  <div className="text-center mb-4">
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
-                      {recommendation.recommendedProgram}
+                {/* Current vs Goal Visualization */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  {/* Current Status */}
+                  <div className="bg-gray-50 rounded-2xl p-6">
+                    <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                      <User className="h-5 w-5 mr-2 text-gray-600" />
+                      Current Status
                     </h4>
-                    <p className="text-primary-600 font-semibold">
-                      {recommendation.recommendedService}
-                    </p>
+                    
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-600">Weight:</span>
+                        <span className="font-semibold text-gray-900">{answers.current_weight} kg</span>
+                      </div>
+                      
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-600">Height:</span>
+                        <span className="font-semibold text-gray-900">{answers.height} cm</span>
+                      </div>
+                      
+                      {recommendation.currentBMI && (
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-600">BMI:</span>
+                          <div className="text-right">
+                            <div className="font-semibold text-gray-900">{recommendation.currentBMI}</div>
+                            <div className={`text-sm ${getBMICategory(recommendation.currentBMI).color}`}>
+                              {getBMICategory(recommendation.currentBMI).category}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-600">Health Score:</span>
+                        <div className="text-right">
+                          <div className="font-semibold text-gray-900">{recommendation.healthScore}%</div>
+                          <div className="w-20 h-2 bg-gray-200 rounded-full">
+                            <div 
+                              className={`h-2 rounded-full ${
+                                recommendation.healthScore >= 70 ? 'bg-green-500' : 
+                                recommendation.healthScore >= 50 ? 'bg-yellow-500' : 'bg-red-500'
+                              }`}
+                              style={{ width: `${recommendation.healthScore}%` }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-primary-600">{recommendation.price}</div>
-                      <div className="text-sm text-gray-600">Investment</div>
+                  {/* Goal Status */}
+                  <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6">
+                    <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                      <Target className="h-5 w-5 mr-2 text-primary-600" />
+                      Goal Status
+                    </h4>
+                    
+                    <div className="space-y-4">
+                      {answers.target_weight && (
+                        <>
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-600">Target Weight:</span>
+                            <span className="font-semibold text-primary-700">{answers.target_weight} kg</span>
+                          </div>
+                          
+                          <div className="flex justify-between items-center">
+                            <span className="text-gray-600">Weight Change:</span>
+                            <span className="font-semibold text-primary-700">
+                              {answers.goal === 'weight_loss' ? '-' : '+'}{recommendation.weightChange} kg
+                            </span>
+                          </div>
+                          
+                          {recommendation.targetBMI && (
+                            <div className="flex justify-between items-center">
+                              <span className="text-gray-600">Target BMI:</span>
+                              <div className="text-right">
+                                <div className="font-semibold text-primary-700">{recommendation.targetBMI}</div>
+                                <div className={`text-sm ${getBMICategory(recommendation.targetBMI).color}`}>
+                                  {getBMICategory(recommendation.targetBMI).category}
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </>
+                      )}
+                      
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-600">Potential Health Score:</span>
+                        <div className="text-right">
+                          <div className="font-semibold text-primary-700">85-95%</div>
+                          <div className="w-20 h-2 bg-gray-200 rounded-full">
+                            <div className="h-2 rounded-full bg-green-500 w-full" />
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-600">Timeline:</span>
+                        <span className="font-semibold text-primary-700">{recommendation.duration}</span>
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-secondary-600">{recommendation.duration}</div>
-                      <div className="text-sm text-gray-600">Duration</div>
-                    </div>
+                  </div>
+                </div>
+
+                {/* Recommendation */}
+                <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-6 mb-6 text-white">
+                  <div className="text-center mb-4">
+                    <h4 className="text-xl font-bold mb-2">
+                      Recommended Program
+                    </h4>
+                    <p className="text-lg font-semibold text-primary-100">
+                      {recommendation.recommendedProgram}
+                    </p>
+                    <p className="text-primary-200 mt-1">
+                      {recommendation.recommendedService}
+                    </p>
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -607,12 +775,12 @@ export default function ServicesPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3">
+                      <Button className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3">
                         <MessageCircle className="mr-2 h-5 w-5" />
-                        Get Started on WhatsApp
+                        Claim Your Free Discovery Call Today
                       </Button>
                     </a>
-                    <Button variant="outline" className="px-6 py-3">
+                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary-600 px-8 py-3">
                       <Phone className="mr-2 h-5 w-5" />
                       Book Free Consultation
                     </Button>
@@ -624,7 +792,7 @@ export default function ServicesPage() {
                     onClick={resetQuiz}
                     className="text-primary-600 hover:text-primary-700 underline text-sm"
                   >
-                    Take Quiz Again
+                    Take Assessment Again
                   </button>
                 </div>
               </CardContent>
@@ -649,8 +817,8 @@ export default function ServicesPage() {
             {[
               {
                 step: '01',
-                title: 'Book Consultation',
-                description: 'Schedule your initial consultation through WhatsApp or our booking system.'
+                title: 'Free Discovery Call',
+                description: 'Claim your free consultation through WhatsApp or our booking system.'
               },
               {
                 step: '02',
@@ -695,8 +863,8 @@ export default function ServicesPage() {
             Ready to Transform Your Health?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Choose the service that best fits your needs, or let us help you create a custom combination 
-            of services for optimal results.
+            Take the first step towards your health transformation with a free discovery call. 
+            No commitments, just expert guidance tailored to your needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -706,7 +874,7 @@ export default function ServicesPage() {
             >
               <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                WhatsApp Consultation
+                Claim Your Free Discovery Call Today
               </Button>
             </a>
             <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4">
