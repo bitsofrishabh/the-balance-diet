@@ -19,8 +19,8 @@ export default function Home() {
       <ClientTestimonials />
       <Features />
       <VideoTestimonials />
-      <CTA />
       <Stats />
+      <CTA />
     </>
   );
 }
