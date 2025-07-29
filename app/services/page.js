@@ -139,7 +139,7 @@ export default function ServicesPage() {
       results: 'Complete transformation support',
       color: 'bg-indigo-100 text-indigo-600',
       gradient: 'from-indigo-500 to-indigo-600'
-    }
+    },
     {
       icon: Award,
       title: 'Program Features',
