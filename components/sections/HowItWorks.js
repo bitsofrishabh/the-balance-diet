@@ -148,7 +148,6 @@ export function HowItWorks() {
               </div>
             </div>
           )}
-          </div>
         </div>
 
         {/* Mobile Vertical Stepper */}
@@ -226,46 +225,6 @@ export function HowItWorks() {
                 Book your free discovery call today and let's create your personalized success plan.
               </p>
               <button className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100">
-                Book Your Free Discovery Call
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-                        {isActive && (
-                          <ul className="space-y-2">
-                            {step.details.map((detail, detailIndex) => (
-                              <li key={detailIndex} className="flex items-center text-xs text-gray-500">
-                                <CheckCircle className="w-3 h-3 text-primary-400 mr-2 flex-shrink-0" />
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white">
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-4">
-                Ready to Start Your Journey?
-              </h3>
-              <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
-                Your transformation journey starts with a simple conversation. 
-                Book your free discovery call today and let's create your personalized success plan.
-              </p>
-              <button className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all">
                 Book Your Free Discovery Call
               </button>
             </div>
