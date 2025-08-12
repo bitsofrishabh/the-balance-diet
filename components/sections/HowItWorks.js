@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export function HowItWorks() {
-  const [activeStep, setActiveStep] = useState(null);
+  const [activeStep, setActiveStep] = useState(0); // Start with first step active
 
   const steps = [
     {
@@ -68,7 +68,7 @@ export function HowItWorks() {
   ];
 
   const handleStepClick = (index) => {
-    setActiveStep(activeStep === index ? null : index);
+    setActiveStep(index);
   };
 
   return (
@@ -91,78 +91,63 @@ export function HowItWorks() {
 
         {/* Desktop Horizontal Stepper */}
         <div className="hidden lg:block mb-16">
-          {/* Step Numbers and Connecting Lines */}
-          <div className="relative mb-8">
-            <div className="flex justify-between items-center">
+          {/* Horizontal Stepper */}
+          <div className="flex items-center justify-center mb-12">
+            <div className="flex items-center space-x-8">
               {steps.map((step, index) => (
-                <div key={index} className="flex flex-col items-center relative">
+                <div key={index} className="flex items-center">
                   {/* Connecting Line */}
                   {index < steps.length - 1 && (
-                    <div className="absolute top-6 left-full w-full h-0.5 bg-gray-300 z-0" style={{ width: 'calc(100vw / 5)' }} />
+                    <div className="w-16 h-0.5 bg-gray-300 mx-4" />
                   )}
                   
                   {/* Step Circle */}
-                  <div className={`relative z-10 w-12 h-12 rounded-full border-4 flex items-center justify-center font-bold text-lg transition-all cursor-pointer ${
+                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center font-bold text-lg cursor-pointer ${
                     activeStep === index 
-                      ? 'border-primary-500 bg-primary-500 text-white scale-110' 
+                      ? 'border-primary-500 bg-primary-500 text-white' 
                       : 'border-gray-300 bg-white text-gray-600 hover:border-primary-300'
                   }`}
                   onClick={() => handleStepClick(index)}>
                     {step.step}
-                  </div>
-                  
-                  {/* Step Title */}
-                  <div className="mt-4 text-center">
-                    <h3 className={`font-semibold transition-colors ${
-                      activeStep === index ? 'text-primary-600' : 'text-gray-900'
-                    }`}>
-                      {step.title}
-                    </h3>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Step Content Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {steps.map((step, index) => {
-              const IconComponent = step.icon;
-              const isActive = activeStep === index;
-              
-              return (
-                <div 
-                  key={index}
-                  className={`bg-white rounded-2xl p-6 shadow-lg border-2 transition-all cursor-pointer ${
-                    isActive 
-                      ? 'border-primary-200 shadow-xl' 
-                      : 'border-gray-100 hover:border-gray-200 hover:shadow-xl'
-                  }`}
-                  onClick={() => handleStepClick(index)}
-                >
-                  {/* Icon */}
-                  <div className={`${step.bgColor} p-3 rounded-xl inline-flex mb-4`}>
-                    <IconComponent className={`h-6 w-6 ${step.iconColor}`} />
-                  </div>
+          {/* Active Step Content */}
+          {activeStep !== null && (
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                {(() => {
+                  const step = steps[activeStep];
+                  const IconComponent = step.icon;
+                  return (
+                    <>
+                      {/* Icon */}
+                      <div className={`${step.bgColor} p-4 rounded-xl inline-flex mb-6`}>
+                        <IconComponent className={`h-8 w-8 ${step.iconColor}`} />
+                      </div>
 
-                  {/* Content */}
-                  <h4 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h4>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{step.description}</p>
-                  
-                  {/* Details */}
-                  {isActive && (
-                    <ul className="space-y-2">
-                      {step.details.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="flex items-center text-xs text-gray-500">
-                          <CheckCircle className="w-3 h-3 text-primary-400 mr-2 flex-shrink-0" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              );
-            })}
+                      {/* Content */}
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed">{step.description}</p>
+                      
+                      {/* Details */}
+                      <ul className="space-y-3">
+                        {step.details.map((detail, detailIndex) => (
+                          <li key={detailIndex} className="flex items-center text-gray-700">
+                            <CheckCircle className="w-5 h-5 text-primary-500 mr-3 flex-shrink-0" />
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  );
+                })()}
+              </div>
+            </div>
+          )}
           </div>
         </div>
 
@@ -177,12 +162,12 @@ export function HowItWorks() {
                 <div key={index} className="relative">
                   {/* Connecting Line */}
                   {index < steps.length - 1 && (
-                    <div className="absolute left-6 top-16 w-0.5 h-16 bg-gray-300" />
+                    <div className="absolute left-6 top-12 w-0.5 h-20 bg-gray-300" />
                   )}
                   
-                  <div className="flex items-start space-x-4 mb-8">
+                  <div className="flex items-start space-x-4 mb-12">
                     {/* Step Circle */}
-                    <div className={`relative z-10 w-12 h-12 rounded-full border-4 flex items-center justify-center font-bold text-lg flex-shrink-0 transition-all cursor-pointer ${
+                    <div className={`relative z-10 w-12 h-12 rounded-full border-4 flex items-center justify-center font-bold text-lg flex-shrink-0 cursor-pointer ${
                       isActive 
                         ? 'border-primary-500 bg-primary-500 text-white' 
                         : 'border-gray-300 bg-white text-gray-600'
@@ -192,25 +177,64 @@ export function HowItWorks() {
                     </div>
 
                     {/* Step Content */}
-                    <div className="flex-1">
-                      <div 
-                        className={`bg-white rounded-2xl p-6 shadow-lg border-2 transition-all cursor-pointer ${
-                          isActive 
-                            ? 'border-primary-200 shadow-xl' 
-                            : 'border-gray-100'
-                        }`}
-                        onClick={() => handleStepClick(index)}
-                      >
-                        {/* Icon */}
-                        <div className={`${step.bgColor} p-3 rounded-xl inline-flex mb-4`}>
-                          <IconComponent className={`h-6 w-6 ${step.iconColor}`} />
-                        </div>
+                    <div className="flex-1 pt-2">
+                      <h4 className={`text-lg font-bold mb-2 cursor-pointer ${
+                        isActive ? 'text-primary-600' : 'text-gray-900'
+                      }`} onClick={() => handleStepClick(index)}>
+                        {step.title}
+                      </h4>
+                      
+                      {/* Show content only when active */}
+                      {isActive && (
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 mt-4">
+                          {/* Icon */}
+                          <div className={`${step.bgColor} p-3 rounded-xl inline-flex mb-4`}>
+                            <IconComponent className={`h-6 w-6 ${step.iconColor}`} />
+                          </div>
 
-                        {/* Content */}
-                        <h4 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h4>
-                        <p className="text-gray-600 text-sm mb-4 leading-relaxed">{step.description}</p>
-                        
-                        {/* Details */}
+                          {/* Description */}
+                          <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
+                          
+                          {/* Details */}
+                          <ul className="space-y-2">
+                            {step.details.map((detail, detailIndex) => (
+                              <li key={detailIndex} className="flex items-center text-sm text-gray-700">
+                                <CheckCircle className="w-4 h-4 text-primary-500 mr-3 flex-shrink-0" />
+                                {detail}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white">
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4">
+                Ready to Start Your Journey?
+              </h3>
+              <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
+                Your transformation journey starts with a simple conversation. 
+                Book your free discovery call today and let's create your personalized success plan.
+              </p>
+              <button className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100">
+                Book Your Free Discovery Call
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
                         {isActive && (
                           <ul className="space-y-2">
                             {step.details.map((detail, detailIndex) => (
