@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export function HowItWorks() {
-  const [activeStep, setActiveStep] = useState(0); // Start with first step active
+  const [activeStep, setActiveStep] = useState(null); // Start with no step active
 
   const steps = [
     {
@@ -92,17 +92,16 @@ export function HowItWorks() {
         {/* Desktop Horizontal Stepper */}
         <div className="hidden lg:block mb-16">
           {/* Horizontal Stepper */}
-          <div className="flex items-center justify-center mb-12">
-            <div className="flex items-center space-x-8">
+          <div className="flex items-center justify-between mb-12 max-w-4xl mx-auto">
               {steps.map((step, index) => (
-                <div key={index} className="flex items-center">
+                <div key={index} className="flex items-center flex-1">
                   {/* Connecting Line */}
                   {index < steps.length - 1 && (
-                    <div className="w-16 h-0.5 bg-gray-300 mx-4" />
+                    <div className="flex-1 h-0.5 bg-gray-300 ml-8" />
                   )}
                   
                   {/* Step Circle */}
-                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center font-bold text-lg cursor-pointer ${
+                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center font-bold text-lg cursor-pointer transition-colors ${
                     activeStep === index 
                       ? 'border-primary-500 bg-primary-500 text-white' 
                       : 'border-gray-300 bg-white text-gray-600 hover:border-primary-300'
@@ -110,9 +109,13 @@ export function HowItWorks() {
                   onClick={() => handleStepClick(index)}>
                     {step.step}
                   </div>
+                  
+                  {/* Step Title */}
+                  <div className="text-center mt-4 absolute top-16 left-1/2 transform -translate-x-1/2 w-32">
+                    <h4 className="text-sm font-semibold text-gray-700">{step.title}</h4>
+                  </div>
                 </div>
               ))}
-            </div>
           </div>
 
           {/* Active Step Content */}
