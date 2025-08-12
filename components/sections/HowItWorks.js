@@ -134,67 +134,35 @@ export function HowItWorks() {
 
         {/* Road Design - Desktop Horizontal */}
         <div className="hidden lg:block relative mb-16">
-          {/* Zigzag Road Background */}
-          <div className="relative h-96">
-            {/* SVG Zigzag Road Path */}
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#9CA3AF" />
-                  <stop offset="50%" stopColor="#6B7280" />
-                  <stop offset="100%" stopColor="#9CA3AF" />
-                </linearGradient>
-              </defs>
-              
-              {/* Main Zigzag Road Path */}
-              <path
-                d="M 50 200 Q 300 100 550 200 Q 800 300 1150 200"
-                stroke="url(#roadGradient)"
-                strokeWidth="60"
-                fill="none"
-                strokeLinecap="round"
-              />
-              
-              {/* Road Center Line */}
-              <path
-                d="M 50 200 Q 300 100 550 200 Q 800 300 1150 200"
-                stroke="white"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="20,15"
-                opacity="0.8"
-              />
-            </svg>
+          {/* Road Background */}
+          <div className="relative">
+            {/* Main Road */}
+            <div className="absolute top-1/2 left-0 right-0 h-16 bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 rounded-full transform -translate-y-1/2 shadow-inner">
+              {/* Road Lines */}
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-white transform -translate-y-1/2 opacity-60">
+                <div className="flex justify-between items-center h-full px-8">
+                  {Array.from({ length: 20 }).map((_, i) => (
+                    <div key={i} className="w-8 h-1 bg-white rounded-full opacity-80" />
+                  ))}
+                </div>
+              </div>
+            </div>
 
-            {/* Steps positioned along the zigzag path */}
-            <div className="absolute inset-0">
+            {/* Steps on Road */}
+            <div className="relative flex justify-between items-center px-8 py-8">
               {steps.map((step, index) => {
                 const IconComponent = step.icon;
                 const isVisible = visibleSteps.has(index);
                 const isActive = activeStep === index;
                 
-                // Position steps along the zigzag curve
-                const positions = [
-                  { left: '4%', top: '45%' },      // Start - Discovery Call
-                  { left: '25%', top: '20%' },     // Create Plan (up curve)
-                  { left: '50%', top: '45%' },     // Implementation (middle)
-                  { left: '75%', top: '70%' },     // Track Progress (down curve)
-                  { left: '96%', top: '45%' }      // Finish - Goal Achieved
-                ];
-                
                 return (
                   <div 
                     key={index}
                     data-index={index}
-                    className={`step-card absolute transition-all duration-700 cursor-pointer transform -translate-x-1/2 -translate-y-1/2 ${
+                    className={`step-card relative transition-all duration-700 cursor-pointer ${
                       isVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-8'
                     }`}
                     style={{ animationDelay: `${index * 200}ms` }}
-                    style={{
-                      left: positions[index].left,
-                      top: positions[index].top,
-                      animationDelay: `${index * 200}ms`
-                    }}
                     onClick={() => handleStepClick(index)}
                     onMouseEnter={() => handleStepHover(index)}
                     onMouseLeave={handleStepLeave}
@@ -274,68 +242,34 @@ export function HowItWorks() {
         {/* Road Design - Mobile Vertical */}
         <div className="lg:hidden relative mb-16">
           <div className="relative max-w-sm mx-auto">
-            {/* Vertical Zigzag Road */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-20 transform -translate-x-1/2">
-              <svg className="w-full h-full" viewBox="0 0 80 800" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="verticalRoadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#9CA3AF" />
-                    <stop offset="50%" stopColor="#6B7280" />
-                    <stop offset="100%" stopColor="#9CA3AF" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Vertical Zigzag Path */}
-                <path
-                  d="M 40 50 Q 20 200 40 350 Q 60 500 40 650 Q 20 750 40 800"
-                  stroke="url(#verticalRoadGradient)"
-                  strokeWidth="60"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                
-                {/* Center Line */}
-                <path
-                  d="M 40 50 Q 20 200 40 350 Q 60 500 40 650 Q 20 750 40 800"
-                  stroke="white"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeDasharray="15,10"
-                  opacity="0.8"
-                />
-              </svg>
+            {/* Vertical Road */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-16 bg-gradient-to-b from-gray-300 via-gray-400 to-gray-300 rounded-full transform -translate-x-1/2 shadow-inner">
+              {/* Road Lines */}
+              <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-white transform -translate-x-1/2 opacity-60">
+                <div className="flex flex-col justify-between items-center h-full py-8">
+                  {Array.from({ length: 15 }).map((_, i) => (
+                    <div key={i} className="w-1 h-8 bg-white rounded-full opacity-80" />
+                  ))}
+                </div>
+              </div>
             </div>
 
-            {/* Steps positioned along vertical zigzag */}
-            <div className="relative h-full py-8">
+            {/* Steps on Vertical Road */}
+            <div className="relative flex flex-col space-y-16 py-8">
               {steps.map((step, index) => {
                 const IconComponent = step.icon;
                 const isVisible = visibleSteps.has(index);
                 const isActive = activeStep === index;
-                
-                // Position steps along the vertical zigzag curve
-                const verticalPositions = [
-                  { top: '5%', isLeft: false },    // Start - center
-                  { top: '25%', isLeft: true },    // Create Plan - left curve
-                  { top: '45%', isLeft: false },   // Implementation - center
-                  { top: '65%', isLeft: true },    // Track Progress - right curve  
-                  { top: '85%', isLeft: false }    // Finish - center
-                ];
-                
-                const position = verticalPositions[index];
-                const isLeft = position.isLeft;
+                const isLeft = index % 2 === 0;
                 
                 return (
                   <div 
                     key={index}
                     data-index={index}
-                    className={`step-card absolute transition-all duration-700 cursor-pointer w-full ${
+                    className={`step-card relative transition-all duration-700 cursor-pointer ${
                       isVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-8'
-                    }`}
-                    style={{ 
-                      top: position.top,
-                      animationDelay: `${index * 200}ms` 
-                    }}
+                    } ${isLeft ? 'self-start' : 'self-end'}`}
+                    style={{ animationDelay: `${index * 200}ms` }}
                     onClick={() => handleStepClick(index)}
                   >
                     <div className={`flex items-center space-x-4 ${isLeft ? '' : 'flex-row-reverse space-x-reverse'}`}>
