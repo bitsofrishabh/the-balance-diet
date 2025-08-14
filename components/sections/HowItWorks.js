@@ -1,107 +1,126 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { 
   UserCheck, 
   Target, 
   Calendar, 
   TrendingUp,
-  ArrowRight,
   CheckCircle,
   Sparkles,
-    ChevronRight,
-  ChevronLeft,
+  Activity,
+  BarChart3
 } from 'lucide-react';
 
 export function HowItWorks() {
-  const [visibleSteps, setVisibleSteps] = useState(new Set());
   const [activeStep, setActiveStep] = useState(0);
-  const observerRef = useRef();
 
   const steps = [
     {
       step: 1,
       icon: UserCheck,
-      title: 'Free Discovery Call',
-      description: 'We start with a comprehensive assessment of your current health, goals, and lifestyle to create your personalized roadmap.',
-      details: ['Health & lifestyle assessment', 'Goal setting session', 'Program recommendation', 'Q&A with our experts'],
+      title: 'Diet Plan',
+      description: 'Get a personalized nutrition plan tailored to your goals, preferences, and lifestyle.',
+      details: [
+        'Comprehensive health assessment',
+        'Customized meal plans with Indian foods',
+        'Portion control guidelines',
+        'Nutritional balance optimization',
+        'Food preference accommodation'
+      ],
       color: 'from-blue-500 to-blue-600',
       bgColor: 'bg-blue-50',
-      iconColor: 'text-blue-600'
+      iconColor: 'text-blue-600',
+      borderColor: 'border-blue-200'
     },
     {
       step: 2,
-      icon: Target,
-      title: 'Custom Plan Creation',
-      description: 'Our experts design a tailored nutrition and wellness plan specifically for your body, preferences, and schedule.',
-      details: ['Personalized meal plans', 'Custom workout routines', 'Supplement recommendations', 'Habit-building strategies'],
+      icon: Activity,
+      title: 'Workout Plan',
+      description: 'Custom exercise routines designed to complement your nutrition plan and fit your schedule.',
+      details: [
+        'Personalized workout routines',
+        'Home and gym exercise options',
+        'Progressive difficulty levels',
+        'Time-efficient workouts',
+        'Exercise video demonstrations'
+      ],
       color: 'from-green-500 to-green-600',
       bgColor: 'bg-green-50',
-      iconColor: 'text-green-600'
+      iconColor: 'text-green-600',
+      borderColor: 'border-green-200'
     },
     {
       step: 3,
-      icon: Calendar,
-      title: 'Guided Implementation',
-      description: 'Start your transformation with daily support, weekly check-ins, and adjustments to keep you on track.',
-      details: ['Daily coaching support', 'Weekly progress reviews', 'Plan adjustments', 'Motivation & accountability'],
+      icon: Target,
+      title: 'Habits and Goals',
+      description: 'Build sustainable healthy habits and set achievable milestones for long-term success.',
+      details: [
+        'SMART goal setting framework',
+        'Daily habit tracking system',
+        'Behavioral change strategies',
+        'Milestone celebration planning',
+        'Habit stacking techniques'
+      ],
       color: 'from-purple-500 to-purple-600',
       bgColor: 'bg-purple-50',
-      iconColor: 'text-purple-600'
+      iconColor: 'text-purple-600',
+      borderColor: 'border-purple-200'
     },
     {
       step: 4,
-      icon: TrendingUp,
-      title: 'Track Progress',
-      description: 'Monitor your transformation with regular assessments, body composition analysis, and health improvements.',
-      details: ['Body composition tracking', 'Health marker improvements', 'Energy level monitoring', 'Habit consistency tracking'],
+      icon: BarChart3,
+      title: 'Tracking',
+      description: 'Monitor your progress with comprehensive tracking tools and regular assessments.',
+      details: [
+        'Body composition monitoring',
+        'Weight and measurement tracking',
+        'Food intake logging',
+        'Exercise performance metrics',
+        'Health marker improvements'
+      ],
       color: 'from-orange-500 to-orange-600',
       bgColor: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      borderColor: 'border-orange-200'
     },
     {
       step: 5,
-      icon: CheckCircle,
-      title: 'Achieve & Maintain',
-      description: 'Reach your goals and learn to maintain your results with lifelong healthy habits and ongoing support.',
-      details: ['Goal achievement', 'Maintenance strategies', 'Lifestyle integration', 'Continued support'],
+      icon: TrendingUp,
+      title: 'Progress',
+      description: 'Celebrate achievements and continuously optimize your plan for better results.',
+      details: [
+        'Weekly progress reviews',
+        'Plan adjustments and optimization',
+        'Success milestone celebrations',
+        'Continuous improvement strategies',
+        'Long-term maintenance planning'
+      ],
       color: 'from-primary-500 to-primary-600',
       bgColor: 'bg-primary-50',
-      iconColor: 'text-primary-600'
+      iconColor: 'text-primary-600',
+      borderColor: 'border-primary-200'
+    },
+    {
+      step: 6,
+      icon: CheckCircle,
+      title: 'Achieve and Celebrate',
+      description: 'Reach your goals and maintain your results with lifelong healthy habits.',
+      details: [
+        'Goal achievement celebration',
+        'Maintenance strategy development',
+        'Lifestyle integration support',
+        'Continued coaching access',
+        'Success story documentation'
+      ],
+      color: 'from-pink-500 to-pink-600',
+      bgColor: 'bg-pink-50',
+      iconColor: 'text-pink-600',
+      borderColor: 'border-pink-200'
     }
   ];
 
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.dataset.index);
-            setVisibleSteps(prev => new Set([...prev, index]));
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    const stepElements = document.querySelectorAll('.step-card');
-    stepElements.forEach(step => observerRef.current.observe(step));
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, []);
-
-  // Auto-advance active step
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [steps.length]);
+  const currentStep = steps[activeStep];
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
@@ -116,136 +135,159 @@ export function HowItWorks() {
             How It Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our proven 5-step process has helped thousands achieve lasting health transformation. 
+            Our proven 6-step process has helped thousands achieve lasting health transformation. 
             Here's exactly how we'll help you succeed.
           </p>
         </div>
 
-        {/* Interactive Steps */}
-        <div className="relative">
-          {/* Animated Connection Line */}
-          <div className="hidden lg:block absolute top-20 left-0 right-0">
-            <div className="flex justify-between items-center max-w-5xl mx-auto px-12">
-              {steps.slice(0, -1).map((_, index) => (
-                <div key={index} className="flex-1 relative">
-                  <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-                    <div 
-                      className={`h-full bg-gradient-to-r ${steps[index].color} transition-all duration-1000 ease-out ${
-                        activeStep > index ? 'w-full' : 'w-0'
-                      }`}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-stretch">
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left Side - Step Cards */}
+          <div className="space-y-4">
             {steps.map((step, index) => {
               const IconComponent = step.icon;
-              const isVisible = visibleSteps.has(index);
               const isActive = activeStep === index;
               
               return (
                 <div 
                   key={index}
-                  data-index={index}
-                  className={`step-card relative transition-all duration-700 ${
-                    isVisible ? 'animate-slide-up opacity-100' : 'opacity-0 translate-y-8'
+                  onClick={() => setActiveStep(index)}
+                  className={`relative p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${
+                    isActive 
+                      ? `${step.bgColor} ${step.borderColor} shadow-lg scale-105` 
+                      : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-md'
                   }`}
-                  style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  {/* Mobile Arrow */}
+                  {/* Connecting Line */}
                   {index < steps.length - 1 && (
-                    <div className="md:hidden flex justify-center mt-8 mb-4">
-                      <ArrowRight className="h-6 w-6 text-primary-400 animate-bounce" />
-                    </div>
+                    <div className="absolute left-8 top-full w-0.5 h-4 bg-gray-200" />
                   )}
-
-                  <div className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 relative overflow-hidden group ${
-                    isActive ? 'border-primary-200 scale-105' : 'border-gray-100 hover:border-gray-200'
-                  } h-full flex flex-col`}>
-                    {/* Animated Background */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 transition-opacity duration-500 ${
-                      isActive ? 'opacity-5' : 'group-hover:opacity-5'
-                    }`} />
+                  
+                  <div className="flex items-center space-x-4">
+                    {/* Icon */}
+                    <div className={`p-3 rounded-xl transition-all duration-300 ${
+                      isActive ? step.bgColor : 'bg-gray-100'
+                    }`}>
+                      <IconComponent className={`h-6 w-6 transition-all duration-300 ${
+                        isActive ? step.iconColor : 'text-gray-600'
+                      }`} />
+                    </div>
                     
-                    {/* Floating Particles */}
-                    {isActive && (
-                      <>
-                        <div className="absolute top-4 right-4 w-2 h-2 bg-primary-400 rounded-full animate-ping" />
-                        <div className="absolute top-8 right-8 w-1 h-1 bg-secondary-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
-                      </>
-                    )}
-
-                    {/* Step Number with Pulse */}
-                    <div className={`relative bg-gradient-to-r ${step.color} text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mb-4 mx-auto transition-all duration-500 ${
-                      isActive ? 'scale-110 shadow-lg' : 'group-hover:scale-105'
-                    }`}>
-                      {step.step}
-                      {isActive && (
-                        <div className={`absolute inset-0 bg-gradient-to-r ${step.color} rounded-full animate-ping opacity-30`} />
-                      )}
-                    </div>
-
-                    {/* Icon with Bounce */}
-                    <div className={`${step.bgColor} p-3 rounded-xl inline-flex mb-4 transition-all duration-300 ${
-                      isActive ? 'animate-bounce-subtle' : 'group-hover:scale-110'
-                    }`}>
-                      <IconComponent className={`h-6 w-6 ${step.iconColor} transition-all duration-300`} />
-                    </div>
-
                     {/* Content */}
-                    <div className="flex-grow">
-                      <h3 className={`text-lg font-semibold text-gray-900 mb-3 transition-colors duration-300 ${
-                      isActive ? 'text-gray-800' : ''
+                    <div className="flex-1">
+                      <h3 className={`text-lg font-semibold transition-colors duration-300 ${
+                        isActive ? 'text-gray-900' : 'text-gray-700'
                       }`}>
-                      {step.title}
+                        {step.title}
                       </h3>
-                      <p className={`text-gray-600 mb-4 leading-relaxed text-sm transition-colors duration-300 ${
-                      isActive ? 'text-gray-700' : ''
+                      <p className={`text-sm leading-relaxed transition-colors duration-300 ${
+                        isActive ? 'text-gray-700' : 'text-gray-600'
                       }`}>
-                      {step.description}
+                        {step.description}
                       </p>
                     </div>
-
-                    {/* Details with Stagger Animation */}
-                    <ul className="space-y-2 mt-auto">
-                      {step.details.map((detail, detailIndex) => (
-                        <li 
-                          key={detailIndex} 
-                          className={`flex items-center text-xs text-gray-500 transition-all duration-300 ${
-                            isActive ? 'translate-x-1' : ''
-                          }`}
-                          style={{ 
-                            transitionDelay: isActive ? `${detailIndex * 100}ms` : '0ms' 
-                          }}
-                        >
-                          <div className={`w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0 transition-all duration-300 ${
-                            isActive ? 'bg-primary-400 scale-125' : 'bg-gray-400'
-                          }`} />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Progress Bar */}
-                    <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${step.color} transition-all duration-1000 ${
-                      isActive ? 'w-full' : 'w-0'
-                    }`} />
+                    
+                    {/* Step Number */}
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                      isActive 
+                        ? `bg-gradient-to-r ${step.color} text-white shadow-lg` 
+                        : 'bg-gray-200 text-gray-600'
+                    }`}>
+                      {step.step}
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
+
+          {/* Right Side - Active Step Details (Desktop) */}
+          <div className="hidden lg:block">
+            <div className="sticky top-8">
+              <div className={`${currentStep.bgColor} rounded-3xl p-8 shadow-xl border-2 ${currentStep.borderColor}`}>
+                {/* Header */}
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className={`p-4 rounded-2xl ${currentStep.bgColor}`}>
+                    <currentStep.icon className={`h-8 w-8 ${currentStep.iconColor}`} />
+                  </div>
+                  <div>
+                    <div className={`text-sm font-semibold ${currentStep.iconColor} mb-1`}>
+                      Step {currentStep.step}
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      {currentStep.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  {currentStep.description}
+                </p>
+
+                {/* Details List */}
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
+                  {currentStep.details.map((detail, detailIndex) => (
+                    <div key={detailIndex} className="flex items-start">
+                      <CheckCircle className={`h-5 w-5 ${currentStep.iconColor} mt-0.5 mr-3 flex-shrink-0`} />
+                      <span className="text-gray-700">{detail}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Visual Element */}
+                <div className="mt-8 text-center">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${currentStep.color} text-white text-2xl font-bold shadow-lg`}>
+                    {currentStep.step}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile - Active Step Details (Bottom) */}
+        <div className="lg:hidden mt-8">
+          <div className={`${currentStep.bgColor} rounded-3xl p-6 shadow-xl border-2 ${currentStep.borderColor}`}>
+            {/* Header */}
+            <div className="flex items-center space-x-4 mb-4">
+              <div className={`p-3 rounded-xl ${currentStep.bgColor}`}>
+                <currentStep.icon className={`h-6 w-6 ${currentStep.iconColor}`} />
+              </div>
+              <div>
+                <div className={`text-sm font-semibold ${currentStep.iconColor} mb-1`}>
+                  Step {currentStep.step}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {currentStep.title}
+                </h3>
+              </div>
+            </div>
+
+            {/* Description */}
+            <p className="text-gray-700 leading-relaxed mb-4">
+              {currentStep.description}
+            </p>
+
+            {/* Details List */}
+            <div className="space-y-2">
+              <h4 className="font-semibold text-gray-900 mb-2">What's Included:</h4>
+              {currentStep.details.map((detail, detailIndex) => (
+                <div key={detailIndex} className="flex items-start">
+                  <CheckCircle className={`h-4 w-4 ${currentStep.iconColor} mt-0.5 mr-2 flex-shrink-0`} />
+                  <span className="text-gray-700 text-sm">{detail}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white overflow-hidden group hover:from-primary-600 hover:to-primary-700 transition-all duration-500">
+          <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white overflow-hidden">
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-4 group-hover:scale-105 transition-transform duration-300">
+              <h3 className="text-2xl font-bold mb-4">
                 Ready to Take the First Step?
               </h3>
               <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
