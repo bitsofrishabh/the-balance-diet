@@ -78,7 +78,7 @@ export default function AboutPage() {
               <div className="lg:col-span-3">
                 <div className="relative">
                   <img
-                    src="https://res.cloudinary.com/djdej77pl/image/upload/v1755134492/2_fozkki.png"
+                    src="https://res.cloudinary.com/djdej77pl/image/upload/v1755150648/2_pezirx.png"
                     alt="Rishabh Singh - Founder"
                     className="w-64 h-64 mx-auto rounded-full object-cover shadow-2xl border-4 border-primary-100"
                   />
