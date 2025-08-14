@@ -17,7 +17,7 @@ import {
 
 export const metadata = {
   title: 'About Us - Meet Our Expert Team',
-  description: 'Learn about The Balance Diet team of certified nutritionists and health coaches dedicated to transforming lives through personalized nutrition.',
+  description: ' At The Balance Diet, we make weight loss simple, personalized, and sustainable. No crash diets, no "detox" gimmicks—just science-backed nutrition, habit coaching, and full accountability. Our plans are built around Indian meals—roti, rice, dal, sabzi, paneer, eggs/fish/chicken (if you eat them)—so you never feel deprived or socially restricted. We pair clear weekly targets with WhatsApp check-ins, progress tracking, and course-corrections to fit your lifestyle, travel, and work schedules. Whether your goal is fat loss, better energy, reversing poor eating habits, or managing conditions like PCOS or cholesterol, we meet you where you are and guide you step by step.',
 };
 
 export default function AboutPage() {
