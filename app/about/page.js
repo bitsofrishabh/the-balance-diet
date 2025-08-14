@@ -38,12 +38,24 @@ export default function AboutPage() {
               About The Balance Diet
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Meet the Expert Behind
-              <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block"> Your Transformation </span>
+              About Us
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Dedicated to helping you achieve lasting health transformation through personalized nutrition, 
-              expert guidance, and proven wellness strategies.
+              The Balance Diet helps busy Indians lose weight sustainably—using the food you already love—through personalized nutrition, simple habits, and no-nonsense coaching.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Full Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="prose prose-lg max-w-none">
+            <p className="text-gray-700 leading-relaxed text-lg">
+              At The Balance Diet, we make weight loss simple, personalized, and sustainable. No crash diets, no "detox" gimmicks—just science-backed nutrition, habit coaching, and full accountability. Our plans are built around Indian meals—roti, rice, dal, sabzi, paneer, eggs/fish/chicken (if you eat them)—so you never feel deprived or socially restricted.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg mt-6">
+              We pair clear weekly targets with WhatsApp check-ins, progress tracking, and course-corrections to fit your lifestyle, travel, and work schedules. Whether your goal is fat loss, better energy, reversing poor eating habits, or managing conditions like PCOS or cholesterol, we meet you where you are and guide you step by step.
             </p>
           </div>
         </div>
@@ -102,14 +114,19 @@ export default function AboutPage() {
                   Rishabh Singh
                 </h2>
                 <p className="text-lg text-primary-600 font-semibold mb-4">
-                  Founder & CEO
+                  Founder & Head Coach
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Rishabh Singh is the visionary founder of The Balance Diet, bringing together his passion 
-                  for health transformation and business excellence. With a deep understanding of the wellness 
-                  industry and a commitment to helping people achieve their health goals, he has built a 
-                  platform that combines cutting-edge nutrition science with personalized care.
+                  Rishabh is a Precision Nutrition–certified coach who blends practical habit coaching with data-driven nutrition. A problem-solver at heart, he simplifies complex concepts into step-by-step routines you can follow even on hectic days. His approach: keep meals familiar, make goals measurable, review weekly, and adjust quickly. Clients appreciate his clarity, accountability, and the no-drama path to real, sustainable results.
                 </p>
+                <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                  <h4 className="font-semibold text-gray-800 mb-2">Quick Facts:</h4>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>• Precision Nutrition certification (PN)</li>
+                    <li>• Special focus: sustainable fat loss, habit building, Indian meal planning</li>
+                    <li>• Coaching style: structured goals, weekly reviews, WhatsApp accountability</li>
+                  </ul>
+                </div>
               </div>
 
               {/* Dt. Savita Choudhary Details */}
@@ -118,14 +135,19 @@ export default function AboutPage() {
                   Dt. Savita Choudhary
                 </h2>
                 <p className="text-lg text-secondary-600 font-semibold mb-4">
-                  Co-founder & Lead Nutritionist
+                  Co-Founder & Lead Nutritionist
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  With over 8 years of experience in clinical nutrition and wellness coaching, 
-                  Dt. Savita Choudhary has dedicated her career to helping people achieve sustainable 
-                  health transformations. Her evidence-based approach combines the latest nutritional 
-                  science with personalized care to deliver results that last.
+                  Savita is a results-oriented dietitian and coach who designs balanced, enjoyable meal plans using everyday Indian ingredients. She focuses on creating variety without complicating your kitchen—prioritizing health markers, satiety, and taste. Her clients value her gentle guidance, practical swaps, and consistent follow-through that make lifestyle change actually stick.
                 </p>
+                <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                  <h4 className="font-semibold text-gray-800 mb-2">Quick Facts:</h4>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>• Clinical nutrition & weight-management expertise</li>
+                    <li>• Strengths: Indian meal design, smart substitutions, behavior change</li>
+                    <li>• Approach: food you enjoy, plans you can maintain, results you can measure</li>
+                  </ul>
+                </div>
               </div>
 
               {/* Combined Credentials & Expertise */}
@@ -186,10 +208,99 @@ export default function AboutPage() {
               Our Philosophy
             </h2>
             <p className="text-xl text-gray-600">
-              The principles that guide our approach to health and wellness
+              Balance wins over extremes. We coach you to eat well, move more, sleep better, and manage stress—because real change sticks only when it fits real life.
             </p>
           </div>
 
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 className="text-xl font-semibold text-gray-900 mb-6">Our Core Principles</h3>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-semibold text-gray-900">Food first, science first:</span>
+                  <span className="text-gray-700"> Evidence-based nutrition, not fads.</span>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-semibold text-gray-900">Indian & practical:</span>
+                  <span className="text-gray-700"> Plans around your home food, culture, and routine.</span>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-semibold text-gray-900">Habits over hacks:</span>
+                  <span className="text-gray-700"> Small, consistent changes beat short bursts.</span>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-semibold text-gray-900">Progress, not perfection:</span>
+                  <span className="text-gray-700"> We adjust, iterate, and keep you moving.</span>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="font-semibold text-gray-900">Accountability matters:</span>
+                  <span className="text-gray-700"> Clear targets, weekly reviews, honest feedback.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Mission */}
+            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8">
+              <div className="bg-primary-500 p-3 rounded-xl inline-flex mb-6">
+                <Target className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                To help people achieve healthy, sustainable weight loss with simple, personalized coaching built on Indian foods and evidence-based practices.
+              </p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 text-primary-600 mr-2 mt-0.5 flex-shrink-0" />
+                  Personalize plans to each client's health, taste, and routine.
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 text-primary-600 mr-2 mt-0.5 flex-shrink-0" />
+                  Provide clear guidance, tracking, and compassionate accountability.
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 text-primary-600 mr-2 mt-0.5 flex-shrink-0" />
+                  Replace confusion and fads with clarity, skills, and confidence.
+                </li>
+              </ul>
+            </div>
+
+            {/* Vision */}
+            <div className="bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-2xl p-8">
+              <div className="bg-secondary-500 p-3 rounded-xl inline-flex mb-6">
+                <TrendingUp className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+              <p className="text-gray-700 leading-relaxed">
+                A world where balanced eating is effortless, Indian meals are celebrated—not feared—and sustainable weight management becomes the norm, not the exception.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legacy Philosophy Section - Keeping for visual consistency */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -223,39 +334,6 @@ export default function AboutPage() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Mission */}
-            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8">
-              <div className="bg-primary-500 p-3 rounded-xl inline-flex mb-6">
-                <Target className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-gray-700 leading-relaxed">
-                To empower individuals to achieve lasting health transformation through personalized 
-                nutrition guidance, evidence-based strategies, and compassionate support. We believe 
-                that everyone deserves to feel confident, energetic, and healthy in their own body.
-              </p>
-            </div>
-
-            {/* Vision */}
-            <div className="bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-2xl p-8">
-              <div className="bg-secondary-500 p-3 rounded-xl inline-flex mb-6">
-                <TrendingUp className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-gray-700 leading-relaxed">
-                To create a world where sustainable health and wellness is accessible to everyone, 
-                regardless of their starting point. We envision a future where people have the 
-                knowledge, tools, and support they need to live their healthiest, happiest lives.
-              </p>
-            </div>
           </div>
         </div>
       </section>
