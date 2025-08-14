@@ -49,7 +49,7 @@ export default function AboutPage() {
 
       {/* About Us Full Section */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed text-lg">
               At The Balance Diet, we make weight loss simple, personalized, and sustainable. No crash diets, no "detox" gimmicks—just science-backed nutrition, habit coaching, and full accountability. Our plans are built around Indian meals—roti, rice, dal, sabzi, paneer, eggs/fish/chicken (if you eat them)—so you never feel deprived or socially restricted.
@@ -61,141 +61,114 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Main Content */}
+      {/* Founders Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Team Members */}
-            <div className="space-y-8">
-              {/* Rishabh Singh - Founder */}
-              <div className="relative">
-                <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-6 shadow-2xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our expert team combines scientific knowledge with practical experience to guide you on your health journey.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {/* Founder - Rishabh Singh */}
+            <div className="grid lg:grid-cols-10 gap-8 items-center">
+              {/* Image - 30% */}
+              <div className="lg:col-span-3">
+                <div className="relative">
                   <img
-                    src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    src="https://res.cloudinary.com/djdej77pl/image/upload/v1755134492/2_fozkki.png"
                     alt="Rishabh Singh - Founder"
-                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                    className="w-64 h-64 mx-auto rounded-full object-cover shadow-2xl border-4 border-primary-100"
                   />
-                  
-                  {/* Floating Stats */}
-                  <div className="absolute -top-3 -right-3 bg-white rounded-2xl p-3 shadow-lg">
-                    <div className="text-center">
-                      <div className="text-xl font-bold text-primary-600">500+</div>
-                      <div className="text-xs text-gray-600">Success Stories</div>
-                    </div>
+                  {/* Floating Badge */}
+                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white rounded-full px-4 py-2 shadow-lg border border-primary-200">
+                    <span className="text-primary-600 font-semibold text-sm">Founder</span>
                   </div>
                 </div>
               </div>
-
-              {/* Dt. Savita Choudhary - Co-founder */}
-              <div className="relative">
-                <div className="relative bg-gradient-to-br from-secondary-100 to-primary-100 rounded-3xl p-6 shadow-2xl">
-                  <img
-                    src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600"
-                    alt="Dt. Savita Choudhary - Co-founder"
-                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  />
-                  
-                  {/* Floating Stats */}
-                  <div className="absolute -top-3 -right-3 bg-white rounded-2xl p-3 shadow-lg">
-                    <div className="text-center">
-                      <div className="text-xl font-bold text-secondary-600">8+</div>
-                      <div className="text-xs text-gray-600">Years Experience</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Content */}
-            <div className="space-y-8">
-              {/* Rishabh Singh Details */}
-              <div>
+              
+              {/* Content - 70% */}
+              <div className="lg:col-span-7">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   Rishabh Singh
                 </h2>
                 <p className="text-lg text-primary-600 font-semibold mb-4">
                   Founder & Head Coach
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className="text-gray-700 leading-relaxed mb-6">
                   Rishabh is a Precision Nutrition–certified coach who blends practical habit coaching with data-driven nutrition. A problem-solver at heart, he simplifies complex concepts into step-by-step routines you can follow even on hectic days. His approach: keep meals familiar, make goals measurable, review weekly, and adjust quickly. Clients appreciate his clarity, accountability, and the no-drama path to real, sustainable results.
                 </p>
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                  <h4 className="font-semibold text-gray-800 mb-2">Quick Facts:</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Precision Nutrition certification (PN)</li>
-                    <li>• Special focus: sustainable fat loss, habit building, Indian meal planning</li>
-                    <li>• Coaching style: structured goals, weekly reviews, WhatsApp accountability</li>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-800 mb-3">Quick Facts:</h4>
+                  <ul className="text-gray-700 space-y-2">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Precision Nutrition certification (PN)
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Special focus: sustainable fat loss, habit building, Indian meal planning
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Coaching style: structured goals, weekly reviews, WhatsApp accountability
+                    </li>
                   </ul>
                 </div>
               </div>
+            </div>
 
-              {/* Dt. Savita Choudhary Details */}
-              <div>
+            {/* Co-Founder - Dt. Savita Choudhary */}
+            <div className="grid lg:grid-cols-10 gap-8 items-center">
+              {/* Content - 70% */}
+              <div className="lg:col-span-7 order-2 lg:order-1">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   Dt. Savita Choudhary
                 </h2>
                 <p className="text-lg text-secondary-600 font-semibold mb-4">
                   Co-Founder & Lead Nutritionist
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className="text-gray-700 leading-relaxed mb-6">
                   Savita is a results-oriented dietitian and coach who designs balanced, enjoyable meal plans using everyday Indian ingredients. She focuses on creating variety without complicating your kitchen—prioritizing health markers, satiety, and taste. Her clients value her gentle guidance, practical swaps, and consistent follow-through that make lifestyle change actually stick.
                 </p>
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                  <h4 className="font-semibold text-gray-800 mb-2">Quick Facts:</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Clinical nutrition & weight-management expertise</li>
-                    <li>• Strengths: Indian meal design, smart substitutions, behavior change</li>
-                    <li>• Approach: food you enjoy, plans you can maintain, results you can measure</li>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-800 mb-3">Quick Facts:</h4>
+                  <ul className="text-gray-700 space-y-2">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Clinical nutrition & weight-management expertise
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Strengths: Indian meal design, smart substitutions, behavior change
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Approach: food you enjoy, plans you can maintain, results you can measure
+                    </li>
                   </ul>
                 </div>
               </div>
-
-              {/* Combined Credentials & Expertise */}
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Credentials & Areas of Expertise</h3>
-                
-                {/* Credentials */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-800 mb-3">Professional Credentials:</h4>
-                  <div className="space-y-2">
-                    {[
-                      'M.Sc. in Clinical Nutrition & Dietetics',
-                      'Certified Nutrition Specialist (CNS)',
-                      'Registered Dietitian Nutritionist (RDN)',
-                      'Certified Diabetes Educator (CDE)',
-                      'Functional Medicine Certified Practitioner',
-                      'Member, Academy of Nutrition and Dietetics'
-                    ].map((credential, index) => (
-                      <div key={index} className="flex items-center">
-                        <CheckCircle className="w-4 h-4 text-primary-500 mr-3 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm">{credential}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Specializations */}
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-3">Areas of Specialization:</h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {[
-                      'Weight Management',
-                      'Diabetes Care',
-                      'PCOS/PCOD',
-                      'Thyroid Disorders',
-                      'Women\'s Health',
-                      'Sports Nutrition',
-                      'Digestive Health',
-                      'Heart Health'
-                    ].map((specialization, index) => (
-                      <div key={index} className="bg-primary-50 text-primary-700 px-3 py-2 rounded-lg text-sm font-medium text-center">
-                        {specialization}
-                      </div>
-                    ))}
+              
+              {/* Image - 30% */}
+              <div className="lg:col-span-3 order-1 lg:order-2">
+                <div className="relative">
+                  <img
+                    src="https://res.cloudinary.com/djdej77pl/image/upload/v1755134495/1_n4riao.png"
+                    alt="Dt. Savita Choudhary - Co-founder"
+                    className="w-64 h-64 mx-auto rounded-full object-cover shadow-2xl border-4 border-secondary-100"
+                  />
+                  {/* Floating Badge */}
+                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white rounded-full px-4 py-2 shadow-lg border border-secondary-200">
+                    <span className="text-secondary-600 font-semibold text-sm">Co-Founder</span>
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
           </div>
         </div>
       </section>
