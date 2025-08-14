@@ -17,7 +17,7 @@ import {
 
 export const metadata = {
   title: 'About Us - Meet Our Expert Team',
-  description: ' At The Balance Diet, we make weight loss simple, personalized, and sustainable. No crash diets, no "detox" gimmicks—just science-backed nutrition, habit coaching, and full accountability. Our plans are built around Indian meals—roti, rice, dal, sabzi, paneer, eggs/fish/chicken (if you eat them)—so you never feel deprived or socially restricted. We pair clear weekly targets with WhatsApp check-ins, progress tracking, and course-corrections to fit your lifestyle, travel, and work schedules. Whether your goal is fat loss, better energy, reversing poor eating habits, or managing conditions like PCOS or cholesterol, we meet you where you are and guide you step by step.',
+  description: 'Learn about The Balance Diet team of certified nutritionists and health coaches dedicated to transforming lives through personalized nutrition.',
 };
 
 export default function AboutPage() {
@@ -40,9 +40,7 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               About Us
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              The Balance Diet helps busy Indians lose weight sustainably—using the food you already love—through personalized nutrition, simple habits, and no-nonsense coaching.
-            </p>
+          
           </div>
         </div>
       </section>
