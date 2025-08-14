@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-primary-100 text-primary-700">
-              <Heart className="w-4 h-4 mr-2" />
+              <Heart className="w-4 h-2 mr-2" />
               About The Balance Diet
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
