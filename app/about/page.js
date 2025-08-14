@@ -37,7 +37,7 @@ export default function AboutPage() {
               <Heart className="w-4 h-2 mr-2" />
               About The Balance Diet
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">
               About Us
             </h1>
           
