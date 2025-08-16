@@ -217,7 +217,7 @@ export function HowItWorks() {
                   {/* Mobile Content Panel - Shows below active card */}
                   <div
                     className={`lg:hidden overflow-hidden transition-all duration-300 ${
-                      isActive ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+                      isActive ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div

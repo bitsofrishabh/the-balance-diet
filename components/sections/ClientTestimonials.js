@@ -65,6 +65,7 @@ export function ClientTestimonials() {
   };
 
   const handleTouchMove = (e) => {
+    e.preventDefault(); // Prevent scrolling while swiping
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
@@ -175,7 +176,8 @@ export function ClientTestimonials() {
         <div className="md:hidden">
           <div className="relative">
             <div 
-              className="bg-white rounded-2xl shadow-lg overflow-hidden"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden touch-pan-y"
+              style={{ touchAction: 'pan-y pinch-zoom' }}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -183,8 +185,9 @@ export function ClientTestimonials() {
               <img
                 src={feedbackImages[currentIndex]}
                 alt={`Client feedback ${currentIndex + 1}`}
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain select-none"
                 loading="lazy"
+                draggable="false"
               />
             </div>
 
