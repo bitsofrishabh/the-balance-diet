@@ -1,94 +1,92 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { 
-  Star, 
-  Quote, 
   ChevronLeft, 
   ChevronRight,
-  Heart,
   Award
 } from 'lucide-react';
 
 export function ClientTestimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      age: 34,
-      weightLoss: '28 lbs',
-      timeframe: '4 months',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300',
-      rating: 5,
-      quote: "The Balance Diet didn't just help me lose weight - it completely changed my relationship with food and my body. I now have energy I haven't felt in years!",
-      results: ['Lost 28 lbs', 'Increased energy', 'Better sleep', 'Improved confidence']
-    },
-    {
-      name: 'Michael Chen',
-      age: 42,
-      weightLoss: '35 lbs',
-      timeframe: '6 months',
-      image: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=300',
-      rating: 5,
-      quote: "After years of failed diets, I finally found a sustainable approach. The personalized coaching made all the difference in my success.",
-      results: ['Lost 35 lbs', 'Lowered blood pressure', 'Gained muscle', 'Lifestyle transformation']
-    },
-    {
-      name: 'Emily Rodriguez',
-      age: 29,
-      weightLoss: '22 lbs',
-      timeframe: '3 months',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300',
-      rating: 5,
-      quote: "The support and guidance I received was incredible. I learned to love healthy food and my body feels amazing. This isn't just a diet - it's a lifestyle.",
-      results: ['Lost 22 lbs', 'Reduced anxiety', 'Better digestion', 'Newfound confidence']
-    },
-    {
-      name: 'David Thompson',
-      age: 38,
-      weightLoss: '31 lbs',
-      timeframe: '5 months',
-      image: 'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=300',
-      rating: 5,
-      quote: "I was skeptical at first, but the results speak for themselves. I've never felt healthier or more confident in my life.",
-      results: ['Lost 31 lbs', 'Improved stamina', 'Better mood', 'Healthier habits']
-    },
-    {
-      name: 'Lisa Martinez',
-      age: 31,
-      weightLoss: '26 lbs',
-      timeframe: '4 months',
-      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300',
-      rating: 5,
-      quote: "The Balance Diet team understood my busy lifestyle and created a plan that actually worked for me. I'm so grateful for this transformation!",
-      results: ['Lost 26 lbs', 'Better work-life balance', 'Increased productivity', 'Happier mindset']
-    },
-    {
-      name: 'James Wilson',
-      age: 45,
-      weightLoss: '40 lbs',
-      timeframe: '7 months',
-      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300',
-      rating: 5,
-      quote: "This program saved my health and probably my life. The comprehensive approach addressed not just weight loss but overall wellness.",
-      results: ['Lost 40 lbs', 'Reversed pre-diabetes', 'Improved heart health', 'Active lifestyle']
-    }
+  // Client feedback images from Cloudinary
+  const feedbackImages = [
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/18_lnkgus.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/26_bjuggp.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/3_ehvb1y.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/20_h7xzck.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/24_z2vd1g.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/1_cpbkjw.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/4_cpg0mo.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/17_dbftrk.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/8_qpm5sj.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342246/Faceless%20Feedback/25_znaonj.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/9_ebylbc.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342246/Faceless%20Feedback/5_ipj1fd.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/7_qicf3v.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/6_rcounj.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/10_vvhrjn.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/14_jeabde.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/15_rlwmql.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/13_j8hdmk.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/11_rqoigu.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/19_fhq2r6.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/21_acyun9.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/22_jkoupj.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/23_pzfnzl.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/12_nsws6o.png'
   ];
 
-  const nextTestimonials = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 3) % testimonials.length);
+  // Auto-play functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % feedbackImages.length);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [feedbackImages.length]);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % feedbackImages.length);
   };
 
-  const prevTestimonials = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 3 + testimonials.length) % testimonials.length);
+  const prevTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + feedbackImages.length) % feedbackImages.length);
+  };
+
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextTestimonial();
+    }
+    if (isRightSwipe) {
+      prevTestimonial();
+    }
   };
 
   const getVisibleTestimonials = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
-      visible.push(testimonials[(currentIndex + i) % testimonials.length]);
+      visible.push(feedbackImages[(currentIndex + i) % feedbackImages.length]);
     }
     return visible;
   };
@@ -110,197 +108,135 @@ export function ClientTestimonials() {
             What Our Clients Say About Us
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Hear from real people who have transformed their lives 
+            Don't just take our word for it. See real feedback from people who have transformed their lives 
             with The Balance Diet's personalized approach to health and wellness.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="relative">
-          {/* Mobile Horizontal Scroll */}
-          <div className="md:hidden mb-8">
-            <div className="flex space-x-6 overflow-x-auto pb-4 px-4 -mx-4 scrollbar-hide">
-              {testimonials.map((testimonial, index) => (
+        {/* Desktop - 3 Cards Layout */}
+        <div className="hidden md:block">
+          <div className="relative">
+            <div className="grid grid-cols-3 gap-8 mb-8">
+              {visibleTestimonials.map((image, index) => (
                 <div 
-                  key={index}
-                  className="flex-shrink-0 w-80 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                  key={`${currentIndex}-${index}`}
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in overflow-hidden"
+                  style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  {/* Client Image */}
-                  <div className="flex items-center mb-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-primary-100"
-                    />
-                    <div className="ml-4">
-                      <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                      <p className="text-sm text-gray-600">Age {testimonial.age}</p>
-                      <div className="flex items-center mt-1">
-                        <div className="flex space-x-1">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Quote */}
-                  <div className="relative mb-4">
-                    <Quote className="absolute -top-2 -left-2 h-6 w-6 text-primary-200" />
-                    <p className="text-gray-700 leading-relaxed italic pl-4">
-                      "{testimonial.quote}"
-                    </p>
-                  </div>
-
-                  {/* Results */}
-                  <div className="border-t border-gray-100 pt-4">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-primary-600">-{testimonial.weightLoss}</div>
-                        <div className="text-xs text-gray-500">Weight Lost</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-secondary-600">{testimonial.timeframe}</div>
-                        <div className="text-xs text-gray-500">Duration</div>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {testimonial.results.slice(0, 4).map((result, resultIndex) => (
-                        <div key={resultIndex} className="flex items-center text-xs text-gray-600">
-                          <Heart className="h-3 w-3 text-primary-400 mr-1 flex-shrink-0" />
-                          {result}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <img
+                    src={image}
+                    alt={`Client feedback ${currentIndex + index + 1}`}
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
-            
-            {/* Mobile Navigation Arrows */}
-            <div className="flex justify-center space-x-4">
+
+            {/* Navigation Arrows */}
+            <div className="flex items-center justify-center space-x-4">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={prevTestimonial}
+                className="p-3 rounded-full hover:bg-primary-50 hover:border-primary-200 transition-all group"
+              >
+                <ChevronLeft className="h-5 w-5 group-hover:text-primary-600" />
+              </Button>
+              
+              {/* Dots Indicator */}
+              <div className="flex space-x-2">
+                {Array.from({ length: Math.ceil(feedbackImages.length / 3) }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index * 3)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      Math.floor(currentIndex / 3) === index 
+                        ? 'bg-primary-500 scale-125' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={nextTestimonial}
+                className="p-3 rounded-full hover:bg-primary-50 hover:border-primary-200 transition-all group"
+              >
+                <ChevronRight className="h-5 w-5 group-hover:text-primary-600" />
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile - Single Card with Swipe */}
+        <div className="md:hidden">
+          <div className="relative">
+            <div 
+              className="bg-white rounded-2xl shadow-lg overflow-hidden"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <img
+                src={feedbackImages[currentIndex]}
+                alt={`Client feedback ${currentIndex + 1}`}
+                className="w-full h-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="flex items-center justify-center space-x-4 mt-6">
               <button
-                onClick={() => document.querySelector('.overflow-x-auto').scrollBy({ left: -320, behavior: 'smooth' })}
+                onClick={prevTestimonial}
                 className="bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
               >
                 <ChevronLeft className="h-5 w-5 text-gray-600" />
               </button>
+              
+              {/* Mobile Dots */}
+              <div className="flex space-x-1 overflow-x-auto max-w-48">
+                {feedbackImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all flex-shrink-0 ${
+                      currentIndex === index 
+                        ? 'bg-primary-500 scale-125' 
+                        : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+              
               <button
-                onClick={() => document.querySelector('.overflow-x-auto').scrollBy({ left: 320, behavior: 'smooth' })}
+                onClick={nextTestimonial}
                 className="bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all"
               >
                 <ChevronRight className="h-5 w-5 text-gray-600" />
               </button>
             </div>
-          </div>
 
-          {/* Desktop Grid */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8 mb-8">
-            {visibleTestimonials.map((testimonial, index) => (
-              <div 
-                key={`${currentIndex}-${index}`}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                {/* Client Image */}
-                <div className="flex items-center mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover border-4 border-primary-100"
-                  />
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">Age {testimonial.age}</p>
-                    <div className="flex items-center mt-1">
-                      <div className="flex space-x-1">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Quote */}
-                <div className="relative mb-4">
-                  <Quote className="absolute -top-2 -left-2 h-6 w-6 text-primary-200" />
-                  <p className="text-gray-700 leading-relaxed italic pl-4">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
-
-                {/* Results */}
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-primary-600">-{testimonial.weightLoss}</div>
-                      <div className="text-xs text-gray-500">Weight Lost</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-secondary-600">{testimonial.timeframe}</div>
-                      <div className="text-xs text-gray-500">Duration</div>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    {testimonial.results.slice(0, 4).map((result, resultIndex) => (
-                      <div key={resultIndex} className="flex items-center text-xs text-gray-600">
-                        <Heart className="h-3 w-3 text-primary-400 mr-1 flex-shrink-0" />
-                        {result}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Navigation */}
-          <div className="hidden md:flex items-center justify-center space-x-4">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={prevTestimonials}
-              className="p-3 rounded-full hover:bg-primary-50 hover:border-primary-200 transition-all group"
-            >
-              <ChevronLeft className="h-5 w-5 group-hover:text-primary-600" />
-            </Button>
-            
-            {/* Dots Indicator */}
-            <div className="flex space-x-2">
-              {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index * 3)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    Math.floor(currentIndex / 3) === index 
-                      ? 'bg-primary-500 scale-125' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
+            {/* Swipe Indicator */}
+            <div className="text-center mt-4">
+              <p className="text-sm text-gray-500">
+                Swipe left or right to see more feedback
+              </p>
             </div>
-
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={nextTestimonials}
-              className="p-3 rounded-full hover:bg-primary-50 hover:border-primary-200 transition-all group"
-            >
-              <ChevronRight className="h-5 w-5 group-hover:text-primary-600" />
-            </Button>
           </div>
         </div>
 
         {/* Bottom CTA */}
-       <div className="text-center mt-16">
+        <div className="text-center mt-16">
           <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-2xl font-bold mb-4">Ready to Take the First Step?</h3>
               <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
                 Your transformation journey starts with a simple conversation.
-                Book your free discovery call today and let&apos;s create your personalized success plan.
+                Book your free discovery call today and let's create your personalized success plan.
               </p>
               <button className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 Book Your Free Discovery Call
