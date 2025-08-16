@@ -149,7 +149,7 @@ export function HowItWorks() {
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Step Cards */}
-          <div className="space-y-4">
+          <div className="flex flex-col h-full">
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               const isActive = activeStep === index;
@@ -163,14 +163,14 @@ export function HowItWorks() {
                       isActive 
                         ? `${step.bgColor} ${step.borderColor} shadow-lg` 
                         : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-md'
-                    }`}
+                    className={`p-4 rounded-2xl border-2 cursor-pointer transition-all duration-300 h-full flex items-center ${
                   >
                     {/* Connecting Line */}
                     {index < steps.length - 1 && (
                       <div className="absolute left-8 top-full w-0.5 h-4 bg-gray-200 hidden lg:block" />
                     )}
                     
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 w-full">
                       {/* Icon */}
                       <div className={`p-3 rounded-xl transition-all duration-300 ${
                         isActive ? step.bgColor : 'bg-gray-100'
@@ -226,7 +226,7 @@ export function HowItWorks() {
 
           {/* Right Side - Active Step Details (Desktop Only) */}
           <div className="hidden lg:block">
-            <div className="sticky top-8">
+            <div className="sticky top-8 h-full">
               <div className={`${currentStep.bgColor} rounded-3xl p-8 shadow-xl border-2 ${currentStep.borderColor}`}>
                 {/* Header */}
                 <div className="flex items-center space-x-4 mb-6">
@@ -249,7 +249,7 @@ export function HowItWorks() {
                 </p>
 
                 {/* Details List */}
-                <div className="space-y-3">
+                <div className="space-y-3 flex-1">
                   <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
                   {currentStep.details.map((detail, detailIndex) => (
                     <div key={detailIndex} className="flex items-start">
@@ -260,7 +260,7 @@ export function HowItWorks() {
                 </div>
 
                 {/* Visual Element */}
-                <div className="mt-8 text-center">
+                <div className="mt-auto pt-8 text-center">
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${currentStep.color} text-white text-2xl font-bold shadow-lg`}>
                     {currentStep.step}
                   </div>
