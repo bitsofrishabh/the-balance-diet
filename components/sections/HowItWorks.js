@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import { 
-  UserCheck, 
-  Target, 
-  Calendar, 
-  TrendingUp,
+  Phone, 
+  FileText, 
+  MessageSquare, 
+  BarChart3,
+  Calendar,
+  Trophy,
   CheckCircle,
-  Sparkles,
-  Activity,
-  BarChart3
+  Sparkles
 } from 'lucide-react';
 
 export function HowItWorks() {
@@ -18,15 +18,16 @@ export function HowItWorks() {
   const steps = [
     {
       step: 1,
-      icon: UserCheck,
-      title: 'Diet Plan',
-      description: 'Get a personalized nutrition plan tailored to your goals, preferences, and lifestyle.',
+      icon: Phone,
+      title: 'Health Consultation Call',
+      description: 'Comprehensive health assessment and goal setting session with our expert nutritionists.',
       details: [
-        'Comprehensive health assessment',
-        'Customized meal plans with Indian foods',
-        'Portion control guidelines',
-        'Nutritional balance optimization',
-        'Food preference accommodation'
+        'Complete health history and lifestyle assessment',
+        'Discussion of your health goals and challenges',
+        'Body composition analysis and measurements',
+        'Dietary preferences and restrictions evaluation',
+        'Medical conditions and medication review',
+        'Personalized goal setting and timeline planning'
       ],
       color: 'from-blue-500 to-blue-600',
       bgColor: 'bg-blue-50',
@@ -35,15 +36,16 @@ export function HowItWorks() {
     },
     {
       step: 2,
-      icon: Activity,
-      title: 'Workout Plan',
-      description: 'Custom exercise routines designed to complement your nutrition plan and fit your schedule.',
+      icon: FileText,
+      title: 'Diet Plan Creation',
+      description: 'Custom nutrition plan designed specifically for your goals, preferences, and lifestyle.',
       details: [
-        'Personalized workout routines',
-        'Home and gym exercise options',
-        'Progressive difficulty levels',
-        'Time-efficient workouts',
-        'Exercise video demonstrations'
+        'Personalized meal plans with Indian foods',
+        'Calorie and macro-nutrient calculations',
+        'Recipe suggestions and meal prep guides',
+        'Shopping lists and ingredient substitutions',
+        'Portion control guidelines and timing',
+        'Special dietary accommodations included'
       ],
       color: 'from-green-500 to-green-600',
       bgColor: 'bg-green-50',
@@ -52,15 +54,16 @@ export function HowItWorks() {
     },
     {
       step: 3,
-      icon: Target,
-      title: 'Habits and Goals',
-      description: 'Build sustainable healthy habits and set achievable milestones for long-term success.',
+      icon: MessageSquare,
+      title: 'Diet & Workout Explanation Call',
+      description: 'Detailed walkthrough of your personalized plan with exercise recommendations.',
       details: [
-        'SMART goal setting framework',
-        'Daily habit tracking system',
-        'Behavioral change strategies',
-        'Milestone celebration planning',
-        'Habit stacking techniques'
+        'Step-by-step diet plan explanation',
+        'Customized workout routine presentation',
+        'Exercise demonstrations and modifications',
+        'Q&A session for plan clarification',
+        'Tips for successful implementation',
+        'Resource sharing and app setup guidance'
       ],
       color: 'from-purple-500 to-purple-600',
       bgColor: 'bg-purple-50',
@@ -70,14 +73,15 @@ export function HowItWorks() {
     {
       step: 4,
       icon: BarChart3,
-      title: 'Tracking',
-      description: 'Monitor your progress with comprehensive tracking tools and regular assessments.',
+      title: 'Daily Meal & Habit Tracking',
+      description: 'Continuous monitoring of your daily meals, habits, and progress metrics.',
       details: [
-        'Body composition monitoring',
-        'Weight and measurement tracking',
-        'Food intake logging',
-        'Exercise performance metrics',
-        'Health marker improvements'
+        'Daily food intake logging and analysis',
+        'Habit tracking and streak monitoring',
+        'Weight and measurement recording',
+        'Energy levels and mood tracking',
+        'Water intake and sleep quality monitoring',
+        'Photo progress documentation'
       ],
       color: 'from-orange-500 to-orange-600',
       bgColor: 'bg-orange-50',
@@ -86,15 +90,16 @@ export function HowItWorks() {
     },
     {
       step: 5,
-      icon: TrendingUp,
-      title: 'Progress',
-      description: 'Celebrate achievements and continuously optimize your plan for better results.',
+      icon: Calendar,
+      title: 'Follow-up Calls Every Week',
+      description: 'Regular check-ins with your coach for support, adjustments, and motivation.',
       details: [
-        'Weekly progress reviews',
-        'Plan adjustments and optimization',
-        'Success milestone celebrations',
-        'Continuous improvement strategies',
-        'Long-term maintenance planning'
+        'Weekly progress review and analysis',
+        'Plan adjustments based on results',
+        'Challenge identification and solutions',
+        'Motivation and accountability support',
+        'New goal setting and milestone planning',
+        'Continuous education and tips sharing'
       ],
       color: 'from-primary-500 to-primary-600',
       bgColor: 'bg-primary-50',
@@ -103,15 +108,16 @@ export function HowItWorks() {
     },
     {
       step: 6,
-      icon: CheckCircle,
-      title: 'Achieve and Celebrate',
-      description: 'Reach your goals and maintain your results with lifelong healthy habits.',
+      icon: Trophy,
+      title: 'Results & Celebrate',
+      description: 'Achievement of your health goals and celebration of your transformation success.',
       details: [
-        'Goal achievement celebration',
-        'Maintenance strategy development',
-        'Lifestyle integration support',
-        'Continued coaching access',
-        'Success story documentation'
+        'Goal achievement assessment and documentation',
+        'Before and after transformation photos',
+        'Success story creation and sharing',
+        'Maintenance plan development',
+        'Celebration of milestones reached',
+        'Continued support for long-term success'
       ],
       color: 'from-pink-500 to-pink-600',
       bgColor: 'bg-pink-50',
@@ -149,51 +155,68 @@ export function HowItWorks() {
               const isActive = activeStep === index;
               
               return (
-                <div 
-                  key={index}
-                  onClick={() => setActiveStep(index)}
-                  className={`relative p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${
-                    isActive 
-                      ? `${step.bgColor} ${step.borderColor} shadow-lg scale-105` 
-                      : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-md'
-                  }`}
-                >
-                  {/* Connecting Line */}
-                  {index < steps.length - 1 && (
-                    <div className="absolute left-8 top-full w-0.5 h-4 bg-gray-200" />
-                  )}
-                  
-                  <div className="flex items-center space-x-4">
-                    {/* Icon */}
-                    <div className={`p-3 rounded-xl transition-all duration-300 ${
-                      isActive ? step.bgColor : 'bg-gray-100'
-                    }`}>
-                      <IconComponent className={`h-6 w-6 transition-all duration-300 ${
-                        isActive ? step.iconColor : 'text-gray-600'
-                      }`} />
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className={`text-lg font-semibold transition-colors duration-300 ${
-                        isActive ? 'text-gray-900' : 'text-gray-700'
-                      }`}>
-                        {step.title}
-                      </h3>
-                      <p className={`text-sm leading-relaxed transition-colors duration-300 ${
-                        isActive ? 'text-gray-700' : 'text-gray-600'
-                      }`}>
-                        {step.description}
-                      </p>
-                    </div>
-                    
-                    {/* Step Number */}
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                <div key={index} className="relative">
+                  {/* Mobile Content - Shows below card on mobile when active */}
+                  <div 
+                    onClick={() => setActiveStep(index)}
+                    className={`p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${
                       isActive 
-                        ? `bg-gradient-to-r ${step.color} text-white shadow-lg` 
-                        : 'bg-gray-200 text-gray-600'
-                    }`}>
-                      {step.step}
+                        ? `${step.bgColor} ${step.borderColor} shadow-lg` 
+                        : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-md'
+                    }`}
+                  >
+                    {/* Connecting Line */}
+                    {index < steps.length - 1 && (
+                      <div className="absolute left-8 top-full w-0.5 h-4 bg-gray-200 hidden lg:block" />
+                    )}
+                    
+                    <div className="flex items-center space-x-4">
+                      {/* Icon */}
+                      <div className={`p-3 rounded-xl transition-all duration-300 ${
+                        isActive ? step.bgColor : 'bg-gray-100'
+                      }`}>
+                        <IconComponent className={`h-6 w-6 transition-all duration-300 ${
+                          isActive ? step.iconColor : 'text-gray-600'
+                        }`} />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1">
+                        <h3 className={`text-lg font-semibold transition-colors duration-300 ${
+                          isActive ? 'text-gray-900' : 'text-gray-700'
+                        }`}>
+                          {step.title}
+                        </h3>
+                      </div>
+                      
+                      {/* Step Number */}
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                        isActive 
+                          ? `bg-gradient-to-r ${step.color} text-white shadow-lg` 
+                          : 'bg-gray-200 text-gray-600'
+                      }`}>
+                        {step.step}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mobile Content Panel - Shows below active card */}
+                  <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
+                    isActive ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+                  }`}>
+                    <div className={`${currentStep.bgColor} rounded-2xl p-6 border-2 ${currentStep.borderColor}`}>
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        {currentStep.description}
+                      </p>
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
+                        {currentStep.details.map((detail, detailIndex) => (
+                          <div key={detailIndex} className="flex items-start">
+                            <CheckCircle className={`h-5 w-5 ${currentStep.iconColor} mt-0.5 mr-3 flex-shrink-0`} />
+                            <span className="text-gray-700">{detail}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -201,7 +224,7 @@ export function HowItWorks() {
             })}
           </div>
 
-          {/* Right Side - Active Step Details (Desktop) */}
+          {/* Right Side - Active Step Details (Desktop Only) */}
           <div className="hidden lg:block">
             <div className="sticky top-8">
               <div className={`${currentStep.bgColor} rounded-3xl p-8 shadow-xl border-2 ${currentStep.borderColor}`}>
@@ -243,42 +266,6 @@ export function HowItWorks() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile - Active Step Details (Bottom) */}
-        <div className="lg:hidden mt-8">
-          <div className={`${currentStep.bgColor} rounded-3xl p-6 shadow-xl border-2 ${currentStep.borderColor}`}>
-            {/* Header */}
-            <div className="flex items-center space-x-4 mb-4">
-              <div className={`p-3 rounded-xl ${currentStep.bgColor}`}>
-                <currentStep.icon className={`h-6 w-6 ${currentStep.iconColor}`} />
-              </div>
-              <div>
-                <div className={`text-sm font-semibold ${currentStep.iconColor} mb-1`}>
-                  Step {currentStep.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">
-                  {currentStep.title}
-                </h3>
-              </div>
-            </div>
-
-            {/* Description */}
-            <p className="text-gray-700 leading-relaxed mb-4">
-              {currentStep.description}
-            </p>
-
-            {/* Details List */}
-            <div className="space-y-2">
-              <h4 className="font-semibold text-gray-900 mb-2">What's Included:</h4>
-              {currentStep.details.map((detail, detailIndex) => (
-                <div key={detailIndex} className="flex items-start">
-                  <CheckCircle className={`h-4 w-4 ${currentStep.iconColor} mt-0.5 mr-2 flex-shrink-0`} />
-                  <span className="text-gray-700 text-sm">{detail}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
