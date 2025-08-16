@@ -163,7 +163,9 @@ export function HowItWorks() {
                       isActive 
                         ? `${step.bgColor} ${step.borderColor} shadow-lg` 
                         : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-md'
+                    }
                     className={`p-4 rounded-2xl border-2 cursor-pointer transition-all duration-300 h-full flex items-center ${
+                    }
                   >
                     {/* Connecting Line */}
                     {index < steps.length - 1 && (
@@ -221,6 +223,9 @@ export function HowItWorks() {
                   </div>
                 </div>
               );
+            }
+            )
+            }
             })}
           </div>
 
@@ -230,11 +235,11 @@ export function HowItWorks() {
               <div className={`${currentStep.bgColor} rounded-3xl p-8 shadow-xl border-2 ${currentStep.borderColor}`}>
                 {/* Header */}
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className={`p-4 rounded-2xl ${currentStep.bgColor}`}>
-                    <currentStep.icon className={`h-8 w-8 ${currentStep.iconColor}`} />
+                  <div className={\`p-4 rounded-2xl ${currentStep.bgColor}`}>
+                    <currentStep.icon className={\`h-8 w-8 ${currentStep.iconColor}`} />
                   </div>
                   <div>
-                    <div className={`text-sm font-semibold ${currentStep.iconColor} mb-1`}>
+                    <div className={\`text-sm font-semibold ${currentStep.iconColor} mb-1`}>
                       Step {currentStep.step}
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900">
@@ -253,7 +258,7 @@ export function HowItWorks() {
                   <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
                   {currentStep.details.map((detail, detailIndex) => (
                     <div key={detailIndex} className="flex items-start">
-                      <CheckCircle className={`h-5 w-5 ${currentStep.iconColor} mt-0.5 mr-3 flex-shrink-0`} />
+                      <CheckCircle className={\`h-5 w-5 ${currentStep.iconColor} mt-0.5 mr-3 flex-shrink-0`} />
                       <span className="text-gray-700">{detail}</span>
                     </div>
                   ))}
@@ -261,7 +266,7 @@ export function HowItWorks() {
 
                 {/* Visual Element */}
                 <div className="mt-auto pt-8 text-center">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${currentStep.color} text-white text-2xl font-bold shadow-lg`}>
+                  <div className={\`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${currentStep.color} text-white text-2xl font-bold shadow-lg`}>
                     {currentStep.step}
                   </div>
                 </div>
@@ -290,4 +295,6 @@ export function HowItWorks() {
       </div>
     </section>
   );
+}
+  )
 }
