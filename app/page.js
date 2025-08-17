@@ -4,7 +4,7 @@ import { ClientTestimonials } from '@/components/sections/ClientTestimonials';
 import { Features } from '@/components/sections/Features';
 import { VideoTestimonials } from '@/components/sections/VideoTestimonials';
 import { Stats } from '@/components/sections/Stats';
-import { LeadGenerationForm } from '@/components/sections/LeadGenerationForm';
+import { TransformationSection } from '@/components/sections/TransformationSection';
 
 export const metadata = {
   title: 'The Balance Diet - Transform Your Health Journey',
@@ -20,7 +20,7 @@ export default function Home() {
       <Features />
       <Stats />
       <VideoTestimonials />
-      <LeadGenerationForm />
+      <TransformationSection />
     </>
   );
 }
