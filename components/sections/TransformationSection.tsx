@@ -137,7 +137,7 @@ export function TransformationSection() {
                     <img
                       src="https://res.cloudinary.com/djdej77pl/image/upload/v1755419517/Ad_Creative_For_Rishab_Sir_sajqyg.png"
                       alt="The Balance Diet Transformation Program"
-                      className="w-full h-auto rounded-xl shadow-md max-h-64 object-contain"
+                      className="w-full h-auto rounded-2xl shadow-lg max-h-48 object-contain"
                     />
                     {/* Floating Badge */}
                     <div className="absolute -top-3 -right-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12">
@@ -519,31 +519,6 @@ export function TransformationSection() {
                   </div>
                 </div>
 
-                {/* CTAs */}
-                <div className="space-y-3 mt-auto">
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block">
-                    <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-3 text-base font-semibold">
-                      <MessageCircle className="mr-2 h-4 w-4" />
-                      Claim Your Risk-Free Transformation
-                    </Button>
-                  </a>
-                  <Button variant="outline" className="w-full py-3 text-base border-green-200 text-green-700 hover:bg-green-50">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Book Free Consultation
-                  </Button>
-                </div>
-
-                {/* Footer trust bits */}
-                <div className="flex items-center justify-center space-x-6 text-sm text-gray-600 pt-4">
-                  <div className="flex items-center">
-                    <Award className="h-4 w-4 text-green-500 mr-2" />
-                    Certified Experts
-                  </div>
-                  <div className="flex items-center">
-                    <Shield className="h-4 w-4 text-green-500 mr-2" />
-                    Secure & Confidential
-                  </div>
-                </div>
               </div>
             </div>
           </div>
