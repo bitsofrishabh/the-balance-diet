@@ -113,7 +113,7 @@ export function LeadGenerationForm() {
 
   if (isSubmitted) {
     return (
-      <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <section className="py-12 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white rounded-3xl p-8 shadow-xl">
             <div className="bg-green-100 p-4 rounded-full inline-flex mb-6">
@@ -152,12 +152,12 @@ export function LeadGenerationForm() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+    <section className="py-12 bg-gradient-to-br from-primary-50 to-secondary-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Start Your Transformation Journey
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Free Health Assessment
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Share your health information with us and get a personalized consultation 
