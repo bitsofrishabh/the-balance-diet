@@ -15,122 +15,104 @@ import {
 export function HowItWorks() {
   const [activeStep, setActiveStep] = useState(0);
 
-  const steps = [
-    {
-      step: 1,
-      icon: Phone,
-      title: 'Health Consultation Call',
-      description:
-        'Comprehensive health assessment and goal setting session with our expert nutritionists.',
-      details: [
-        'Complete health history and lifestyle assessment',
-        'Discussion of your health goals and challenges',
-        'Body composition analysis and measurements',
-        'Dietary preferences and restrictions evaluation',
-        'Medical conditions and medication review',
-        'Personalized goal setting and timeline planning',
-      ],
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'bg-blue-50',
-      iconColor: 'text-blue-600',
-      borderColor: 'border-blue-200',
-    },
-    {
-      step: 2,
-      icon: FileText,
-      title: 'Diet Plan Creation',
-      description:
-        'Custom nutrition plan designed specifically for your goals, preferences, and lifestyle.',
-      details: [
-        'Personalized meal plans with Indian foods',
-        'Calorie and macro-nutrient calculations',
-        'Recipe suggestions and meal prep guides',
-        'Shopping lists and ingredient substitutions',
-        'Portion control guidelines and timing',
-        'Special dietary accommodations included',
-      ],
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50',
-      iconColor: 'text-green-600',
-      borderColor: 'border-green-200',
-    },
-    {
-      step: 3,
-      icon: MessageSquare,
-      title: 'Diet & Workout Explanation Call',
-      description:
-        'Detailed walkthrough of your personalized plan with exercise recommendations.',
-      details: [
-        'Step-by-step diet plan explanation',
-        'Customized workout routine presentation',
-        'Exercise demonstrations and modifications',
-        'Q&A session for plan clarification',
-        'Tips for successful implementation',
-        'Resource sharing and app setup guidance',
-      ],
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50',
-      iconColor: 'text-purple-600',
-      borderColor: 'border-purple-200',
-    },
-    {
-      step: 4,
-      icon: BarChart3,
-      title: 'Daily Meal & Habit Tracking',
-      description:
-        'Continuous monitoring of your daily meals, habits, and progress metrics.',
-      details: [
-        'Daily food intake logging and analysis',
-        'Habit tracking and streak monitoring',
-        'Weight and measurement recording',
-        'Energy levels and mood tracking',
-        'Water intake and sleep quality monitoring',
-        'Photo progress documentation',
-      ],
-      color: 'from-orange-500 to-orange-600',
-      bgColor: 'bg-orange-50',
-      iconColor: 'text-orange-600',
-      borderColor: 'border-orange-200',
-    },
-    {
-      step: 5,
-      icon: Calendar,
-      title: 'Follow-up Calls Every Week',
-      description:
-        'Regular check-ins with your coach for support, adjustments, and motivation.',
-      details: [
-        'Weekly progress review and analysis',
-        'Plan adjustments based on results',
-        'Challenge identification and solutions',
-        'Motivation and accountability support',
-        'New goal setting and milestone planning',
-        'Continuous education and tips sharing',
-      ],
-      color: 'from-primary-500 to-primary-600',
-      bgColor: 'bg-primary-50',
-      iconColor: 'text-primary-600',
-      borderColor: 'border-primary-200',
-    },
-    {
-      step: 6,
-      icon: Trophy,
-      title: 'Results & Celebrate',
-      description:
-        'Achievement of your health goals and celebration of your transformation success.',
-      details: [
-        'Goal achievement assessment and documentation',
-        'Before and after transformation photos',
-        'Success story creation and sharing',
-        'Maintenance plan development',
-        'Celebration of milestones reached',
-        'Continued support for long-term success',
-      ],
-      color: 'from-pink-500 to-pink-600',
-      bgColor: 'bg-pink-50',
-      iconColor: 'text-pink-600',
-      borderColor: 'border-pink-200',
-    },
-  ];
+const steps = [
+  {
+    step: 1,
+    icon: Phone,
+    title: 'Free Consultation & Goal Setting',
+    description:
+      'A quick conversation to understand your lifestyle, health history, and set clear, realistic targets.',
+    details: [
+      'Health history, meds & recent labs (if any)',
+      'Work schedule, routines & constraints',
+      'Food preferences (veg/non-veg), likes & dislikes',
+      'Measurements and current activity',
+      '4-week targets and realistic timeline',
+      'Onboarding checklist so you know what’s next',
+    ],
+    color: 'from-blue-500 to-blue-600',
+    bgColor: 'bg-blue-50',
+    iconColor: 'text-blue-600',
+    borderColor: 'border-blue-200',
+  },
+  {
+    step: 2,
+    icon: FileText,
+    title: 'Your Custom Diet + Workout Plan',
+    description:
+      'Simple, Indian-food-first plan tailored to your routine, goals, and medical needs.',
+    details: [
+      'Personalized meals with roti/rice/dal/sabzi',
+      'Calories & macros with easy portion guides',
+      'Recipes, prep shortcuts & shopping list',
+      'Special accommodations (PCOS, cholesterol, IBS, post-partum)',
+      'Home/gym workout split with substitutions',
+      'Clear weekly milestones and do’s/don’ts',
+    ],
+    color: 'from-green-500 to-green-600',
+    bgColor: 'bg-green-50',
+    iconColor: 'text-green-600',
+    borderColor: 'border-green-200',
+  },
+  {
+    step: 3,
+    icon: MessageSquare,
+    title: 'Kickoff: Plan Walkthrough & Setup',
+    description:
+      'We explain everything step-by-step and set up your tools so execution is easy.',
+    details: [
+      'Diet plan walkthrough & timing made simple',
+      'Workout overview, form cues & modifications',
+      'Your questions answered—no confusion left',
+      'Tracker/app/WhatsApp flow set up',
+      'First-week game plan so you start strong',
+      'How to reach us for quick help anytime',
+    ],
+    color: 'from-purple-500 to-purple-600',
+    bgColor: 'bg-purple-50',
+    iconColor: 'text-purple-600',
+    borderColor: 'border-purple-200',
+  },
+  {
+    step: 4,
+    icon: BarChart3,
+    title: 'Daily Tracking & Real-Time Support',
+    description:
+      'You log meals & habits; we guide, nudge, and problem-solve in real time.',
+    details: [
+      'Daily meal photos/logs with quick feedback',
+      'Habit streaks: water, steps, sleep, mindfulness',
+      'Weight & measurements on a set schedule',
+      'Energy/mood check-ins to spot patterns',
+      'Restaurant/travel swaps when you’re outside',
+      'Mid-week tweaks if progress stalls',
+    ],
+    color: 'from-orange-500 to-orange-600',
+    bgColor: 'bg-orange-50',
+    iconColor: 'text-orange-600',
+    borderColor: 'border-orange-200',
+  },
+  {
+    step: 5,
+    icon: Calendar,
+    title: 'Weekly Review, Adjust & Maintain',
+    description:
+      'Short review call/voice note to tune your plan, celebrate wins, and build long-term consistency.',
+    details: [
+      'Weekly progress report & insights',
+      'Adjust calories, portions or workouts',
+      'Troubleshoot cravings, plateaus & schedules',
+      'Celebrate milestones & non-scale victories',
+      'Monthly photo/measure comparisons',
+      'Maintenance roadmap as you hit your goal',
+    ],
+    color: 'from-indigo-500 to-indigo-600',
+    bgColor: 'bg-indigo-50',
+    iconColor: 'text-indigo-600',
+    borderColor: 'border-indigo-200',
+  },
+];
+
 
   const currentStep = steps[activeStep];
   const ActiveIcon = currentStep.icon;
