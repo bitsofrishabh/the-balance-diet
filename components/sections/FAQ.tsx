@@ -47,7 +47,7 @@ export function FAQ() {
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
@@ -70,9 +70,9 @@ export function FAQ() {
             <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
+                className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
               >
-                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                <h3 className="text-xl font-semibold text-gray-900 pr-4 leading-relaxed">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
@@ -87,8 +87,8 @@ export function FAQ() {
               <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
                 openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
               }`}>
-                <div className="px-6 pb-5">
-                  <p className="text-gray-700 leading-relaxed">
+                <div className="px-6 pb-6">
+                  <p className="text-gray-700 leading-relaxed text-base">
                     {faq.answer}
                   </p>
                 </div>

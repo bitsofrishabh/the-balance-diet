@@ -224,9 +224,9 @@ export function TransformationSection() {
               </div>
 
               {/* Row 1: Name, Age, City */}
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {/* Name */}
-                <div className="col-span-1 md:col-span-8">
+                <div>
                   <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <User className="h-4 w-4 text-primary-600" />
                     <span>📝 Name</span>
@@ -245,7 +245,7 @@ export function TransformationSection() {
 
 
                 {/* City */}
-                <div className="col-span-1 md:col-span-4">
+                <div>
                   <label htmlFor="city" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <MapPin className="h-4 w-4 text-primary-600" />
                     <span>🏠 City</span>
