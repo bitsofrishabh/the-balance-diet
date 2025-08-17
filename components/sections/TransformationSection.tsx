@@ -224,9 +224,9 @@ export function TransformationSection() {
               </div>
 
               {/* Row 1: Name, Age, City */}
-              <div className="grid grid-cols-12 gap-4 mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-4">
                 {/* Name */}
-                <div className="col-span-12 md:col-span-6">
+                <div className="col-span-1 md:col-span-8">
                   <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <User className="h-4 w-4 text-primary-600" />
                     <span>📝 Name</span>
@@ -243,8 +243,30 @@ export function TransformationSection() {
                   />
                 </div>
 
+
+                {/* City */}
+                <div className="col-span-1 md:col-span-4">
+                  <label htmlFor="city" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                    <MapPin className="h-4 w-4 text-primary-600" />
+                    <span>🏠 City</span>
+                  </label>
+                  <input
+                    id="city"
+                    type="text"
+                    name="city"
+                    value={formData.city}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full h-10 px-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
+                    placeholder="Enter your city"
+                  />
+                </div>
+              </div>
+
+              {/* Row 2: Age, Height, Weight, Goal Weight */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
                 {/* Age */}
-                <div className="col-span-12 md:col-span-3">
+                <div>
                   <label htmlFor="age" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Calendar className="h-4 w-4 text-primary-600" />
                     <span>🎂 Age</span>
@@ -264,29 +286,8 @@ export function TransformationSection() {
                   />
                 </div>
 
-                {/* City */}
-                <div className="col-span-12 md:col-span-6">
-                  <label htmlFor="city" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                    <MapPin className="h-4 w-4 text-primary-600" />
-                    <span>🏠 City</span>
-                  </label>
-                  <input
-                    id="city"
-                    type="text"
-                    name="city"
-                    value={formData.city}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full h-10 px-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
-                    placeholder="Enter your city"
-                  />
-                </div>
-              </div>
-
-              {/* Row 2: Height, Weight, Goal Weight */}
-              <div className="grid grid-cols-12 gap-4 mb-4">
                 {/* Height */}
-                <div className="col-span-12 md:col-span-3">
+                <div>
                   <label htmlFor="height" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Ruler className="h-4 w-4 text-primary-600" />
                     <span>⬆️ Height (cm)</span>
@@ -307,7 +308,7 @@ export function TransformationSection() {
                 </div>
 
                 {/* Weight */}
-                <div className="col-span-12 md:col-span-3">
+                <div>
                   <label htmlFor="weight" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Scale className="h-4 w-4 text-primary-600" />
                     <span>⚖️ Weight (kg)</span>
@@ -328,7 +329,7 @@ export function TransformationSection() {
                 </div>
 
                 {/* Goal Weight */}
-                <div className="col-span-12 md:col-span-3">
+                <div>
                   <label htmlFor="goalWeight" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Target className="h-4 w-4 text-primary-600" />
                     <span>🔥 Goal Weight (kg)</span>
@@ -350,9 +351,9 @@ export function TransformationSection() {
               </div>
 
               {/* Row 3: Profession, Mobile */}
-              <div className="grid grid-cols-12 gap-4 mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {/* Profession */}
-                <div className="col-span-12 md:col-span-6">
+                <div>
                   <label htmlFor="profession" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Briefcase className="h-4 w-4 text-primary-600" />
                     <span>💼 Work/Profession</span>
@@ -370,7 +371,7 @@ export function TransformationSection() {
                 </div>
 
                 {/* Mobile Number */}
-                <div className="col-span-12 md:col-span-6">
+                <div>
                   <label htmlFor="mobile" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Phone className="h-4 w-4 text-primary-600" />
                     <span>📱 Mobile Number</span>
