@@ -32,10 +32,7 @@ export default function SuccessStoryDetailPage() {
       beforeWeight: 85,
       afterWeight: 60,
       program: 'Complete Transform Program',
-      images: [
-        'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/3_fhiqje.png',
-        'https://res.cloudinary.com/djdej77pl/image/upload/v1753728759/15_wwp1m1.png'
-      ],
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342356/Before-After/1_d4fprb.png',
       story: `When I first contacted The Balance Diet team, I was struggling with PCOS and had tried countless diets without success. My weight had reached 85 kg, and I felt hopeless about ever achieving my health goals.
 
 The team created a personalized plan that addressed my PCOS symptoms while focusing on sustainable weight loss. They didn't just give me a diet chart - they educated me about nutrition, helped me understand my body's needs, and provided constant support throughout my journey.
@@ -70,10 +67,7 @@ Today, I'm not just lighter on the scale, but I'm also happier, more energetic, 
       beforeWeight: 95,
       afterWeight: 65,
       program: 'Premium Transform Program',
-      images: [
-        'https://res.cloudinary.com/djdej77pl/image/upload/v1753728759/15_wwp1m1.png',
-        'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/6_u49nfp.png'
-      ],
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
       story: `As a busy marketing director, I was constantly traveling and eating irregular meals. My weight had ballooned to 95 kg, and I was experiencing health issues that were affecting my work performance and personal life.
 
 The Balance Diet team understood my hectic schedule and created a flexible plan that worked around my travel and meeting schedules. They provided me with portable meal options, restaurant eating guidelines, and even helped me navigate airport food choices.
@@ -108,10 +102,7 @@ This program taught me that being busy is not an excuse for poor health. With th
       beforeWeight: 78,
       afterWeight: 60,
       program: 'Women Care Program',
-      images: [
-        'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/6_u49nfp.png',
-        'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/3_fhiqje.png'
-      ],
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
       story: `After giving birth to my second child, I struggled with postpartum weight gain and felt like I had lost myself. At 78 kg, I was the heaviest I had ever been, and my confidence was at an all-time low.
 
 The Balance Diet team specialized in women's health understood exactly what I was going through. They created a plan that considered my breastfeeding needs, hormonal changes, and the challenges of being a new mother with limited time.
@@ -143,7 +134,7 @@ This journey taught me that motherhood doesn't mean sacrificing your own health 
       name: 'Amit Singh',
       weightLoss: '22 kg',
       timeframe: '5 months',
-      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1753728759/15_wwp1m1.png',
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
       quote: 'The Balance Diet helped me manage my diabetes while losing weight. My blood sugar levels are now completely normal!',
       rating: 5
     },
@@ -151,7 +142,7 @@ This journey taught me that motherhood doesn't mean sacrificing your own health 
       name: 'Kavya Reddy',
       weightLoss: '20 kg',
       timeframe: '5 months',
-      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/6_u49nfp.png',
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/4_alxia4.png',
       quote: 'As a college student, I needed a plan that fit my budget and lifestyle. This program was perfect and the results speak for themselves!',
       rating: 5
     },
@@ -159,6 +150,9 @@ This journey taught me that motherhood doesn't mean sacrificing your own health 
       name: 'Vikram Joshi',
       weightLoss: '28 kg',
       timeframe: '7 months',
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/3_ug1tse.png',
+      quote: 'Overcoming thyroid issues while losing weight seemed impossible, but this program made it achievable!',
+      rating: 5
     }
   ]
   return (
