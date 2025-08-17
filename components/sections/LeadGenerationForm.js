@@ -157,7 +157,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <User className="h-4 w-4 mr-2 text-primary-600" />
-                  📝 Name
+                  Name
                 </label>
                 <input
                   type="text"
@@ -174,7 +174,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-primary-600" />
-                  🎂 Age
+                   Age
                 </label>
                 <input
                   type="number"
@@ -193,7 +193,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <MapPin className="h-4 w-4 mr-2 text-primary-600" />
-                  🏠 City
+                  City
                 </label>
                 <input
                   type="text"
@@ -210,7 +210,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Ruler className="h-4 w-4 mr-2 text-primary-600" />
-                  ⬆️ Height (cm)
+                   Height (cm)
                 </label>
                 <input
                   type="number"
@@ -229,7 +229,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Scale className="h-4 w-4 mr-2 text-primary-600" />
-                  ⚖️ Current Weight (kg)
+                   Current Weight (kg)
                 </label>
                 <input
                   type="number"
@@ -248,7 +248,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Target className="h-4 w-4 mr-2 text-primary-600" />
-                  🔥 Goal Weight (kg)
+                   Goal Weight (kg)
                 </label>
                 <input
                   type="number"
@@ -267,7 +267,7 @@ export function LeadGenerationForm() {
               <div className="md:col-span-2">
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Briefcase className="h-4 w-4 mr-2 text-primary-600" />
-                  💼 Work/Profession
+                   Work/Profession
                 </label>
                 <input
                   type="text"
@@ -284,7 +284,7 @@ export function LeadGenerationForm() {
               <div className="md:col-span-2">
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Heart className="h-4 w-4 mr-2 text-primary-600" />
-                  🏥 Health Issues/Fitness Goals
+                   Health Issues/Fitness Goals
                 </label>
                 <textarea
                   name="healthGoals"
