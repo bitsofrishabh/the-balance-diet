@@ -12,26 +12,7 @@ export function MoneyBackGuarantee() {
   return (
     <section className="h-full flex flex-col py-16 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex">
-        <div className="flex flex-col h-full w-full">
-          {/* Card */}
-          <div className="space-y-8 bg-white rounded-3xl p-6 shadow-xl flex-1 flex flex-col">
-            {/* Poster */}
-            <div className="relative">
-              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-4 shadow-2xl">
-                <img
-                  src="https://res.cloudinary.com/djdej77pl/image/upload/v1755436075/Ad_Creative_For_Rishab_Sir_1_pytidb.png"
-                  alt="The Balance Diet Transformation Program"
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                />
-                {/* Floating Badge */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-lg transform rotate-12">
-                  <div className="text-center">
-                    <div className="text-sm font-bold">100% GUARANTEED</div>
-                    <div className="text-xs">Money Back</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+       
 
             {/* Content */}
             <div>
