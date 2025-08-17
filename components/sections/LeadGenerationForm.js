@@ -14,7 +14,7 @@ import {
   Phone,
   CheckCircle,
   Loader2,
-  Shield
+  Shield,
   MessageCircle
 } from 'lucide-react';
 
