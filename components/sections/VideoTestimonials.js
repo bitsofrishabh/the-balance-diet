@@ -3,91 +3,72 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { 
+  Play, 
+  Star, 
   ChevronLeft, 
   ChevronRight,
-  Users,
-  Play
+  Award,
+  Users
 } from 'lucide-react';
 
 export function VideoTestimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [playingVideo, setPlayingVideo] = useState(null);
 
+  // You can replace these with your actual YouTube video IDs
   const videoTestimonials = [
     {
-      id: 'ToOadnCWCAw',
-      embedUrl: 'https://www.youtube.com/embed/ToOadnCWCAw',
-      title: 'Subham from Australia Feedback',
-      caption: 'Amazing transformation journey from Australia with sustainable results and lifestyle changes.'
+      id: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
+      title: 'Sarah\'s 30lb Weight Loss Journey',
+      name: 'Sarah Johnson',
+      result: '30 lbs lost',
+      timeframe: '4 months',
+      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
+      rating: 5
     },
     {
-      id: 'HADe4ofvRzM',
-      embedUrl: 'https://www.youtube.com/embed/HADe4ofvRzM',
-      title: 'Gaurav\'s Weight Loss Success',
-      caption: 'Gaurav shares his incredible weight loss journey and how it changed his life completely.'
+      id: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
+      title: 'Michael\'s Health Transformation',
+      name: 'Michael Chen',
+      result: '35 lbs lost',
+      timeframe: '6 months',
+      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
+      rating: 5
     },
     {
-      id: 'INAB1JiTcII',
-      embedUrl: 'https://www.youtube.com/embed/INAB1JiTcII',
-      title: 'Sushabhaym Lost 12kg in 50 Days',
-      caption: 'Remarkable 12kg weight loss in just 50 days with our personalized nutrition program.'
+      id: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
+      title: 'Emily\'s Lifestyle Change',
+      name: 'Emily Rodriguez',
+      result: '22 lbs lost',
+      timeframe: '3 months',
+      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
+      rating: 5
     },
     {
-      id: 'i7ddAvcIUZQ',
-      embedUrl: 'https://www.youtube.com/embed/i7ddAvcIUZQ',
-      title: 'Client Success Story',
-      caption: 'Real client feedback showcasing the effectiveness of our balanced approach to health.'
-    },
-    {
-      id: '8xAncuqjPAU',
-      embedUrl: 'https://www.youtube.com/embed/8xAncuqjPAU',
-      title: 'Trupti Lost 1.5kg in 7 Days',
-      caption: 'Quick and healthy start to weight loss journey with immediate visible results.'
-    },
-    {
-      id: 'tbCamkAMt8o',
-      embedUrl: 'https://www.youtube.com/embed/tbCamkAMt8o',
-      title: 'Neha From Dehradun - 7kg Loss',
-      caption: 'Neha from Dehradun achieved 7kg weight loss in 3 months with our guidance.'
-    },
-    {
-      id: 'AhKWsc2f-fk',
-      embedUrl: 'https://www.youtube.com/embed/AhKWsc2f-fk',
-      title: 'Uma Lost 8kg in 2 Months',
-      caption: 'Uma\'s inspiring 8kg transformation in just 2 months with sustainable habits.'
-    },
-    {
-      id: 'lcW6oskuIx0',
-      embedUrl: 'https://www.youtube.com/embed/lcW6oskuIx0',
-      title: 'Pooja - 6kg & 10 Inches Lost',
-      caption: 'Pooja lost 6kg weight and 10 inches from belly with our targeted approach.'
+      id: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
+      title: 'David\'s Complete Transformation',
+      name: 'David Thompson',
+      result: '31 lbs lost',
+      timeframe: '5 months',
+      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
+      rating: 5
     }
   ];
 
   const nextVideo = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 4) % videoTestimonials.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % videoTestimonials.length);
+    setPlayingVideo(null);
   };
 
   const prevVideo = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 4 + videoTestimonials.length) % videoTestimonials.length);
-  };
-
-  const nextSingleVideo = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % videoTestimonials.length);
-  };
-
-  const prevSingleVideo = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + videoTestimonials.length) % videoTestimonials.length);
+    setPlayingVideo(null);
   };
 
-  const getVisibleVideos = () => {
-    const visible = [];
-    for (let i = 0; i < 4; i++) {
-      visible.push(videoTestimonials[(currentIndex + i) % videoTestimonials.length]);
-    }
-    return visible;
+  const playVideo = (videoId) => {
+    setPlayingVideo(videoId);
   };
 
-  const visibleVideos = getVisibleVideos();
   const currentVideo = videoTestimonials[currentIndex];
 
   return (
@@ -110,156 +91,116 @@ export function VideoTestimonials() {
           </p>
         </div>
 
-        {/* Desktop - 4 Videos Grid */}
-        <div className="hidden lg:block">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {visibleVideos.map((video, index) => (
-              <div key={`${currentIndex}-${index}`} className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                {/* Video Container */}
-                <div className="aspect-[9/16] relative">
-                  <iframe
-                    src={video.embedUrl}
-                    title={video.title}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </div>
-                
-                {/* Caption Area */}
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-white mb-2 line-clamp-1">
-                    {video.title}
-                  </h3>
-                  <p className="text-xs text-gray-300 line-clamp-2 leading-relaxed">
-                    {video.caption}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="flex items-center justify-center space-x-6">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={prevVideo}
-              className="p-3 rounded-full bg-gray-800 border-gray-700 text-white hover:bg-gray-700 hover:border-gray-600 transition-all group"
-            >
-              <ChevronLeft className="h-5 w-5 group-hover:text-primary-400" />
-            </Button>
-
-            {/* Dots Indicator */}
-            <div className="flex space-x-2">
-              {Array.from({ length: Math.ceil(videoTestimonials.length / 4) }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index * 4)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    Math.floor(currentIndex / 4) === index 
-                      ? 'bg-primary-400 scale-125' 
-                      : 'bg-gray-600 hover:bg-gray-500'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={nextVideo}
-              className="p-3 rounded-full bg-gray-800 border-gray-700 text-white hover:bg-gray-700 hover:border-gray-600 transition-all group"
-            >
-              <ChevronRight className="h-5 w-5 group-hover:text-primary-400" />
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile - Single Video */}
-        <div className="lg:hidden">
-          <div className="max-w-sm mx-auto">
-            <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
-              {/* Video Container */}
-              <div className="aspect-[9/16] relative">
+        {/* Main Video Player */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="relative bg-gray-800 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="aspect-video relative">
+              {playingVideo === currentVideo.id ? (
                 <iframe
-                  src={currentVideo.embedUrl}
+                  src={`https://www.youtube.com/embed/${currentVideo.id}?autoplay=1`}
                   title={currentVideo.title}
                   className="w-full h-full"
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-              </div>
-              
-              {/* Caption Area */}
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {currentVideo.title}
-                </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  {currentVideo.caption}
-                </p>
-              </div>
-            </div>
-
-            {/* Mobile Navigation */}
-            <div className="flex items-center justify-center space-x-4 mt-6">
-              <button
-                onClick={prevSingleVideo}
-                className="bg-gray-800 rounded-full p-3 shadow-lg hover:bg-gray-700 transition-all"
-              >
-                <ChevronLeft className="h-5 w-5 text-white" />
-              </button>
-              
-              {/* Mobile Dots */}
-              <div className="flex space-x-1 overflow-x-auto max-w-48">
-                {videoTestimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all flex-shrink-0 ${
-                      currentIndex === index 
-                        ? 'bg-primary-400 scale-125' 
-                        : 'bg-gray-600'
-                    }`}
+              ) : (
+                <div className="relative w-full h-full group cursor-pointer" onClick={() => playVideo(currentVideo.id)}>
+                  <img
+                    src={currentVideo.thumbnail}
+                    alt={currentVideo.title}
+                    className="w-full h-full object-cover"
                   />
-                ))}
-              </div>
-              
-              <button
-                onClick={nextSingleVideo}
-                className="bg-gray-800 rounded-full p-3 shadow-lg hover:bg-gray-700 transition-all"
-              >
-                <ChevronRight className="h-5 w-5 text-white" />
-              </button>
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300" />
+                  
+                  {/* Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-6 group-hover:bg-white group-hover:scale-110 transition-all duration-300 shadow-2xl">
+                      <Play className="h-12 w-12 text-gray-900 ml-1" />
+                    </div>
+                  </div>
+
+                  {/* Video Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-1">{currentVideo.title}</h3>
+                        <p className="text-gray-300">{currentVideo.name}</p>
+                        <div className="flex items-center mt-2">
+                          <div className="flex space-x-1 mr-4">
+                            {[...Array(currentVideo.rating)].map((_, i) => (
+                              <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                            ))}
+                          </div>
+                          <span className="text-primary-300 font-semibold">{currentVideo.result}</span>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-primary-400">{currentVideo.result}</div>
+                        <div className="text-sm text-gray-300">{currentVideo.timeframe}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
+        </div>
+
+        {/* Video Navigation */}
+        <div className="flex items-center justify-center space-x-6 mb-12">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={prevVideo}
+            className="p-3 rounded-full bg-gray-800 border-gray-700 text-white hover:bg-gray-700 hover:border-gray-600 transition-all group"
+          >
+            <ChevronLeft className="h-5 w-5 group-hover:text-primary-400" />
+          </Button>
+
+          {/* Video Thumbnails */}
+          <div className="flex space-x-4 overflow-hidden">
+            {videoTestimonials.map((video, index) => (
+              <button
+                key={video.id}
+                onClick={() => {
+                  setCurrentIndex(index);
+                  setPlayingVideo(null);
+                }}
+                className={`relative w-24 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'ring-2 ring-primary-400 scale-110' 
+                    : 'opacity-60 hover:opacity-100 hover:scale-105'
+                }`}
+              >
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+                {index === currentIndex && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center">
+                      <Play className="w-2 h-2 text-gray-900 ml-0.5" />
+                    </div>
+                  </div>
+                )}
+              </button>
+            ))}
+          </div>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={nextVideo}
+            className="p-3 rounded-full bg-gray-800 border-gray-700 text-white hover:bg-gray-700 hover:border-gray-600 transition-all group"
+          >
+            <ChevronRight className="h-5 w-5 group-hover:text-primary-400" />
+          </Button>
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Create Your Own Success Story?
-            </h3>
-            <p className="text-primary-100 mb-6">
-              These transformations are real, and yours could be next. Start your journey today 
-              with a personalized plan designed just for you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100">
-                Start Your Transformation
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-600">
-                Watch More Stories
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
