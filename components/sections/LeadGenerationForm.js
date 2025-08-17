@@ -11,6 +11,7 @@ import {
   Target, 
   Briefcase, 
   Heart,
+  Phone,
   CheckCircle,
   Loader2,
   MessageCircle
@@ -25,6 +26,7 @@ export function LeadGenerationForm() {
     weight: '',
     goalWeight: '',
     profession: '',
+    mobile: '',
     healthGoals: ''
   });
   
@@ -34,6 +36,17 @@ export function LeadGenerationForm() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
+    // Mobile number validation - only allow digits and limit to 10 digits
+    if (name === 'mobile') {
+      const numericValue = value.replace(/\D/g, '').slice(0, 10);
+      setFormData(prev => ({
+        ...prev,
+        [name]: numericValue
+      }));
+      return;
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -44,6 +57,13 @@ export function LeadGenerationForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
+
+    // Validate mobile number
+    if (formData.mobile.length !== 10) {
+      setError('Please enter a valid 10-digit mobile number.');
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       // Google Apps Script Web App URL - Replace with your actual URL
@@ -75,6 +95,7 @@ export function LeadGenerationForm() {
         weight: '',
         goalWeight: '',
         profession: '',
+        mobile: '',
         healthGoals: ''
       });
 
@@ -87,7 +108,7 @@ export function LeadGenerationForm() {
   };
 
   const whatsappNumber = '+1234567890';
-  const whatsappMessage = `Hi! I just filled out the health assessment form. My details: Name: ${formData.name}, Age: ${formData.age}, Goal: ${formData.healthGoals}. I'd like to discuss my transformation journey.`;
+  const whatsappMessage = `Hi! I just filled out the health assessment form. My details: Name: ${formData.name}, Age: ${formData.age}, Mobile: ${formData.mobile}, Goal: ${formData.healthGoals}. I'd like to discuss my transformation journey.`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   if (isSubmitted) {
@@ -152,12 +173,13 @@ export function LeadGenerationForm() {
           </div>
 
           <form onSubmit={handleSubmit} className="p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Row 1: Name, Age, City */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               {/* Name */}
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <User className="h-4 w-4 mr-2 text-primary-600" />
-                  Name
+                  📝 Name
                 </label>
                 <input
                   type="text"
@@ -174,7 +196,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Calendar className="h-4 w-4 mr-2 text-primary-600" />
-                   Age
+                  🎂 Age
                 </label>
                 <input
                   type="number"
@@ -193,7 +215,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <MapPin className="h-4 w-4 mr-2 text-primary-600" />
-                  City
+                  🏠 City
                 </label>
                 <input
                   type="text"
@@ -205,12 +227,15 @@ export function LeadGenerationForm() {
                   placeholder="Enter your city"
                 />
               </div>
+            </div>
 
+            {/* Row 2: Height, Weight, Goal Weight */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               {/* Height */}
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Ruler className="h-4 w-4 mr-2 text-primary-600" />
-                   Height (cm)
+                  ⬆️ Height (cm)
                 </label>
                 <input
                   type="number"
@@ -229,7 +254,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Scale className="h-4 w-4 mr-2 text-primary-600" />
-                   Current Weight (kg)
+                  ⚖️ Current Weight (kg)
                 </label>
                 <input
                   type="number"
@@ -248,7 +273,7 @@ export function LeadGenerationForm() {
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Target className="h-4 w-4 mr-2 text-primary-600" />
-                   Goal Weight (kg)
+                  🔥 Goal Weight (kg)
                 </label>
                 <input
                   type="number"
@@ -262,12 +287,15 @@ export function LeadGenerationForm() {
                   placeholder="Enter goal weight in kg"
                 />
               </div>
+            </div>
 
+            {/* Row 3: Profession, Mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               {/* Profession */}
-              <div className="md:col-span-2">
+              <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Briefcase className="h-4 w-4 mr-2 text-primary-600" />
-                   Work/Profession
+                  💼 Work/Profession
                 </label>
                 <input
                   type="text"
@@ -280,11 +308,35 @@ export function LeadGenerationForm() {
                 />
               </div>
 
+              {/* Mobile Number */}
+              <div>
+                <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
+                  <Phone className="h-4 w-4 mr-2 text-primary-600" />
+                  📱 Mobile Number
+                </label>
+                <input
+                  type="tel"
+                  name="mobile"
+                  value={formData.mobile}
+                  onChange={handleInputChange}
+                  required
+                  maxLength="10"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="Enter 10-digit mobile number"
+                />
+                {formData.mobile && formData.mobile.length < 10 && (
+                  <p className="text-red-500 text-xs mt-1">Mobile number must be 10 digits</p>
+                )}
+              </div>
+            </div>
+
+            {/* Row 4: Health Goals (Full Width) */}
+            <div className="mb-6">
               {/* Health Goals */}
-              <div className="md:col-span-2">
+              <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   <Heart className="h-4 w-4 mr-2 text-primary-600" />
-                   Health Issues/Fitness Goals
+                  🏥 Health Issues/Fitness Goals
                 </label>
                 <textarea
                   name="healthGoals"

@@ -14,7 +14,7 @@ function doPost(e) {
       // Add headers if this is a new sheet
       sheet.getRange(1, 1, 1, 10).setValues([[
         'Timestamp', 'Name', 'Age', 'City', 'Height (cm)', 
-        'Weight (kg)', 'Goal Weight (kg)', 'Profession', 'Health Goals', 'Source'
+        'Weight (kg)', 'Goal Weight (kg)', 'Profession', 'Mobile', 'Health Goals', 'Source'
       ]]);
     }
     
@@ -31,6 +31,7 @@ function doPost(e) {
       data.weight,
       data.goalWeight,
       data.profession,
+      data.mobile,
       data.healthGoals,
       data.source
     ];
@@ -76,7 +77,7 @@ function setupSpreadsheet() {
   // Set up headers
   const headers = [
     'Timestamp', 'Name', 'Age', 'City', 'Height (cm)', 
-    'Weight (kg)', 'Goal Weight (kg)', 'Profession', 'Health Goals', 'Source'
+    'Weight (kg)', 'Goal Weight (kg)', 'Profession', 'Mobile', 'Health Goals', 'Source'
   ];
   
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
