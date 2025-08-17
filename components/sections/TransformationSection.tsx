@@ -94,7 +94,7 @@ export function TransformationSection() {
     }
   };
 
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = `Hi! I just filled out the health assessment form. My details: Name: ${formData.name}, Age: ${formData.age}, Mobile: ${formData.mobile}, Goal: ${formData.healthGoals}. I'd like to discuss my transformation journey.`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -226,7 +226,7 @@ export function TransformationSection() {
               {/* Row 1: Name, Age, City */}
               <div className="grid grid-cols-12 gap-4 mb-4">
                 {/* Name */}
-                <div className="col-span-12 md:col-span-4">
+                <div className="col-span-12 md:col-span-6">
                   <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <User className="h-4 w-4 text-primary-600" />
                     <span>📝 Name</span>
@@ -244,7 +244,7 @@ export function TransformationSection() {
                 </div>
 
                 {/* Age */}
-                <div className="col-span-12 md:col-span-4">
+                <div className="col-span-12 md:col-span-3">
                   <label htmlFor="age" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Calendar className="h-4 w-4 text-primary-600" />
                     <span>🎂 Age</span>
@@ -265,7 +265,7 @@ export function TransformationSection() {
                 </div>
 
                 {/* City */}
-                <div className="col-span-12 md:col-span-4">
+                <div className="col-span-12 md:col-span-6">
                   <label htmlFor="city" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <MapPin className="h-4 w-4 text-primary-600" />
                     <span>🏠 City</span>
@@ -286,7 +286,7 @@ export function TransformationSection() {
               {/* Row 2: Height, Weight, Goal Weight */}
               <div className="grid grid-cols-12 gap-4 mb-4">
                 {/* Height */}
-                <div className="col-span-12 md:col-span-4">
+                <div className="col-span-12 md:col-span-3">
                   <label htmlFor="height" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Ruler className="h-4 w-4 text-primary-600" />
                     <span>⬆️ Height (cm)</span>
@@ -307,7 +307,7 @@ export function TransformationSection() {
                 </div>
 
                 {/* Weight */}
-                <div className="col-span-12 md:col-span-4">
+                <div className="col-span-12 md:col-span-3">
                   <label htmlFor="weight" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Scale className="h-4 w-4 text-primary-600" />
                     <span>⚖️ Weight (kg)</span>
@@ -328,7 +328,7 @@ export function TransformationSection() {
                 </div>
 
                 {/* Goal Weight */}
-                <div className="col-span-12 md:col-span-4">
+                <div className="col-span-12 md:col-span-3">
                   <label htmlFor="goalWeight" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Target className="h-4 w-4 text-primary-600" />
                     <span>🔥 Goal Weight (kg)</span>
