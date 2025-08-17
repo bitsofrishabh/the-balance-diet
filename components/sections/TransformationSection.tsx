@@ -204,6 +204,26 @@ export function TransformationSection() {
           </div>
         </div>
       </section>
+    );
+  }
+
+  return (
+    <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          {/* Form */}
+          <div className="bg-white rounded-3xl p-8 shadow-xl">
+            <form onSubmit={handleSubmit} className="h-full flex flex-col">
+              <div className="mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Get Your Free Health Assessment
+                </h2>
+                <p className="text-gray-600">
+                  Fill out this quick form to get personalized recommendations for your transformation journey.
+                </p>
+              </div>
+
+              {/* Row 1: Name, Age, City */}
               <div className="grid grid-cols-12 gap-4 mb-4">
                 {/* Name */}
                 <div className="col-span-12 md:col-span-4">
