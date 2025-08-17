@@ -15,7 +15,7 @@ import {
   CheckCircle,
   Loader2,
   Shield,
-  MessageCircle, Star
+  MessageCircle, Star,Award
 } from 'lucide-react';
 
 export function LeadGenerationForm() {
