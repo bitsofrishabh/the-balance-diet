@@ -135,7 +135,7 @@ export function TransformationSection() {
                 <div className="relative mb-6">
                   <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl p-3 shadow-lg">
                     <img
-                      src="https://res.cloudinary.com/djdej77pl/image/upload/v1755419517/Ad_Creative_For_Rishab_Sir_sajqyg.png"
+                      src="https://res.cloudinary.com/djdej77pl/image/upload/v1755436075/Ad_Creative_For_Rishab_Sir_1_pytidb.png"
                       alt="The Balance Diet Transformation Program"
                       className="w-full h-auto rounded-2xl shadow-lg max-h-48 object-contain"
                     />
