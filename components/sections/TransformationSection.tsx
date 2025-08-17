@@ -133,16 +133,16 @@ export function TransformationSection() {
               <div className="flex-1 flex flex-col">
                 {/* Poster */}
                 <div className="relative mb-6">
-                  <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-4 shadow-2xl">
+                  <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl p-3 shadow-lg">
                     <img
                       src="https://res.cloudinary.com/djdej77pl/image/upload/v1755419517/Ad_Creative_For_Rishab_Sir_sajqyg.png"
                       alt="The Balance Diet Transformation Program"
-                      className="w-full h-auto rounded-2xl shadow-lg"
+                      className="w-full h-auto rounded-xl shadow-md max-h-64 object-contain"
                     />
                     {/* Floating Badge */}
-                    <div className="absolute -top-4 -right-4 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-lg transform rotate-12">
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12">
                       <div className="text-center">
-                        <div className="text-sm font-bold">100% GUARANTEED</div>
+                        <div className="text-xs font-bold">100% GUARANTEED</div>
                         <div className="text-xs">Money Back</div>
                       </div>
                     </div>
@@ -204,32 +204,6 @@ export function TransformationSection() {
           </div>
         </div>
       </section>
-    );
-  }
-
-  return (
-    <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Start Your Transformation Journey
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Take the first step towards your health goals with our free assessment and risk-free guarantee.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          {/* Health Assessment Form */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col">
-            <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 text-white text-center">
-              <h3 className="text-xl font-semibold mb-1">Free Health Assessment</h3>
-              <p className="text-primary-100">Tell us about yourself and your goals</p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="p-6 flex-1 flex flex-col">
-              {/* Row 1: Name, Age, City */}
               <div className="grid grid-cols-12 gap-4 mb-4">
                 {/* Name */}
                 <div className="col-span-12 md:col-span-4">
