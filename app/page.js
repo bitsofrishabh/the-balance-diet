@@ -22,7 +22,6 @@ export default function Home() {
       <Stats />
       <VideoTestimonials />
       <LeadGenerationForm />
-      <CTA />
     </>
   );
 }
