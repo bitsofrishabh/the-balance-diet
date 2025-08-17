@@ -3,7 +3,6 @@ import { HowItWorks } from '@/components/sections/HowItWorks';
 import { ClientTestimonials } from '@/components/sections/ClientTestimonials';
 import { Features } from '@/components/sections/Features';
 import { VideoTestimonials } from '@/components/sections/VideoTestimonials';
-import { CTA } from '@/components/sections/CTA';
 import { Stats } from '@/components/sections/Stats';
 import { LeadGenerationForm } from '@/components/sections/LeadGenerationForm';
 
