@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { 
   Menu, 
   X, 
-  Heart, 
   ChevronDown,
   MessageCircle
 } from 'lucide-react';
@@ -50,9 +49,11 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="bg-gradient-to-r from-primary-500 to-primary-600 p-2 rounded-lg group-hover:shadow-lg transition-shadow">
-              <Heart className="h-6 w-6 text-white" />
-            </div>
+            <img
+              src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451382/Brand_Logo_j7zn4t.png"
+              alt="The Balance Diet Logo"
+              className="h-10 w-10 object-contain group-hover:scale-105 transition-transform"
+            />
             <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
               The Balance Diet
             </span>
@@ -81,8 +82,8 @@ export function Navigation() {
               className={`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
-            >
-              Our Services
+              Services
+              Services
             </Link>
             <Link
               href="/success-stories"
@@ -93,57 +94,14 @@ export function Navigation() {
               Success Stories
             </Link>
             
-            {/* Resources Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsResourcesOpen(true)}
-              onMouseLeave={() => setIsResourcesOpen(false)}
+            <Link
+              href="/ebook"
+              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+                isScrolled ? 'text-gray-700' : 'text-gray-900'
+              }`}
             >
-              <button
-                className={`flex items-center text-sm font-medium transition-colors hover:text-primary-600 ${
-                  isScrolled ? 'text-gray-700' : 'text-gray-900'
-                }`}
-              >
-                Resources
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isResourcesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {isResourcesOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50"
-                >
-                  {resourcesItems.map((item) => (
-                    <div key={item.name}>
-                      {item.subItems ? (
-                        <div className="relative group">
-                          <div className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors cursor-pointer">
-                            {item.name}
-                          </div>
-                          <div className="absolute left-full top-0 ml-1 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[60]">
-                            {item.subItems.map((subItem) => (
-                              <Link
-                                key={subItem.name}
-                                href={subItem.href}
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
-                              >
-                                {subItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+              E-Book
+            </Link>
           </div>
 
           {/* CTA Buttons */}
@@ -156,9 +114,20 @@ export function Navigation() {
             >
               <MessageCircle className="h-5 w-5 text-white" />
             </a>
-            <Link href="/programs">
-              <Button size="sm" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700">
-                Get Started
+            <Button 
+              size="sm" 
+              className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.Calendly) {
+                  window.Calendly.initPopupWidget({
+                    url: 'https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita'
+                  });
+                }
+              }}
+            >
+              Book Now
+            </Button>
+          </div>
               </Button>
             </Link>
           </div>
@@ -229,44 +198,29 @@ export function Navigation() {
                                 {subItem.name}
                               </Link>
                             ))}
-                          </div>
-                        </div>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          className="block py-1 text-sm text-gray-600 hover:text-primary-600 transition-colors"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="pt-4 pb-2 space-y-2">
-                <a 
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Button variant="outline" size="sm" className="w-full justify-center bg-green-50 border-green-200 text-green-700 hover:bg-green-100">
-                    <MessageCircle className="mr-2 h-4 w-4" />
-                    WhatsApp Us
-                  </Button>
-                </a>
-                <Link href="/programs" onClick={() => setIsMenuOpen(false)}>
-                  <Button size="sm" className="w-full bg-gradient-to-r from-primary-500 to-primary-600">
-                    Get Started
-                  </Button>
-                </Link>
-              </div>
-            </div>
+            <Link
+              <Button 
+                size="sm" 
+                className="w-full bg-gradient-to-r from-primary-500 to-primary-600"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  if (typeof window !== 'undefined' && window.Calendly) {
+                    window.Calendly.initPopupWidget({
+                      url: 'https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita'
+                    });
+                  }
+                }}
+              >
+                Book Now
+              </Button>
+            </Link>
           </div>
         )}
       </div>
+      
+      {/* Calendly Widget Script */}
+      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+      <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     </nav>
   );
 }

@@ -23,9 +23,16 @@ export function Hero() {
 
   // Client testimonial images from Cloudinary
   const heroImages = [
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/3_fhiqje.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1753728759/15_wwp1m1.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1753728765/6_u49nfp.png'
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342356/Before-After/1_d4fprb.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/4_alxia4.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/3_ug1tse.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/6_nicj27.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/8_tzzijq.png'
   ];
 
   useEffect(() => {
@@ -101,12 +108,19 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/programs">
-                <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl transition-all group h-14 px-8 text-lg">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl transition-all group h-14 px-8 text-lg"
+                onClick={() => {
+                  const healthAssessmentSection = document.getElementById('health-assessment');
+                  if (healthAssessmentSection) {
+                    healthAssessmentSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Start Your Transformation Journey Now!
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
              
             </div>
 
@@ -137,8 +151,8 @@ export function Hero() {
           <div className={`relative ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
             <div className="relative">
               {/* Main Image Container with Carousel */}
-              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-8 shadow-2xl overflow-hidden">
-                <div className="relative h-96 rounded-2xl overflow-hidden">
+              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-2 shadow-2xl overflow-hidden">
+                <div className="relative h-96 rounded-2xl overflow-hidden border-4 border-white">
                   {/* Image Carousel */}
                   <div className="relative w-full h-full">
                     {heroImages.map((image, index) => (

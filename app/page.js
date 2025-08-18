@@ -1,6 +1,7 @@
 import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { ClientTestimonials } from '@/components/sections/ClientTestimonials';
+import { WeightLossServices } from '@/components/sections/WeightLossServices';
 import { Features } from '@/components/sections/Features';
 import { VideoTestimonials } from '@/components/sections/VideoTestimonials';
 import { Stats } from '@/components/sections/Stats';
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <ClientTestimonials />
+      <WeightLossServices />
       <Features />
       <Stats />
       <VideoTestimonials />

@@ -41,6 +41,31 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        
+        {/* Calendly Scripts */}
+        <script 
+          src="https://assets.calendly.com/assets/external/widget.js" 
+          type="text/javascript" 
+          async
+        />
+        <script 
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.onload = function() { 
+                if (typeof Calendly !== 'undefined') {
+                  Calendly.initBadgeWidget({ 
+                    url: 'https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita', 
+                    text: 'Schedule time with me', 
+                    color: '#2cff00', 
+                    textColor: '#ffffff', 
+                    branding: true 
+                  }); 
+                }
+              }
+            `
+          }}
+        />
       </body>
     </html>
   );
