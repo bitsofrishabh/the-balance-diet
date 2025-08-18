@@ -27,7 +27,7 @@ export function Navigation() {
     { name: 'E-Book', href: '/ebook' },
   ];
 
-  const whatsappNumber = '+1234567890'; // Replace with your actual WhatsApp number
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to know more about The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -48,12 +48,12 @@ export function Navigation() {
               <img
                 src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451382/Brand_Logo_j7zn4t.png"
                 alt="The Balance Diet Logo"
-                className="h-16 w-16 object-contain group-hover:scale-105 transition-transform"
+                className="h-12 md:h-16 w-12 md:w-16 object-contain group-hover:scale-105 transition-transform"
               />
               <img
                 src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451381/Logo_u51ucu.png"
                 alt="The Balance Diet Text Logo"
-                className="h-12 object-contain group-hover:scale-105 transition-transform"
+                className="h-8 md:h-12 object-contain group-hover:scale-105 transition-transform"
               />
             </div>
           </Link>
@@ -62,7 +62,7 @@ export function Navigation() {
           <div className="hidden lg:flex items-center space-x-8">
             <Link
               href="/about"
-              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+              <span className="mt-1">#1 Personalized Nutrition Program</span>
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
@@ -103,7 +103,7 @@ export function Navigation() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3"
+                className="bg-green-500 hover:bg-green-600 text-white px-6 py-3"
               >
                 Book Now
               </Button>
@@ -206,7 +206,7 @@ export function Navigation() {
                   >
                     Book Now
                   </Button>
-                </a>
+                      className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3"
               </div>
             </div>
           </div>

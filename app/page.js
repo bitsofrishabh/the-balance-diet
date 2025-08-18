@@ -23,7 +23,7 @@ export default function Home() {
       <Features />
       <Stats />
       <VideoTestimonials />
-      <TransformationSection />
+      <TransformationSection id="health-assessment" />
       <FAQ />
     </>
   );

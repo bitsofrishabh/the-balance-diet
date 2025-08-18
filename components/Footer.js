@@ -49,7 +49,7 @@ export function Footer() {
     }
   };
 
-  const whatsappNumber = '+1234567890'; // Replace with actual WhatsApp number
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to know more about The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -113,6 +113,7 @@ export function Footer() {
                   className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
                 />
                 <Button type="submit" className="bg-primary-500 hover:bg-primary-600 px-6 py-3 text-sm font-semibold whitespace-nowrap">
+                <Button type="submit" className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 text-sm font-semibold whitespace-nowrap">
                   {isSubmitting ? 'Sending...' : 'Send E-Book'}
                 </Button>
               </div>

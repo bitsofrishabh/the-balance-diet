@@ -116,12 +116,12 @@ export function TransformationSection() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-green-500 hover:bg-green-600 px-8 py-3">
+                    <Button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3">
                       <MessageCircle className="mr-2 h-5 w-5" />
                       Continue on WhatsApp
                     </Button>
                   </a>
-                  <Button variant="outline" onClick={() => setIsSubmitted(false)} className="px-8 py-3">
+                  <Button variant="outline" onClick={() => setIsSubmitted(false)} className="px-8 py-3 border-green-500 text-green-600 hover:bg-green-50">
                     Submit Another Form
                   </Button>
                 </div>
@@ -192,9 +192,19 @@ export function TransformationSection() {
                   {/* CTAs */}
                   <div className="space-y-3 mt-auto">
                     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block">
-                      <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-3 text-base font-semibold">
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white py-3 text-base font-semibold">
                         <MessageCircle className="mr-2 h-4 w-4" />
                         Claim Your Risk-Free Transformation
+                      </Button>
+                    </a>
+                    <a 
+                      href="https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white py-3 text-base font-semibold">
+                        Book Call Now
                       </Button>
                     </a>
                   </div>
@@ -424,7 +434,7 @@ export function TransformationSection() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 px-8 py-3 text-base font-semibold w-full"
+                  className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 text-base font-semibold w-full"
                 >
                   {isSubmitting ? (
                     <>

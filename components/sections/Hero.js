@@ -80,13 +80,13 @@ export function Hero() {
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Diets Don’t Work
+                Diets Don't Work
                 <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block">
                   Balance Does
                 </span>
                 
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl pr-4 md:pr-0">
               Experience a total health transformation with expert coaching, science-backed nutrition, and real accountability—personalized for you. Take the first step to a happier, healthier you—start your transformation now!
               </p>
             </div>
@@ -107,10 +107,10 @@ export function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pr-4 md:pr-0">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl transition-all group h-14 px-8 text-lg"
+                className="bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all group h-14 px-6 md:px-8 text-base md:text-lg"
                 onClick={() => {
                   const healthAssessmentSection = document.getElementById('health-assessment');
                   if (healthAssessmentSection) {
@@ -151,7 +151,7 @@ export function Hero() {
           <div className={`relative ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
             <div className="relative">
               {/* Main Image Container with Carousel */}
-              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-1 shadow-2xl overflow-hidden max-w-sm mx-auto">
+              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-1 shadow-2xl overflow-hidden max-w-xs md:max-w-sm mx-auto mr-4 md:mr-auto">
                 <div className="relative h-[500px] rounded-2xl overflow-hidden border-4 border-white">
                   {/* Image Carousel */}
                   <div className="relative w-full h-full">

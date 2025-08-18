@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 
 export function WeightLossServices() {
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to know more about your weight loss services.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -117,7 +117,7 @@ export function WeightLossServices() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all hover:shadow-lg inline-flex items-center">
+              <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-all hover:shadow-lg inline-flex items-center">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Get Expert Guidance
               </button>

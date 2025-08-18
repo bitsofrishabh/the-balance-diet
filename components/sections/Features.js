@@ -155,10 +155,10 @@ export function Features() {
                 Join thousands of people who have already transformed their health and are living their best lives.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   View Our Programs
                 </button>
-                <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300 hover:scale-105">
+                <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:border-green-500 transition-all duration-300 hover:scale-105">
                   Book a Free Call
                 </button>
               </div>
