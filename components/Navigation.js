@@ -62,15 +62,16 @@ export function Navigation() {
           <div className="hidden lg:flex items-center space-x-8">
             <Link
               href="/about"
-              <span className="mt-1">#1 Personalized Nutrition Program</span>
+              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
+              <span className="mt-1">#1 Personalized Nutrition Program</span>
               About Us
             </Link>
             <Link
               href="/"
-              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+              className={\`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
@@ -78,7 +79,7 @@ export function Navigation() {
             </Link>
             <Link
               href="/success-stories"
-              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+              className={\`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
@@ -86,7 +87,7 @@ export function Navigation() {
             </Link>
             <Link
               href="/ebook"
-              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+              className={\`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
@@ -206,7 +207,7 @@ export function Navigation() {
                   >
                     Book Now
                   </Button>
-                      className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3"
+                </a>
               </div>
             </div>
           </div>
