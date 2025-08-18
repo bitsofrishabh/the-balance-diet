@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { 
@@ -16,6 +17,38 @@ import {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+    
+    const email = e.target.email.value;
+    
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setMessage('🎉 Thank you! Check your email for the recipe e-book.');
+        e.target.reset();
+      } else {
+        setMessage(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setMessage('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const whatsappNumber = '+1234567890'; // Replace with actual WhatsApp number
   const whatsappMessage = 'Hi! I would like to know more about The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -69,10 +102,7 @@ export function Footer() {
             
             <form className="space-y-4" onSubmit={(e) => {
               e.preventDefault();
-              // TODO: Integrate with Brevo API
-              const email = e.target.email.value;
-              console.log('Email to send to Brevo:', email);
-              // Add Brevo API call here
+              handleSubmit(e);
             }}>
               <div className="flex flex-col sm:flex-row gap-2">
                 <input
@@ -83,9 +113,19 @@ export function Footer() {
                   className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
                 />
                 <Button type="submit" className="bg-primary-500 hover:bg-primary-600 px-6 py-3 text-sm font-semibold whitespace-nowrap">
-                  Send E-Book
+                  {isSubmitting ? 'Sending...' : 'Send E-Book'}
                 </Button>
               </div>
+              
+              {message && (
+                <div className={`text-sm p-3 rounded-lg ${
+                  message.includes('🎉') 
+                    ? 'bg-green-800 text-green-200 border border-green-700' 
+                    : 'bg-red-800 text-red-200 border border-red-700'
+                }`}>
+                  {message}
+                </div>
+              )}
             </form>
             
             <p className="text-xs text-gray-400 mt-3">
