@@ -95,10 +95,10 @@ export function ClientTestimonials() {
   const visibleTestimonials = getVisibleTestimonials();
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+    <section className="py-12 bg-gradient-to-br from-primary-50 to-secondary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <Award className="h-8 w-8 text-primary-600 mr-2" />
             <span className="bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold">

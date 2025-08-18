@@ -91,10 +91,10 @@ export function VideoTestimonials() {
   const currentVideo = videoTestimonials[currentIndex];
 
   return (
-    <section className="py-20 bg-gray-900 text-white overflow-hidden">
+    <section className="py-12 bg-gray-900 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <Users className="h-8 w-8 text-primary-400 mr-2" />
             <span className="bg-primary-900/50 text-primary-300 px-4 py-2 rounded-full text-sm font-semibold">

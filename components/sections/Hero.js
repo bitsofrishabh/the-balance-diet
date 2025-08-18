@@ -67,7 +67,7 @@ export function Hero() {
       <div className="absolute top-20 right-10 w-20 h-20 bg-primary-200 rounded-full blur-xl animate-pulse-soft" />
       <div className="absolute bottom-20 left-10 w-32 h-32 bg-secondary-200 rounded-full blur-xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className={`space-y-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>

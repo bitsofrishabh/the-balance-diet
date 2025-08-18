@@ -118,10 +118,10 @@ const steps = [
   const ActiveIcon = currentStep.icon;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section className="py-12 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center bg-primary-100 text-primary-700 px-4 py-2 rounded-full mb-4">
             <Sparkles className="w-4 h-4 mr-2" />
             <span className="text-sm font-semibold">Our Proven Process</span>
