@@ -66,14 +66,12 @@ export function Navigation() {
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
-              <>
-                <span className="mt-1">#1 Personalized Nutrition Program</span>
-                About Us
-              </>
+              <span className="mt-1">#1 Personalized Nutrition Program</span>
+              About Us
             </Link>
             <Link
               href="/"
-              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+              className={\`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
@@ -81,7 +79,7 @@ export function Navigation() {
             </Link>
             <Link
               href="/success-stories"
-              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+              className={\`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
@@ -89,7 +87,7 @@ export function Navigation() {
             </Link>
             <Link
               href="/ebook"
-              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+              className={\`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
