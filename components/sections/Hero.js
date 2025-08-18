@@ -70,23 +70,23 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Content */}
-          <div className={`space-y-6 lg:space-y-8 px-4 sm:px-0 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          <div className={`space-y-6 lg:space-y-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
             {/* Badge */}
-            <Badge className="bg-primary-100 text-primary-700 hover:bg-primary-200 px-4 py-2 mt-2">
+            <Badge className="bg-primary-100 text-primary-700 hover:bg-primary-200 px-4 py-2 mt-4">
               <Trophy className="w-4 h-4 mr-2" />
               #1 Personalized Nutrition Program
             </Badge>
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight pr-2 sm:pr-0">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Diets Don't Work
                 <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block">
                   Balance Does
                 </span>
                 
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl pr-2 sm:pr-0">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
               Experience a total health transformation with expert coaching, science-backed nutrition, and real accountability—personalized for you. Take the first step to a happier, healthier you—start your transformation now!
               </p>
             </div>
@@ -107,10 +107,10 @@ export function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pr-2 sm:pr-0">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all group h-12 sm:h-14 px-4 sm:px-6 md:px-8 text-sm sm:text-base md:text-lg w-full sm:w-auto"
+                className="bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all group h-12 sm:h-14 px-6 md:px-8 text-sm sm:text-base md:text-lg w-full sm:w-auto"
                 onClick={() => {
                   const healthAssessmentSection = document.getElementById('health-assessment');
                   if (healthAssessmentSection) {
@@ -125,7 +125,7 @@ export function Hero() {
             </div>
 
             {/* Social Proof */}
-            <div className="flex items-center space-x-4 sm:space-x-8 pt-4 pr-2 sm:pr-0">
+            <div className="flex items-center space-x-4 sm:space-x-8 pt-4">
               <div className="flex items-center space-x-2">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
@@ -148,10 +148,10 @@ export function Hero() {
           </div>
 
           {/* Right Column - Image Carousel */}
-          <div className={`relative px-4 sm:px-0 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+          <div className={`relative ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
             <div className="relative">
               {/* Main Image Container with Carousel */}
-              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-1 shadow-2xl overflow-hidden max-w-xs sm:max-w-sm md:max-w-md mx-auto">
+              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-1 shadow-2xl overflow-hidden max-w-sm sm:max-w-md md:max-w-lg mx-auto">
                 <div className="relative h-[500px] rounded-2xl overflow-hidden border-4 border-white">
                   {/* Image Carousel */}
                   <div className="relative w-full h-full">
