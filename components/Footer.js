@@ -23,10 +23,9 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Resources & Get In Touch */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Resources */}
           <div>
-            {/* Resources Section */}
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/blog" className="text-gray-300 hover:text-primary-400 transition-colors">Blog</Link></li>
@@ -37,9 +36,10 @@ export function Footer() {
               <li><Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors">Services</Link></li>
               <li><Link href="/success-stories" className="text-gray-300 hover:text-primary-400 transition-colors">Success Stories</Link></li>
             </ul>
-            
-            {/* Get In Touch Section */}
-            <div className="mt-8">
+          </div>
+
+          {/* Get In Touch */}
+          <div>
             <h3 className="font-semibold mb-4">Get In Touch</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3 text-gray-300">
@@ -55,12 +55,14 @@ export function Footer() {
                 <span>123 Wellness Street<br />Health City, HC 12345</span>
               </div>
             </div>
-            </div>
           </div>
 
-          {/* Email Signup Only */}
+          {/* Email Signup */}
           <div>
-            <h3 className="font-semibold mb-4 text-primary-300">Get Free Healthy Recipes E-Book</h3>
+            <div className="flex items-center mb-4">
+              <Heart className="h-6 w-6 text-primary-400 mr-2" />
+              <h3 className="font-semibold text-primary-300">Get Free Healthy Recipes E-Book</h3>
+            </div>
             <p className="text-gray-300 text-sm mb-6 leading-relaxed">
               Need healthy recipes for your weight loss journey? Enter your email and we'll send you our free e-book with delicious, nutritious recipes that support your goals!
             </p>

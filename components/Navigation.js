@@ -44,11 +44,16 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="flex items-center">
+            <div className="flex items-center space-x-3">
               <img
                 src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451382/Brand_Logo_j7zn4t.png"
                 alt="The Balance Diet Logo"
                 className="h-16 w-16 object-contain group-hover:scale-105 transition-transform"
+              />
+              <img
+                src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451381/Logo_u51ucu.png"
+                alt="The Balance Diet Text Logo"
+                className="h-12 object-contain group-hover:scale-105 transition-transform"
               />
             </div>
           </Link>
