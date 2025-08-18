@@ -1,12 +1,9 @@
 'use client';
 
 import { 
-  GraduationCap, 
+  Scale, 
   Heart, 
   Activity, 
-  Shield, 
-  Users, 
-  Stethoscope, 
   Baby,
   MessageCircle
 } from 'lucide-react';
@@ -16,62 +13,27 @@ export function WeightLossServices() {
   const whatsappMessage = 'Hi! I would like to know more about your weight loss services.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-  const services = [
+  const serviceCategories = [
     {
-      icon: GraduationCap,
-      title: 'College/Busy Professional Plan',
-      description: 'Minimal-cook meals, tiffin ideas, and budget-friendly shopping list. Structure for irregular schedules, late nights, and hostel/PG realities.',
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'bg-blue-50',
-      iconColor: 'text-blue-600'
+      title: 'Weight Management',
+      description: 'Our customized programs support you in finding healthy habits that optimize both physical and mental well-being.',
+      image: 'https://images.pexels.com/photos/6975474/pexels-photo-6975474.jpeg?auto=compress&cs=tinysrgb&w=300&h=200',
+      bgColor: 'bg-gradient-to-br from-orange-400 to-orange-500',
+      services: ['Weight Loss', 'Weight Gain']
     },
     {
-      icon: Heart,
-      title: 'Wedding / Event Transformation (8–12 Weeks)',
-      description: 'Time-bound plan for visible change before your big day. Structured weekly milestones, outfit-friendly measurements, and travel/eating-out strategies.',
-      color: 'from-pink-500 to-pink-600',
-      bgColor: 'bg-pink-50',
-      iconColor: 'text-pink-600'
+      title: 'Disease Management',
+      description: 'Our team offers personalised disease management creating customised nutrition plans, incorporating healthy habits, and empowering you with knowledge to manage your condition and live a full, active life.',
+      image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=300&h=200',
+      bgColor: 'bg-gradient-to-br from-teal-400 to-teal-500',
+      services: ['Thyroid', 'PCOS', 'Diabetes', 'Cardiac', 'Renal']
     },
     {
-      icon: Activity,
-      title: 'Diabetes/Prediabetes Weight Loss',
-      description: 'Balanced plates with carb timing, SMBG-friendly swaps, and step goals to improve insulin sensitivity. Practical dal-sabzi-roti strategies you can actually follow.',
-      color: 'from-red-500 to-red-600',
-      bgColor: 'bg-red-50',
-      iconColor: 'text-red-600'
-    },
-    {
-      icon: Shield,
-      title: 'Thyroid-Friendly Fat Loss',
-      description: 'Thyroid-supportive nutrition, fiber and protein targets, and fatigue-aware workouts. We focus on consistency and realistic pacing—no extreme deficits.',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50',
-      iconColor: 'text-green-600'
-    },
-    {
-      icon: Users,
-      title: 'PCOS/PCOD Weight Management',
-      description: 'Low-GI, high-protein Indian meals with cycle-wise tweaks, strength training guidance, and symptom tracking (cravings, energy, skin). Sustainable, not restrictive.',
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50',
-      iconColor: 'text-purple-600'
-    },
-    {
-      icon: Stethoscope,
-      title: 'Heart-Healthy & Cholesterol Control',
-      description: 'Smarter fats, high-fiber Indian staples, and portion guidance. Progress tracked via inches, energy, and (optionally) lipid panels with your physician\'s advice.',
-      color: 'from-orange-500 to-orange-600',
-      bgColor: 'bg-orange-50',
-      iconColor: 'text-orange-600'
-    },
-    {
-      icon: Baby,
-      title: 'Post-Partum Slim & Strong',
-      description: 'Gentle, nourishing meal plans and regain-strength routines. Focus on energy, lactation-safe options (if applicable), and realistic weight pacing with sleep constraints.',
-      color: 'from-teal-500 to-teal-600',
-      bgColor: 'bg-teal-50',
-      iconColor: 'text-teal-600'
+      title: 'Women Care Diet',
+      description: 'We provide personalised dietary plans specifically designed for pregnancy, lactation, postpartum, and even menopause. Let us guide you with the right nutrition to feel your best and support your body throughout life\'s precious milestones.',
+      image: 'https://images.pexels.com/photos/7155693/pexels-photo-7155693.jpeg?auto=compress&cs=tinysrgb&w=300&h=200',
+      bgColor: 'bg-gradient-to-br from-pink-400 to-pink-500',
+      services: ['Pregnancy', 'Lactation', 'Postpartum', 'Menopause']
     }
   ];
 
@@ -81,44 +43,59 @@ export function WeightLossServices() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Weight Loss Services
+            Programs offered by The Balance Diet
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Specialized programs designed for your unique health needs and lifestyle. 
-            Choose the service that best fits your situation.
+            We understand that weight loss is a personal journey. Our customized programs support you in finding healthy habits that optimize both physical and mental well-being.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div 
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-              >
-                {/* Icon */}
-                <div className={`${service.bgColor} p-3 rounded-xl inline-flex mb-4`}>
-                  <IconComponent className={`h-8 w-8 ${service.iconColor}`} />
+        {/* Service Categories */}
+        <div className="space-y-12">
+          {serviceCategories.map((category, index) => (
+            <div key={index} className="flex flex-col lg:flex-row items-center gap-8">
+              {/* Image Section */}
+              <div className="lg:w-1/3">
+                <div className={`${category.bgColor} rounded-2xl p-6 text-white relative overflow-hidden`}>
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-bold mb-4 text-center">
+                      {category.title}
+                    </h3>
+                  </div>
+                  <div className="mt-4">
+                    <img
+                      src={category.image}
+                      alt={category.title}
+                      className="w-full h-48 object-cover rounded-xl"
+                    />
+                  </div>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-tight">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  {service.description}
-                </p>
               </div>
-            );
-          })}
+
+              {/* Content Section */}
+              <div className="lg:w-2/3">
+                <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                  {category.description}
+                </p>
+                
+                {/* Service Buttons */}
+                <div className="flex flex-wrap gap-3">
+                  {category.services.map((service, serviceIndex) => (
+                    <button
+                      key={serviceIndex}
+                      className="px-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 hover:border-primary-500 hover:text-primary-600 transition-all duration-300 font-medium"
+                    >
+                      {service} &gt;
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* CTA Section */}
-        <div className="text-center">
+        <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Not Sure Which Service is Right for You?

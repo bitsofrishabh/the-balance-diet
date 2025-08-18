@@ -47,11 +47,8 @@ export function Navigation() {
             <img
               src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451382/Brand_Logo_j7zn4t.png"
               alt="The Balance Diet Logo"
-              className="h-10 w-10 object-contain group-hover:scale-105 transition-transform"
+              className="h-14 w-14 object-contain group-hover:scale-105 transition-transform"
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
-              The Balance Diet
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

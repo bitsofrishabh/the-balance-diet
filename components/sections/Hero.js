@@ -151,8 +151,8 @@ export function Hero() {
           <div className={`relative ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
             <div className="relative">
               {/* Main Image Container with Carousel */}
-              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-2 shadow-2xl overflow-hidden">
-                <div className="relative h-96 rounded-2xl overflow-hidden border-4 border-white">
+              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-1 shadow-2xl overflow-hidden max-w-sm mx-auto">
+                <div className="relative h-[500px] rounded-2xl overflow-hidden border-4 border-white">
                   {/* Image Carousel */}
                   <div className="relative w-full h-full">
                     {heroImages.map((image, index) => (
