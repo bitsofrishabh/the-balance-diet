@@ -82,7 +82,7 @@ export function Navigation() {
               className={`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
-              Services
+            >
               Services
             </Link>
             <Link
