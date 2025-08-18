@@ -22,8 +22,9 @@ export function Footer() {
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Resources */}
+          {/* Resources & Get In Touch */}
           <div>
+            {/* Resources Section */}
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/blog" className="text-gray-300 hover:text-primary-400 transition-colors">Blog</Link></li>
@@ -34,10 +35,9 @@ export function Footer() {
               <li><Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors">Services</Link></li>
               <li><Link href="/success-stories" className="text-gray-300 hover:text-primary-400 transition-colors">Success Stories</Link></li>
             </ul>
-          </div>
-
-          {/* Get In Touch & Email Signup */}
-          <div>
+            
+            {/* Get In Touch Section */}
+            <div className="mt-8">
             <h3 className="font-semibold mb-4">Get In Touch</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3 text-gray-300">
@@ -53,37 +53,40 @@ export function Footer() {
                 <span>123 Wellness Street<br />Health City, HC 12345</span>
               </div>
             </div>
+            </div>
+          </div>
+
+          {/* Email Signup Only */}
+          <div>
+            <h3 className="font-semibold mb-4 text-primary-300">Get Free Healthy Recipes E-Book</h3>
+            <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+              Need healthy recipes for your weight loss journey? Enter your email and we'll send you our free e-book with delicious, nutritious recipes that support your goals!
+            </p>
             
-            {/* Email Signup */}
-            <div className="mt-8">
-              <h4 className="font-semibold mb-3 text-primary-300">Get Free Healthy Recipes E-Book</h4>
-              <p className="text-gray-300 text-sm mb-4">
-                Need healthy recipes for your weight loss journey? Enter your email and we'll send you our free e-book!
-              </p>
+            <form className="space-y-4" onSubmit={(e) => {
+              e.preventDefault();
+              // TODO: Integrate with Brevo API
+              const email = e.target.email.value;
+              console.log('Email to send to Brevo:', email);
+              // Add Brevo API call here
+            }}>
               <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
+                  className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
                 />
-                <Button className="bg-primary-500 hover:bg-primary-600 px-4 py-2 text-sm">
+                <Button type="submit" className="bg-primary-500 hover:bg-primary-600 px-6 py-3 text-sm font-semibold whitespace-nowrap">
                   Send E-Book
                 </Button>
               </div>
-            </div>
+            </form>
             
-            <div className="mt-6">
-              <a 
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" size="sm" className="border-green-400 text-green-400 hover:bg-green-400 hover:text-white w-full">
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  WhatsApp Us
-                </Button>
-              </a>
-            </div>
+            <p className="text-xs text-gray-400 mt-3">
+              🔒 Your email is safe with us. We'll only send you the free e-book and occasional healthy tips.
+            </p>
           </div>
         </div>
 
