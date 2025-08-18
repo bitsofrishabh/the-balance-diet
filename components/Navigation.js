@@ -44,18 +44,11 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="flex items-center space-x-3">
-              <img
-                src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451382/Brand_Logo_j7zn4t.png"
-                alt="The Balance Diet Logo"
-                className="h-12 md:h-16 w-12 md:w-16 object-contain group-hover:scale-105 transition-transform"
-              />
-              <img
-                src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451381/Logo_u51ucu.png"
-                alt="The Balance Diet Text Logo"
-                className="h-8 md:h-12 object-contain group-hover:scale-105 transition-transform"
-              />
-            </div>
+            <img
+              src="https://res.cloudinary.com/djdej77pl/image/upload/v1755512878/Logo_1_r9bvu1.png"
+              alt="The Balance Diet Logo"
+              className="h-12 md:h-16 object-contain group-hover:scale-105 transition-transform"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -66,7 +59,6 @@ export function Navigation() {
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
-              <span className="mt-1">#1 Personalized Nutrition Program</span>
               About Us
             </Link>
             <Link
@@ -144,54 +136,19 @@ export function Navigation() {
                 Home
               </Link>
               <Link
-                href="/services"
-                className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Our Services
-              </Link>
-              <Link
                 href="/success-stories"
                 className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Success Stories
               </Link>
-
-              {/* Mobile Resources */}
-              <div className="px-3 py-2">
-                <div className="text-sm font-medium text-gray-900 mb-2">Resources</div>
-                <div className="pl-4 space-y-1">
-                  {resourcesItems.map((item) =>
-                    item.subItems ? (
-                      <div key={item.name} className="mb-2">
-                        <div className="py-1 text-sm text-gray-700 font-medium">{item.name}</div>
-                        <div className="pl-4 space-y-1">
-                          {item.subItems.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              href={sub.href}
-                              className="block py-1 text-sm text-gray-600 hover:text-primary-600 transition-colors"
-                              onClick={() => setIsMenuOpen(false)}
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="block py-1 text-sm text-gray-600 hover:text-primary-600 transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    )
-                  )}
-                </div>
-              </div>
+              <Link
+                href="/ebook"
+                className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                E-Book
+              </Link>
 
               {/* Mobile CTA */}
               <div className="px-3 pt-2 pb-3">

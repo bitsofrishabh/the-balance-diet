@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navigation />
-        <main className="min-h-screen">
+        <main className="min-h-screen mt-1">
           {children}
         </main>
         <Footer />
