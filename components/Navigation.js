@@ -67,6 +67,7 @@ export function Navigation() {
               }`}
             >
               <span className="mt-1">#1 Personalized Nutrition Program</span>
+              <span className="mt-1">#1 Personalized Nutrition Program</span>
               About Us
             </Link>
             <Link
