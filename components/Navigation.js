@@ -203,7 +203,7 @@ export function Navigation() {
                 >
                   <Button
                     size="lg"
-                    className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3"
+                    className="w-full bg-green-500 hover:bg-green-600 text-white"
                   >
                     Book Now
                   </Button>

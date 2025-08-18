@@ -108,14 +108,14 @@ export function FAQ() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a 
-                href="https://wa.me/+919149081034?text=Hi! I have some questions about The Balance Diet programs."
+                href="https://wa.me/919149081034?text=Hi! I have some questions about The Balance Diet programs."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors"
               >
                 Ask on WhatsApp
               </a>
-              <button className="inline-flex items-center justify-center px-6 py-3 border border-green-200 text-green-600 font-semibold rounded-lg hover:bg-green-50 transition-colors">
+              <button className="inline-flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors">
                 Book Free Call
               </button>
             </div>

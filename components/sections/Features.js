@@ -158,7 +158,7 @@ export function Features() {
                 <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   View Our Programs
                 </button>
-                <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:border-green-500 transition-all duration-300 hover:scale-105">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
                   Book a Free Call
                 </button>
               </div>

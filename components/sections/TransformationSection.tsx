@@ -121,7 +121,7 @@ export function TransformationSection() {
                       Continue on WhatsApp
                     </Button>
                   </a>
-                  <Button variant="outline" onClick={() => setIsSubmitted(false)} className="px-8 py-3 border-green-500 text-green-600 hover:bg-green-50">
+                  <Button onClick={() => setIsSubmitted(false)} className="bg-green-500 hover:bg-green-600 text-white px-8 py-3">
                     Submit Another Form
                   </Button>
                 </div>
