@@ -77,14 +77,6 @@ export function Navigation() {
               Home
             </Link>
             <Link
-              href="/services"
-              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
-                isScrolled ? 'text-gray-700' : 'text-gray-900'
-              }`}
-            >
-              Services
-            </Link>
-            <Link
               href="/success-stories"
               className={`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
@@ -104,19 +96,18 @@ export function Navigation() {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.Calendly) {
-                  window.Calendly.initPopupWidget({
-                    url: 'https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita',
-                  });
-                }
-              }}
+            <a
+              href="https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Book Now
-            </Button>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3"
+              >
+                Book Now
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -203,20 +194,19 @@ export function Navigation() {
 
               {/* Mobile CTA */}
               <div className="px-3 pt-2 pb-3">
-                <Button
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    if (typeof window !== 'undefined' && window.Calendly) {
-                      window.Calendly.initPopupWidget({
-                        url: 'https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita',
-                      });
-                    }
-                  }}
+                <a
+                  href="https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  Book Now
-                </Button>
+                  <Button
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3"
+                  >
+                    Book Now
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
