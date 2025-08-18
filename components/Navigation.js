@@ -44,11 +44,13 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <img
-              src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451382/Brand_Logo_j7zn4t.png"
-              alt="The Balance Diet Logo"
-              className="h-14 w-14 object-contain group-hover:scale-105 transition-transform"
-            />
+            <div className="flex items-center">
+              <img
+                src="https://res.cloudinary.com/djdej77pl/image/upload/v1755451382/Brand_Logo_j7zn4t.png"
+                alt="The Balance Diet Logo"
+                className="h-16 w-16 object-contain group-hover:scale-105 transition-transform"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -97,19 +99,9 @@ export function Navigation() {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full transition-colors"
-              aria-label="Chat on WhatsApp"
-            >
-              <MessageCircle className="h-5 w-5 text-white" />
-            </a>
-
             <Button
-              size="sm"
-              className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700"
+              size="lg"
+              className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.Calendly) {
                   window.Calendly.initPopupWidget({
@@ -207,8 +199,8 @@ export function Navigation() {
               {/* Mobile CTA */}
               <div className="px-3 pt-2 pb-3">
                 <Button
-                  size="sm"
-                  className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700"
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3"
                   onClick={() => {
                     setIsMenuOpen(false);
                     if (typeof window !== 'undefined' && window.Calendly) {

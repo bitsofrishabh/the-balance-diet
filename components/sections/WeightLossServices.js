@@ -81,12 +81,20 @@ export function WeightLossServices() {
                 {/* Service Buttons */}
                 <div className="flex flex-wrap gap-3">
                   {category.services.map((service, serviceIndex) => (
-                    <button
+                    <a
                       key={serviceIndex}
-                      className="px-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 hover:border-primary-500 hover:text-primary-600 transition-all duration-300 font-medium"
+                      href="#health-assessment"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const healthAssessmentSection = document.getElementById('health-assessment');
+                        if (healthAssessmentSection) {
+                          healthAssessmentSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="inline-block px-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 hover:border-primary-500 hover:text-primary-600 transition-all duration-300 font-medium cursor-pointer"
                     >
                       {service} &gt;
-                    </button>
+                    </a>
                   ))}
                 </div>
               </div>
