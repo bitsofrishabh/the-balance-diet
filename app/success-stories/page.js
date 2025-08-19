@@ -151,7 +151,8 @@ export default function SuccessStoriesPage() {
       beforeWeight: 82,
       afterWeight: 58,
       program: 'Women Care Program'
-    }
+  }
+
   ];
 
   // Calculate pagination
