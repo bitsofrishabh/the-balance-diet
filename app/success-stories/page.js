@@ -154,11 +154,11 @@ export default function SuccessStoriesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
+      <section className="relative py-12 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         <div className="absolute inset-0 bg-hero-pattern opacity-30" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <Badge className="mb-4 bg-primary-100 text-primary-700">
               <Award className="w-4 h-4 mr-2" />
               Real Transformations
@@ -174,7 +174,7 @@ export default function SuccessStoriesPage() {
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {[
               { number: '500+', label: 'Transformations', icon: Users },
               { number: '2000+', label: 'Kg Lost Collectively', icon: TrendingDown },
@@ -197,9 +197,9 @@ export default function SuccessStoriesPage() {
       </section>
 
       {/* Success Stories Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Real People, Real Results
             </h2>
@@ -221,17 +221,6 @@ export default function SuccessStoriesPage() {
                       alt={`${story.name} transformation`}
                       className="w-full h-64 object-contain bg-gradient-to-br from-primary-50 to-secondary-50 group-hover:scale-105 transition-transform duration-500"
                     />
-                    
-                    {/* Weight Loss Badge */}
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-                      -{story.weightLoss}
-                    </div>
-
-                    {/* Timeframe Badge */}
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-                      <Calendar className="w-3 h-3 inline mr-1" />
-                      {story.timeframe}
-                    </div>
                   </div>
 
                   {/* Content */}
@@ -281,7 +270,7 @@ export default function SuccessStoriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600">
+      <section className="py-12 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Write Your Success Story?
@@ -290,24 +279,14 @@ export default function SuccessStoriesPage() {
             Join hundreds of people who have already transformed their lives. Your journey to better health 
             starts with a simple conversation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Claim Your Free Discovery Call Today
-              </Button>
-            </a>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4">
-              View All Programs
+          <div className="flex justify-center">
+            <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white px-8 py-4">
+              Book Your Call Now
             </Button>
           </div>
           
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mt-12 text-sm text-primary-100">
+          <div className="flex flex-wrap justify-center items-center gap-6 mt-8 text-sm text-primary-100">
             <div className="flex items-center">
               <Award className="h-5 w-5 mr-2" />
               500+ Success Stories
