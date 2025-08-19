@@ -340,8 +340,6 @@ export function TransformationSection() {
 
              
                 
-              </div>
-
               {/* Row 3: Profession, Mobile */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {/* Profession */}
