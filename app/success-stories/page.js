@@ -307,8 +307,6 @@ export default function SuccessStoriesPage() {
                 </button>
               ))}
             </div>
-        </div>
-      </section>
 
             <button
               onClick={nextPage}
@@ -322,7 +320,8 @@ export default function SuccessStoriesPage() {
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
-      {/* CTA Section */}
+        </div>
+      </section>
       <section className="py-12 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
