@@ -300,7 +300,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="height" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Ruler className="h-4 w-4 text-primary-600" />
-                    <span> Height (cm)</span>
+                    <span> Height</span>
                   </label>
                   <input
                     id="height"
@@ -313,7 +313,7 @@ export function TransformationSection() {
                     max={220}
                     inputMode="numeric"
                     className="w-full h-10 px-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
-                    placeholder="Enter height in cm"
+                    placeholder="height in cm"
                   />
                 </div>
 
