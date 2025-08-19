@@ -26,7 +26,7 @@ export function WeightLossServices() {
       description: 'Our team offers personalised disease management creating customised nutrition plans, incorporating healthy habits, and empowering you with knowledge to manage your condition and live a full, active life.',
       image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755512661/7_dblzdh.png',
       bgColor: 'bg-gradient-to-br from-teal-400 to-teal-500',
-      services: ['Thyroid', 'PCOS', 'Diabetes', 'Cardiac',]
+      services: ['Thyroid', 'PCOS/PCOD', 'Diabetes', 'Cardiac',]
     },
     {
       title: 'Women Care Diet',
