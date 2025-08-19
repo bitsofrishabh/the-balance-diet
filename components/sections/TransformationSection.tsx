@@ -131,6 +131,107 @@ export function TransformationSection() {
             {/* Money Back Guarantee Poster */}
             <div className="bg-white rounded-3xl p-6 shadow-xl flex flex-col">
               <div className="flex-1 flex flex-col">
+                {/* Content */}
+                <div className="flex-1 flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <Shield className="h-8 w-8 text-green-500 mr-3" />
+                    <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+                      Risk-Free Guarantee
+                    </span>
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    100% Money-Back
+                    <span className="bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent block">
+                      Guarantee
+                    </span>
+                  </h2>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                    We're so confident in our proven transformation system that we offer a complete money-back guarantee.
+                    Your success is our commitment.
+                  </p>
+
+                  {/* Trust Indicators */}
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 mb-6">
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div>
+                        <div className="text-xl font-bold text-green-600 mb-1">500+</div>
+                        <div className="text-xs text-gray-600">Success Stories</div>
+                      </div>
+                      <div>
+                        <div className="text-xl font-bold text-green-600 mb-1">98%</div>
+                        <div className="text-xs text-gray-600">Success Rate</div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-center mb-1">
+                          <Star className="w-4 h-4 fill-yellow-400 stroke-yellow-400" />
+                          <span className="text-xl font-bold text-green-600 ml-1">4.9</span>
+                        </div>
+                        <div className="text-xs text-gray-600">Client Rating</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTAs */}
+                  <div className="space-y-3 mt-auto">
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block">
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white py-3 text-base font-semibold">
+                        <MessageCircle className="mr-2 h-4 w-4" />
+                        Claim Your Risk-Free Transformation
+                      </Button>
+                    </a>
+                    <a 
+                      href="https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white py-3 text-base font-semibold">
+                        Book Call Now
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (isSubmitted) {
+    return (
+      <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            {/* Success Message */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl flex items-center justify-center">
+              <div className="text-center">
+                <div className="bg-green-100 p-4 rounded-full inline-flex mb-6">
+                  <CheckCircle className="h-12 w-12 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Thank You for Your Interest!</h3>
+                <p className="text-gray-600 mb-6">
+                  We've received your health information and our expert team will review it shortly.
+                  Get ready to start your transformation journey!
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3">
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Continue on WhatsApp
+                    </Button>
+                  </a>
+                  <Button onClick={() => setIsSubmitted(false)} className="bg-green-500 hover:bg-green-600 text-white px-8 py-3">
+                    Submit Another Form
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Money Back Guarantee Poster */}
+            <div className="bg-white rounded-3xl p-6 shadow-xl flex flex-col">
+              <div className="flex-1 flex flex-col">
                 {/* Poster */}
                 <div className="relative mb-6">
                   <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl p-3 shadow-lg">
