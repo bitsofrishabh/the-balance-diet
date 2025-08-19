@@ -1,15 +1,17 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
   Award, 
-  ArrowRight, 
   Star,
   TrendingDown,
   Calendar,
   Target,
   Users,
-  MessageCircle
+  MessageCircle,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 export const metadata = {
@@ -18,6 +20,9 @@ export const metadata = {
 };
 
 export default function SuccessStoriesPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+
   const successStories = [
     {
       id: 'priya-lost-25kg',
@@ -147,6 +152,29 @@ export default function SuccessStoriesPage() {
     }
   ];
 
+  // Calculate pagination
+  const totalPages = Math.ceil(successStories.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentStories = successStories.slice(startIndex, endIndex);
+
+  const goToPage = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      goToPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      goToPage(currentPage - 1);
+    }
+  };
+
   const whatsappNumber = '+1234567890';
   const whatsappMessage = 'Hi! I would like to claim my free discovery call for The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -211,64 +239,89 @@ export default function SuccessStoriesPage() {
 
           {/* 3x3 Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {successStories.map((story, index) => (
-              <div key={story.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden group">
-                <Link href={`/success-stories/${story.id}`}>
-                  {/* Image Container */}
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={story.image}
-                      alt={`${story.name} transformation`}
-                      className="w-full h-64 object-contain bg-gradient-to-br from-primary-50 to-secondary-50 group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+            {currentStories.map((story, index) => (
+              <div key={story.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                {/* Image Container */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={story.image}
+                    alt={`${story.name} transformation`}
+                    className="w-full h-80 object-contain bg-gradient-to-br from-primary-50 to-secondary-50"
+                  />
+                </div>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    {/* Name and Weight Loss */}
-                    <div className="mb-3">
-                      <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-primary-600 transition-colors">
-                        {story.name}
-                      </h3>
-                      <div className="flex items-center text-primary-600 font-semibold">
-                        <TrendingDown className="w-4 h-4 mr-1" />
-                        Lost {story.weightLoss} in {story.timeframe}
-                      </div>
-                    </div>
-
-                    {/* Short Description */}
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
-                      {story.shortDescription}
-                    </p>
-
-                    {/* Client Details */}
-                    <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
-                      <span>{story.age} years • {story.occupation}</span>
-                      <span>{story.location}</span>
-                    </div>
-
-                    {/* Read More Button */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-primary-600 font-medium text-sm group-hover:text-primary-700 transition-colors">
-                        Read Full Story
-                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                      
-                      {/* Star Rating */}
-                      <div className="flex items-center">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star key={star} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
+                {/* Content */}
+                <div className="p-6">
+                  {/* Name and Weight Loss */}
+                  <div className="mb-3">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      {story.name}
+                    </h3>
+                    <div className="flex items-center text-primary-600 font-semibold">
+                      <TrendingDown className="w-4 h-4 mr-1" />
+                      Lost {story.weightLoss} in {story.timeframe}
                     </div>
                   </div>
-                </Link>
+
+                  {/* Short Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {story.shortDescription}
+                  </p>
+
+                  {/* Client Details */}
+                  <div className="flex items-center justify-between text-xs text-gray-500">
+                    <span>{story.age} years • {story.occupation}</span>
+                    <span>{story.location}</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Pagination */}
+          <div className="flex items-center justify-center space-x-4 mt-12">
+            <button
+              onClick={prevPage}
+              disabled={currentPage === 1}
+              className={`p-2 rounded-lg transition-colors ${
+                currentPage === 1
+                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                  : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <div className="flex space-x-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => goToPage(page)}
+                  className={`w-10 h-10 rounded-lg font-medium transition-colors ${
+                    currentPage === page
+                      ? 'bg-primary-500 text-white'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
         </div>
       </section>
 
+            <button
+              onClick={nextPage}
+              disabled={currentPage === totalPages}
+              className={`p-2 rounded-lg transition-colors ${
+                currentPage === totalPages
+                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                  : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
+              }`}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
       {/* CTA Section */}
       <section className="py-12 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -304,4 +357,5 @@ export default function SuccessStoriesPage() {
       </section>
     </div>
   );
+'use client';
 }
