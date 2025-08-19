@@ -234,7 +234,7 @@ export default function WebinarPage() {
                   <img
                     src={image}
                     alt={`Transformation ${index + 1}`}
-                    className="w-full h-48 object-contain bg-gradient-to-br from-primary-50 to-secondary-50"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
               ))}
