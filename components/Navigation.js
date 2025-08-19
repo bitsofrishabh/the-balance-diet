@@ -47,7 +47,7 @@ export function Navigation() {
             <img
               src="https://res.cloudinary.com/djdej77pl/image/upload/v1755512878/Logo_1_r9bvu1.png"
               alt="The Balance Diet Logo"
-              className="h-12 md:h-16 object-contain group-hover:scale-105 transition-transform"
+              className="h-16 md:h-20 object-contain group-hover:scale-105 transition-transform"
             />
           </Link>
 
