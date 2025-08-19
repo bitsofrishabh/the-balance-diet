@@ -22,9 +22,8 @@ export const metadata = {
 };
 
 export default function EbookPage() {
-  const whatsappNumber = '+1234567890';
-  const whatsappMessage = 'Hi! I would like to download the free e-book and know more about The Balance Diet programs.';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  // Razorpay payment link
+  const razorpayUrl = 'https://razorpay.me/@thebalancediet';
 
   const ebookFeatures = [
     'Science-based weight loss strategies',
@@ -147,20 +146,11 @@ export default function EbookPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download Free E-Book
+                    Yes, I want to get fit
                   </Button>
                 </a>
-                <Button variant="outline" size="lg" className="px-8 py-4">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Get Expert Guidance
-                </Button>
               </div>
 
               {/* Trust Indicators */}
@@ -183,18 +173,13 @@ export default function EbookPage() {
             {/* Right Column - E-book Preview */}
             <div className="relative">
               <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-8 shadow-2xl">
-                {/* E-book Cover Mockup */}
-                <div className="bg-white rounded-2xl shadow-xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                  <div className="aspect-[3/4] bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center text-white p-6">
-                    <div className="text-center">
-                      <BookOpen className="w-16 h-16 mx-auto mb-4" />
-                      <h3 className="text-xl font-bold mb-2">The Complete Guide</h3>
-                      <p className="text-sm opacity-90">Healthy Weight Loss</p>
-                      <div className="mt-4 text-xs opacity-75">
-                        By The Balance Diet Team
-                      </div>
-                    </div>
-                  </div>
+                {/* E-book Cover Image */}
+                <div className="transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                  <img
+                    src="https://res.cloudinary.com/djdej77pl/image/upload/v1755538875/Green_Illustrated_Healthy_Eating_eBook_Cover_1_aqtcdq.png"
+                    alt="The Balance Diet E-book Cover"
+                    className="w-full h-auto rounded-2xl shadow-xl"
+                  />
                 </div>
 
                 {/* Floating Stats */}
@@ -258,145 +243,70 @@ export default function EbookPage() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Everything You Need to Succeed
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                This isn't just another diet book. It's a complete transformation guide 
-                with practical tools and strategies you can implement immediately.
-              </p>
-
-              <div className="space-y-4">
-                {ebookFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
+      {/* Free Consultation Section */}
+      <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white rounded-3xl p-8 shadow-xl">
+            <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Phone className="w-8 h-8" />
             </div>
-
-            <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8">
-              <div className="text-center mb-6">
-                <div className="bg-primary-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Gift className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Limited Time Bonus
-                </h3>
-                <p className="text-gray-600">
-                  Download now and get exclusive access to our private community and weekly Q&A sessions!
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600 mb-2">FREE</div>
-                  <div className="text-gray-500 line-through mb-2">Worth ₹2,999</div>
-                  <div className="text-sm text-gray-600 mb-4">
-                    No hidden costs, no credit card required
-                  </div>
-                  <a 
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700">
-                      <Download className="mr-2 h-4 w-4" />
-                      Download Now
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Readers Are Saying
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Get a Free 30-Minute Zoom Video Call Consultation
             </h2>
-            <p className="text-xl text-gray-600">
-              Join thousands who have transformed their lives with our e-book
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              With the purchase of this e-book, get a personalized 30-minute consultation with our expert nutritionists. 
+              Discuss your health goals, get personalized advice, and create your transformation roadmap.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
+            
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 mb-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">What You'll Get:</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Personalized health assessment</span>
                 </div>
-                <p className="text-gray-700 italic mb-4">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-primary-600 font-medium">{testimonial.result}</div>
-                  </div>
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Custom nutrition recommendations</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Goal-setting and planning session</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Q&A with certified nutritionist</span>
                 </div>
               </div>
-            ))}
+            </div>
+            
+            <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4 text-lg">
+                Yes, I want to get fit
+              </Button>
+            </a>
+            
+            <p className="text-sm text-gray-500 mt-4">
+              💡 Consultation will be scheduled within 24 hours of purchase
+            </p>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600">
+      <section className="py-16 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Start Your Transformation?
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Don't Wait - Start Your Transformation Today!
           </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Download your free copy now and take the first step towards a healthier, 
-            happier you. No strings attached, just pure value.
+          <p className="text-lg text-primary-100 mb-6 max-w-2xl mx-auto">
+            Get the e-book plus your free consultation and begin your journey to better health.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4">
-                <Download className="mr-2 h-5 w-5" />
-                Download Free E-Book Now
-              </Button>
-            </a>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Get Personal Guidance
+          <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4">
+              Yes, I want to get fit
             </Button>
-          </div>
-          
-          {/* Final Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mt-12 text-sm text-primary-100">
-            <div className="flex items-center">
-              <Download className="h-5 w-5 mr-2" />
-              10,000+ Downloads
-            </div>
-            <div className="flex items-center">
-              <Star className="h-5 w-5 mr-2" />
-              4.9/5 Rating
-            </div>
-            <div className="flex items-center">
-              <Shield className="h-5 w-5 mr-2" />
-              100% Free Forever
-            </div>
-          </div>
+          </a>
         </div>
       </section>
     </div>
