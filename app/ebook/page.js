@@ -68,7 +68,7 @@ export default function EbookPage() {
   // Shuffle and select 6 random images
   const shuffleImages = () => {
     const shuffled = [...allTestimonialImages].sort(() => Math.random() - 0.5);
-    setCurrentImages(shuffled.slice(0, 8));
+    setCurrentImages(shuffled.slice(0, 4));
   };
 
   // Initialize and auto-shuffle every 5 seconds
