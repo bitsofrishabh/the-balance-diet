@@ -1,3 +1,6 @@
+'use client';
+
+
 import SuccessStoryClientContent from '@/components/SuccessStoryClientContent';
 
 export function generateStaticParams() {
