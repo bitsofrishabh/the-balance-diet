@@ -35,3 +35,19 @@ To set up email subscriptions with Brevo:
 - ✅ Optional automated welcome email
 - ✅ Tracks subscription source
 - ✅ Error handling and validation
+- ✅ Fallback logging for manual processing
+- ✅ Network timeout protection
+- ✅ Demo mode when API key not configured
+
+### Troubleshooting:
+
+**Network Errors:**
+- Check that BREVO_API_KEY is correctly set in .env.local
+- Verify API key is active in Brevo dashboard
+- Ensure BREVO_LIST_ID is a valid number
+- Check network connectivity to api.brevo.com
+
+**Demo Mode:**
+- If no API key is configured, the system runs in demo mode
+- Emails are logged to console for manual processing
+- Users still receive success messages for better UX
