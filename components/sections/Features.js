@@ -145,26 +145,7 @@ export function Features() {
         </div>
 
         {/* Interactive Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-8 text-white overflow-hidden group hover:from-primary-600 hover:to-primary-700 transition-all duration-500">
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-4 group-hover:scale-105 transition-transform duration-300">
-                Ready to Start Your Transformation?
-              </h3>
-              <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
-                Join thousands of people who have already transformed their health and are living their best lives.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                  View Our Programs
-                </button>
-                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
-                  Book a Free Call
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
