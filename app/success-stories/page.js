@@ -16,11 +16,6 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-export const metadata = {
-  title: 'Success Stories - Real Transformations That Inspire',
-  description: 'Discover inspiring weight loss and health transformation stories from our clients. See real results and get motivated for your own journey.',
-};
-
 export default function SuccessStoriesPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
