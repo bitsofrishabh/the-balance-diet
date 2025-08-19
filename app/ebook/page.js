@@ -1,14 +1,15 @@
+'use client';
+
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { 
-  BookOpen, 
-  Download, 
+import {
+  BookOpen,
+  Download,
   CheckCircle,
   Star,
   Users,
-  MessageCircle,
   Gift,
   Clock,
   Target,
@@ -17,18 +18,13 @@ import {
   Shield,
   Award,
   Phone,
-  ArrowRight
+  ArrowRight,
 } from 'lucide-react';
-
-export const metadata = {
-  title: 'Free E-Book - Complete Guide to Healthy Weight Loss',
-  description: 'Download our comprehensive free e-book with proven strategies for sustainable weight loss and healthy living.',
-};
 
 export default function EbookPage() {
   // Razorpay payment link
   const razorpayUrl = 'https://razorpay.me/@thebalancediet';
-  
+
   // All testimonial images
   const allTestimonialImages = [
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
@@ -64,7 +60,7 @@ export default function EbookPage() {
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/21_acyun9.png',
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/22_jkoupj.png',
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/23_pzfnzl.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/12_nsws6o.png'
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/12_nsws6o.png',
   ];
 
   const [currentImages, setCurrentImages] = useState([]);
@@ -77,80 +73,18 @@ export default function EbookPage() {
 
   // Initialize and auto-shuffle every 5 seconds
   useEffect(() => {
-    shuffleImages(); // Initial shuffle
+    shuffleImages();
     const interval = setInterval(shuffleImages, 5000);
     return () => clearInterval(interval);
   }, []);
 
-  const ebookFeatures = [
-    'Science-based weight loss strategies',
-    'Meal planning templates and guides',
-    '50+ healthy recipes with nutritional info',
-    'Exercise routines for all fitness levels',
-    'Habit formation and mindset techniques',
-    'Common weight loss mistakes to avoid',
-    'Supplement recommendations',
-    'Progress tracking tools and worksheets'
-  ];
-
   const chapters = [
-    {
-      number: '01',
-      title: 'Understanding Your Body',
-      description: 'Learn about metabolism, hormones, and how your body processes food.',
-      icon: Heart
-    },
-    {
-      number: '02',
-      title: 'Nutrition Fundamentals',
-      description: 'Master the basics of macronutrients, micronutrients, and balanced eating.',
-      icon: BookOpen
-    },
-    {
-      number: '03',
-      title: 'Meal Planning Made Easy',
-      description: 'Step-by-step guide to planning and preparing healthy meals.',
-      icon: Target
-    },
-    {
-      number: '04',
-      title: 'Exercise & Movement',
-      description: 'Effective workout routines that complement your nutrition plan.',
-      icon: TrendingUp
-    },
-    {
-      number: '05',
-      title: 'Mindset & Habits',
-      description: 'Build lasting habits and overcome mental barriers to success.',
-      icon: Shield
-    },
-    {
-      number: '06',
-      title: 'Maintaining Your Results',
-      description: 'Strategies to keep the weight off and maintain your healthy lifestyle.',
-      icon: Award
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Priya Sharma',
-      result: 'Lost 15 kg',
-      quote: 'This e-book gave me the foundation I needed to start my weight loss journey. The meal plans are so practical!',
-      rating: 5
-    },
-    {
-      name: 'Rahul Gupta',
-      result: 'Lost 20 kg',
-      quote: 'The mindset chapter was a game-changer for me. Finally understood why my previous diets failed.',
-      rating: 5
-    },
-    {
-      name: 'Sneha Patel',
-      result: 'Lost 12 kg',
-      quote: 'Easy to follow recipes and clear explanations. This book is worth its weight in gold!',
-      rating: 5
-    }
+    { number: '01', title: 'Understanding Your Body', description: 'Learn about metabolism, hormones, and how your body processes food.', icon: Heart },
+    { number: '02', title: 'Nutrition Fundamentals', description: 'Master the basics of macronutrients, micronutrients, and balanced eating.', icon: BookOpen },
+    { number: '03', title: 'Meal Planning Made Easy', description: 'Step-by-step guide to planning and preparing healthy meals.', icon: Target },
+    { number: '04', title: 'Exercise & Movement', description: 'Effective workout routines that complement your nutrition plan.', icon: TrendingUp },
+    { number: '05', title: 'Mindset & Habits', description: 'Build lasting habits and overcome mental barriers to success.', icon: Shield },
+    { number: '06', title: 'Maintaining Your Results', description: 'Strategies to keep the weight off and maintain your healthy lifestyle.', icon: Award },
   ];
 
   return (
@@ -158,10 +92,9 @@ export default function EbookPage() {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         <div className="absolute inset-0 bg-hero-pattern opacity-30" />
-        
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Content */}
+            {/* Left Column */}
             <div className="space-y-8">
               <Badge className="bg-primary-100 text-primary-700">
                 <Gift className="w-4 h-4 mr-2" />
@@ -176,7 +109,7 @@ export default function EbookPage() {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                  Download our comprehensive 80-page e-book packed with proven strategies, 
+                  Download our comprehensive 80-page e-book packed with proven strategies,
                   meal plans, recipes, and expert tips for sustainable weight loss.
                 </p>
               </div>
@@ -187,7 +120,7 @@ export default function EbookPage() {
                   { icon: BookOpen, text: '80+ Pages of Expert Content' },
                   { icon: Users, text: '10,000+ Downloads' },
                   { icon: Star, text: '4.9/5 Average Rating' },
-                  { icon: Clock, text: 'Lifetime Access' }
+                  { icon: Clock, text: 'Lifetime Access' },
                 ].map((benefit, index) => {
                   const IconComponent = benefit.icon;
                   return (
@@ -201,7 +134,7 @@ export default function EbookPage() {
                 })}
               </div>
 
-              {/* CTA Buttons */}
+              {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
@@ -230,7 +163,6 @@ export default function EbookPage() {
             {/* Right Column - E-book Preview */}
             <div className="relative">
               <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-8 shadow-2xl">
-                {/* E-book Cover Image */}
                 <div className="transform rotate-3 hover:rotate-0 transition-transform duration-300">
                   <img
                     src="https://res.cloudinary.com/djdej77pl/image/upload/v1755538875/Green_Illustrated_Healthy_Eating_eBook_Cover_1_aqtcdq.png"
@@ -266,9 +198,7 @@ export default function EbookPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What's Inside the E-Book
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What's Inside the E-Book</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive content designed to guide you through every step of your weight loss journey
             </p>
@@ -287,12 +217,8 @@ export default function EbookPage() {
                       {chapter.number}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    {chapter.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {chapter.description}
-                  </p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{chapter.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{chapter.description}</p>
                 </div>
               );
             })}
@@ -311,59 +237,56 @@ export default function EbookPage() {
               Get a Free 30-Minute Zoom Video Call Consultation
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              With the purchase of this e-book, get a personalized 30-minute consultation with our expert nutritionists. 
+              With the purchase of this e-book, get a personalized 30-minute consultation with our expert nutritionists.
               Discuss your health goals, get personalized advice, and create your transformation roadmap.
             </p>
-            
+
             <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 mb-8">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">What You'll Get:</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Personalized health assessment</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Custom nutrition recommendations</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Goal-setting and planning session</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Q&A with certified nutritionist</span>
-                </div>
+                {[
+                  'Personalized health assessment',
+                  'Custom nutrition recommendations',
+                  'Goal-setting and planning session',
+                  'Q&A with certified nutritionist',
+                ].map((item) => (
+                  <div key={item} className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            
+
             <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4 text-lg">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4 text-lg"
+              >
                 Yes, I want to get fit
               </Button>
             </a>
-            
-            <p className="text-sm text-gray-500 mt-4">
-              💡 Consultation will be scheduled within 24 hours of purchase
-            </p>
+
+            <p className="text-sm text-gray-500 mt-4">💡 Consultation will be scheduled within 24 hours of purchase</p>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Final CTA & Testimonials */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What Our Clients Say
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
             See real transformation results from people who have changed their lives with our guidance.
           </p>
-          
-          {/* Testimonial Images Grid */}
+
+          {/* Testimonial Images Grid (rotating) */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
             {currentImages.map((image, index) => (
-              <div key={`${image}-${index}`} className="overflow-hidden hover:scale-105 transition-all duration-300">
+              <div
+                key={`${image}-${index}`}
+                className="overflow-hidden hover:scale-105 transition-all duration-300"
+              >
                 <img
                   src={image}
                   alt={`Client transformation ${index + 1}`}
@@ -372,30 +295,7 @@ export default function EbookPage() {
               </div>
             ))}
           </div>
-          
-          {/* More Testimonials Button */}
-          <Link href="/success-stories">
-            <Button variant="outline" size="lg" className="px-8 py-4 mb-8">
-              View More Success Stories
-              <ArrowRight className="ml-2 h-5 w-5" />
-            {[
-              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
-              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
-              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
-              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
-              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
-              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/8_tzzijq.png'
-            ].map((image, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <img
-                  src={image}
-                  alt={`Client transformation ${index + 1}`}
-                  className="w-full h-48 object-contain bg-gradient-to-br from-primary-50 to-secondary-50"
-                />
-              </div>
-            ))}
-          </div>
-          
+
           {/* More Testimonials Button */}
           <Link href="/success-stories">
             <Button variant="outline" size="lg" className="px-8 py-4 mb-8">
@@ -403,20 +303,14 @@ export default function EbookPage() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          
-          {/* CTA Button */}
+
+          {/* Purchase CTA */}
           <div>
             <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
-                Yes, I want to get fit
-              </Button>
-            </a>
-          </div>
-          
-          {/* CTA Button */}
-          <div>
-            <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4"
+              >
                 Yes, I want to get fit
               </Button>
             </a>
@@ -425,5 +319,4 @@ export default function EbookPage() {
       </section>
     </div>
   );
-'use client';
 }
