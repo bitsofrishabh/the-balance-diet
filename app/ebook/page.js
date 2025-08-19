@@ -149,7 +149,7 @@ export default function EbookPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
-                    Yes, I want to get fit
+                    Yes, I want to get fit in just ₹99/-
                   </Button>
                 </a>
               </div>
