@@ -78,6 +78,14 @@ export function Navigation() {
               Success Stories
             </Link>
             <Link
+              href="/webinar"
+              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+                isScrolled ? 'text-gray-700' : 'text-gray-900'
+              }`}
+            >
+              Webinar
+            </Link>
+            <Link
               href="/ebook"
               className={`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
@@ -141,6 +149,13 @@ export function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Success Stories
+              </Link>
+              <Link
+                href="/webinar"
+                className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Webinar
               </Link>
               <Link
                 href="/ebook"

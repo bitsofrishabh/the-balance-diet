@@ -35,54 +35,86 @@ export default function WebinarPage() {
         <div className="absolute inset-0 bg-hero-pattern opacity-30" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-primary-100 text-primary-700">
-              <Play className="w-4 h-4 mr-2" />
-              Free Live Webinar
-            </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Transform Your Health in
-              <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block"> 90 Days or Less </span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-              Join our exclusive free webinar and discover the proven system that has helped 500+ people 
-              achieve sustainable weight loss and optimal health without restrictive diets or extreme workouts.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <div className="space-y-8">
+              <Badge className="bg-primary-100 text-primary-700">
+                <Play className="w-4 h-4 mr-2" />
+                Free Live Webinar
+              </Badge>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Transform Your Health in
+                <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block"> 90 Days or Less </span>
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                Join our exclusive free webinar and discover the proven system that has helped 500+ people 
+                achieve sustainable weight loss and optimal health without restrictive diets or extreme workouts.
+              </p>
 
-            {/* Webinar Details */}
-            <div className="bg-white rounded-2xl p-6 shadow-xl max-w-2xl mx-auto mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                <div className="flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-primary-600 mr-2" />
-                  <span className="font-semibold">Every Saturday</span>
+              {/* Webinar Details */}
+              <div className="bg-white rounded-2xl p-6 shadow-xl">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                  <div className="flex items-center justify-center">
+                    <Calendar className="w-5 h-5 text-primary-600 mr-2" />
+                    <span className="font-semibold">Every Saturday</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-primary-600 mr-2" />
+                    <span className="font-semibold">7:00 PM IST</span>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <Users className="w-5 h-5 text-primary-600 mr-2" />
+                    <span className="font-semibold">Limited Seats</span>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-primary-600 mr-2" />
-                  <span className="font-semibold">7:00 PM IST</span>
-                </div>
-                <div className="flex items-center justify-center">
-                  <Users className="w-5 h-5 text-primary-600 mr-2" />
-                  <span className="font-semibold">Limited Seats</span>
-                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Register for Free Webinar
+                  </Button>
+                </a>
+                <Button variant="outline" size="lg" className="px-8 py-4">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Book Personal Call
+                </Button>
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Register for Free Webinar
-                </Button>
-              </a>
-              <Button variant="outline" size="lg" className="px-8 py-4">
-                <Phone className="mr-2 h-5 w-5" />
-                Book Personal Call
-              </Button>
+            {/* Right Column - Webinar Image */}
+            <div className="relative">
+              <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-8 shadow-2xl">
+                <img
+                  src="https://res.cloudinary.com/djdej77pl/image/upload/v1755572982/Grey_and_Yellow_Modern_Geometric_Online_Business_Webinar_Instagram_Post_t4rgi1.png"
+                  alt="Health Transformation Webinar"
+                  className="w-full h-auto rounded-2xl shadow-xl"
+                />
+                
+                {/* Floating Stats */}
+                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-primary-600">500+</div>
+                    <div className="text-xs text-gray-600">Attendees</div>
+                  </div>
+                </div>
+
+                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-1">
+                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                      <span className="text-lg font-bold text-gray-900 ml-1">4.9</span>
+                    </div>
+                    <div className="text-xs text-gray-600">Rating</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

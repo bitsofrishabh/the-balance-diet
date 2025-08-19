@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
@@ -27,6 +28,59 @@ export const metadata = {
 export default function EbookPage() {
   // Razorpay payment link
   const razorpayUrl = 'https://razorpay.me/@thebalancediet';
+  
+  // All testimonial images
+  const allTestimonialImages = [
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/8_tzzijq.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/4_alxia4.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/3_ug1tse.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/6_nicj27.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342356/Before-After/1_d4fprb.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/18_lnkgus.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/26_bjuggp.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/3_ehvb1y.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/20_h7xzck.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/24_z2vd1g.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/1_cpbkjw.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/4_cpg0mo.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/17_dbftrk.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/8_qpm5sj.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342246/Faceless%20Feedback/25_znaonj.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/9_ebylbc.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342246/Faceless%20Feedback/5_ipj1fd.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/7_qicf3v.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/6_rcounj.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/10_vvhrjn.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/14_jeabde.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/15_rlwmql.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/13_j8hdmk.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/11_rqoigu.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/19_fhq2r6.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/21_acyun9.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/22_jkoupj.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/23_pzfnzl.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/12_nsws6o.png'
+  ];
+
+  const [currentImages, setCurrentImages] = useState([]);
+
+  // Shuffle and select 6 random images
+  const shuffleImages = () => {
+    const shuffled = [...allTestimonialImages].sort(() => Math.random() - 0.5);
+    setCurrentImages(shuffled.slice(0, 6));
+  };
+
+  // Initialize and auto-shuffle every 5 seconds
+  useEffect(() => {
+    shuffleImages(); // Initial shuffle
+    const interval = setInterval(shuffleImages, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const ebookFeatures = [
     'Science-based weight loss strategies',
@@ -307,7 +361,23 @@ export default function EbookPage() {
           </p>
           
           {/* Testimonial Images Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+            {currentImages.map((image, index) => (
+              <div key={`${image}-${index}`} className="overflow-hidden hover:scale-105 transition-all duration-300">
+                <img
+                  src={image}
+                  alt={`Client transformation ${index + 1}`}
+                  className="w-full h-48 object-contain bg-gradient-to-br from-primary-50 to-secondary-50"
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* More Testimonials Button */}
+          <Link href="/success-stories">
+            <Button variant="outline" size="lg" className="px-8 py-4 mb-8">
+              View More Success Stories
+              <ArrowRight className="ml-2 h-5 w-5" />
             {[
               'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
               'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
@@ -342,8 +412,18 @@ export default function EbookPage() {
               </Button>
             </a>
           </div>
+          
+          {/* CTA Button */}
+          <div>
+            <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
+                Yes, I want to get fit
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
     </div>
   );
+'use client';
 }
