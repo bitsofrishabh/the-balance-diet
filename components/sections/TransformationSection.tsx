@@ -339,25 +339,7 @@ export function TransformationSection() {
                 </div>
 
                 {/* Goal Weight */}
-                <div>
-                  <label htmlFor="goalWeight" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                    <Target className="h-4 w-4 text-primary-600" />
-                    <span>Goal Weight</span>
-                  </label>
-                  <input
-                    id="goalWeight"
-                    type="number"
-                    name="goalWeight"
-                    value={formData.goalWeight}
-                    onChange={handleInputChange}
-                    required
-                    min={30}
-                    max={200}
-                    inputMode="numeric"
-                    className="w-full h-10 px-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
-                    placeholder="weight in kg"
-                  />
-                </div>
+                
               </div>
 
               {/* Row 3: Profession, Mobile */}
