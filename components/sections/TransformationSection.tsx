@@ -338,7 +338,7 @@ export function TransformationSection() {
                   />
                 </div>
 
-                {/* Goal Weight */}
+             
                 
               </div>
 
