@@ -93,7 +93,7 @@ export function WeightLossServices() {
                       }}
                       className="inline-block px-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 hover:border-primary-500 hover:text-primary-600 transition-all duration-300 font-medium cursor-pointer"
                     >
-                      {service};
+                      {service}
                     </a>
                   ))}
                 </div>
