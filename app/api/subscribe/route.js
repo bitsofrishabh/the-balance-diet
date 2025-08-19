@@ -146,53 +146,6 @@ export async function POST(request) {
   }
 }
 
-        return NextResponse.json(
-          { error: 'Failed to subscribe. Please try again.' },
-          { status: 500 }
-        );
-      }
-    }
-
-    // Send welcome email with recipe e-book (optional)
-    // You can create a transactional email template in Brevo and send it here
-    if (process.env.BREVO_TEMPLATE_ID) {
-      try {
-        await fetch('https://api.brevo.com/v3/smtp/email', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'api-key': BREVO_API_KEY,
-          },
-          body: JSON.stringify({
-            templateId: parseInt(process.env.BREVO_TEMPLATE_ID),
-            to: [{ email: email }],
-            params: {
-              EMAIL: email,
-              DOWNLOAD_LINK: process.env.RECIPE_EBOOK_URL || '#',
-            },
-          }),
-        });
-      } catch (emailError) {
-        console.error('Failed to send welcome email:', emailError);
-        // Don't fail the subscription if email sending fails
-      }
-    }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Successfully subscribed! Check your email for the recipe e-book.',
-    });
-
-  } catch (error) {
-    console.error('Subscription error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error. Please try again.' },
-      { status: 500 }
-    );
-  }
-}
-
 // Handle preflight requests for CORS
 export async function OPTIONS() {
   return new NextResponse(null, {
