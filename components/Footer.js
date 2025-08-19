@@ -28,15 +28,26 @@ export function Footer() {
     const email = e.target.email.value;
     
     try {
-      // For now, simulate successful subscription
-      // In production, you would integrate with your email service
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage('🎉 Thank you! Check your email for the free recipe e-book.');
+        e.target.reset();
+      } else {
+        setMessage(data.error || 'Something went wrong. Please try again.');
+      }
       
-      setMessage('🎉 Thank you! We\'ll send you the recipe e-book shortly.');
-      e.target.reset();
     } catch (error) {
-      setMessage('Thank you for subscribing! We\'ll be in touch soon.');
-      e.target.reset();
+      console.error('Subscription error:', error);
+      setMessage('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
