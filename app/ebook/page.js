@@ -274,14 +274,14 @@ export default function EbookPage() {
 
       {/* Final CTA & Testimonials */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
             See real transformation results from people who have changed their lives with our guidance.
           </p>
 
           {/* Testimonial Images Grid (rotating) */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
             {currentImages.map((image, index) => (
               <div
                 key={`${image}-${index}`}
