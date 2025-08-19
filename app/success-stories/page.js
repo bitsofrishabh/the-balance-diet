@@ -1,4 +1,4 @@
-
+'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';
@@ -151,7 +151,8 @@ export default function SuccessStoriesPage() {
       beforeWeight: 82,
       afterWeight: 58,
       program: 'Women Care Program'
-    }
+  }
+
   ];
 
   // Calculate pagination
@@ -358,5 +359,4 @@ export default function SuccessStoriesPage() {
       </section>
     </div>
   );
-'use client';
 }
