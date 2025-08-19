@@ -13,7 +13,8 @@ import {
   Heart,
   TrendingUp,
   Shield,
-  Award
+  Award,
+  Phone 
 } from 'lucide-react';
 
 export const metadata = {
