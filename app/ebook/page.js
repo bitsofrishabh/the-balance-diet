@@ -74,7 +74,7 @@ export default function EbookPage() {
   // Initialize and auto-shuffle every 5 seconds
   useEffect(() => {
     shuffleImages();
-    const interval = setInterval(shuffleImages, 5000);
+    const interval = setInterval(shuffleImages, 3000);
     return () => clearInterval(interval);
   }, []);
 

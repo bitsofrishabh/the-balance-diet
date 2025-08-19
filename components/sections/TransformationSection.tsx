@@ -375,7 +375,7 @@ export function TransformationSection() {
               </div>
 
               {/* Row 2: Age, Height, Weight, Goal Weight */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+              <div className="grid grid-cols-3 gap-4 mb-4">
                 {/* Age */}
                 <div>
                   <label htmlFor="age" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
@@ -438,7 +438,10 @@ export function TransformationSection() {
                     placeholder="Enter current weight in kg"
                   />
                 </div>
+              </div>
 
+              {/* Row 3: Goal Weight, Profession, Mobile */}
+              <div className="grid grid-cols-3 gap-4 mb-4">
                 {/* Goal Weight */}
                 <div>
                   <label htmlFor="goalWeight" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
@@ -459,10 +462,7 @@ export function TransformationSection() {
                     placeholder="Enter goal weight in kg"
                   />
                 </div>
-              </div>
 
-              {/* Row 3: Profession, Mobile */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {/* Profession */}
                 <div>
                   <label htmlFor="profession" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">

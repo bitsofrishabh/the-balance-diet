@@ -221,7 +221,7 @@ export default function WebinarPage() {
             <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
               Real Transformation Results
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {[
                 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
                 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
@@ -230,7 +230,7 @@ export default function WebinarPage() {
                 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
                 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/8_tzzijq.png'
               ].map((image, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div key={index} className="overflow-hidden hover:scale-105 transition-all duration-300">
                   <img
                     src={image}
                     alt={`Transformation ${index + 1}`}
