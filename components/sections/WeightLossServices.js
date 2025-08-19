@@ -43,7 +43,7 @@ export function WeightLossServices() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Programs offered by The Balance Diet
+            Programs offered by Rishabh & Savita
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We understand that weight loss is a personal journey. Our customized programs support you in finding healthy habits that optimize both physical and mental well-being.
