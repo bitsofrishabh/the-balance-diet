@@ -358,5 +358,4 @@ export default function SuccessStoriesPage() {
       </section>
     </div>
   );
-'use client';
 }
