@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
@@ -14,7 +15,8 @@ import {
   TrendingUp,
   Shield,
   Award,
-  Phone 
+  Phone,
+  ArrowRight
 } from 'lucide-react';
 
 export const metadata = {
@@ -295,19 +297,51 @@ export default function EbookPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-gradient-to-r from-primary-600 to-secondary-600">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Don't Wait - Start Your Transformation Today!
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            What Our Clients Say
           </h2>
-          <p className="text-lg text-primary-100 mb-6 max-w-2xl mx-auto">
-            Get the e-book plus your free consultation and begin your journey to better health.
+          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+            See real transformation results from people who have changed their lives with our guidance.
           </p>
-          <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4">
-              Yes, I want to get fit
+          
+          {/* Testimonial Images Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+            {[
+              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
+              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
+              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
+              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
+              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
+              'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/8_tzzijq.png'
+            ].map((image, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <img
+                  src={image}
+                  alt={`Client transformation ${index + 1}`}
+                  className="w-full h-48 object-contain bg-gradient-to-br from-primary-50 to-secondary-50"
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* More Testimonials Button */}
+          <Link href="/success-stories">
+            <Button variant="outline" size="lg" className="px-8 py-4 mb-8">
+              View More Success Stories
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </a>
+          </Link>
+          
+          {/* CTA Button */}
+          <div>
+            <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
+                Yes, I want to get fit
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
     </div>

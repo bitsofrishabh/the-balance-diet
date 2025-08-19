@@ -18,7 +18,7 @@ import {
 
 export default function SuccessStoriesPage() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 9;
 
   const successStories = [
     {
