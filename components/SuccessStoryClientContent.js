@@ -34,7 +34,7 @@ export default function SuccessStoryClientContent({ currentStory, moreTestimonia
     setCurrentTestimonialIndex((prev) => (prev - 1 + moreTestimonials.length) % moreTestimonials.length);
   };
 
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = `Hi! I was inspired by ${currentStory.name}'s transformation story and would like to claim my free discovery call.`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

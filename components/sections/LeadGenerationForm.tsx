@@ -91,7 +91,7 @@ export function LeadGenerationForm() {
     }
   };
 
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = `Hi! I just filled out the health assessment form. My details: Name: ${formData.name}, Age: ${formData.age}, Mobile: ${formData.mobile}, Goal: ${formData.healthGoals}. I'd like to discuss my transformation journey.`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

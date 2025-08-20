@@ -154,7 +154,7 @@ export function TransformationSection() {
                   <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 mb-6">
                     <div className="grid grid-cols-3 gap-4 text-center">
                       <div>
-                        <div className="text-xl font-bold text-green-600 mb-1">500+</div>
+                        <div className="text-xl font-bold text-green-600 mb-1">300+</div>
                         <div className="text-xs text-gray-600">Success Stories</div>
                       </div>
                       <div>
@@ -340,7 +340,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <User className="h-4 w-4 text-primary-600" />
-                    <span>📝 Name</span>
+                    <span> Name</span>
                   </label>
                   <input
                     id="name"
@@ -359,7 +359,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="city" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <MapPin className="h-4 w-4 text-primary-600" />
-                    <span>🏠 City</span>
+                    <span> City</span>
                   </label>
                   <input
                     id="city"
@@ -380,7 +380,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="age" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Calendar className="h-4 w-4 text-primary-600" />
-                    <span>🎂 Age</span>
+                    <span> Age</span>
                   </label>
                   <input
                     id="age"
@@ -401,7 +401,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="height" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Ruler className="h-4 w-4 text-primary-600" />
-                    <span>⬆️ Height (cm)</span>
+                    <span> Height (cm)</span>
                   </label>
                   <input
                     id="height"
@@ -422,7 +422,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="weight" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Scale className="h-4 w-4 text-primary-600" />
-                    <span>⚖️ Weight (kg)</span>
+                    <span> Weight (kg)</span>
                   </label>
                   <input
                     id="weight"
@@ -446,7 +446,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="goalWeight" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Target className="h-4 w-4 text-primary-600" />
-                    <span>🔥 Goal Weight (kg)</span>
+                    <span> Goal Weight (kg)</span>
                   </label>
                   <input
                     id="goalWeight"
@@ -467,7 +467,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="profession" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Briefcase className="h-4 w-4 text-primary-600" />
-                    <span>💼 Work/Profession</span>
+                    <span> Work/Profession</span>
                   </label>
                   <input
                     id="profession"
@@ -485,7 +485,7 @@ export function TransformationSection() {
                 <div>
                   <label htmlFor="mobile" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                     <Phone className="h-4 w-4 text-primary-600" />
-                    <span>📱 Mobile Number</span>
+                    <span> Mobile Number</span>
                   </label>
                   <input
                     id="mobile"
@@ -509,7 +509,7 @@ export function TransformationSection() {
               <div className="mb-6">
                 <label htmlFor="healthGoals" className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                   <Heart className="h-4 w-4 text-primary-600" />
-                  <span>🏥 Health Issues / Fitness Goals</span>
+                  <span> Health Issues / Fitness Goals</span>
                 </label>
                 <textarea
                   id="healthGoals"

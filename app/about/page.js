@@ -21,7 +21,7 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to know more about The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -66,9 +66,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Meet Our Team
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our expert team combines scientific knowledge with practical experience to guide you on your health journey.
-            </p>
+            
           </div>
 
           <div className="space-y-12">
@@ -95,10 +93,10 @@ export default function AboutPage() {
                   Rishabh Singh
                 </h2>
                 <p className="text-lg text-primary-600 font-semibold mb-4">
-                  Founder & Head Coach
+                  Founder & Certified Nutritionist
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Rishabh is a Precision Nutrition–certified coach who blends practical habit coaching with data-driven nutrition. A problem-solver at heart, he simplifies complex concepts into step-by-step routines you can follow even on hectic days. His approach: keep meals familiar, make goals measurable, review weekly, and adjust quickly. Clients appreciate his clarity, accountability, and the no-drama path to real, sustainable results.
+                  Rishabh is a Precision Nutrition–certified coach and a software developer with 8 years of IT experience. He blends habit coaching with a data-and-systems mindset—turning complex nutrition into simple, trackable routines that fit real life. His approach is practical and iterative: set clear goals, review weekly, adjust fast, and keep meals familiar with Indian home food so results stick.
                 </p>
                 <div className="bg-gray-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-800 mb-3">Quick Facts:</h4>
@@ -109,7 +107,11 @@ export default function AboutPage() {
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Special focus: sustainable fat loss, habit building, Indian meal planning
+                    8+ years in software development (IT)
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
+                      Special focus: sustainable fat loss, habit building, motivating clients
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -136,17 +138,21 @@ export default function AboutPage() {
                 <div className="bg-gray-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-800 mb-3">Quick Facts:</h4>
                   <ul className="text-gray-700 space-y-2">
+                     <li className="flex items-start">
+                      <CheckCircle className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
+                       Msc in health and nutrition
+                    </li>
                     <li className="flex items-start">
                       <CheckCircle className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
                       Clinical nutrition & weight-management expertise
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Strengths: Indian meal design, smart substitutions, behavior change
+                      Strengths: PCOS/PCOD, Diabetes, Thyroid
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
-                      Approach: food you enjoy, plans you can maintain, results you can measure
+                      Approach: Lose weight without feeling of dieting.
                     </li>
                   </ul>
                 </div>
@@ -270,21 +276,9 @@ export default function AboutPage() {
       </section>
 
       {/* Legacy Philosophy Section - Keeping for visual consistency */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          </div>
-        </div>
-      </section>
+ 
 
-      {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-r from-primary-600 to-secondary-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-primary-100 max-w-2xl mx-auto">
-            Ready to start your transformation journey? Contact us today to learn more about our personalized programs.
-          </p>
-        </div>
-      </section>
+  
     </div>
   );
 }

@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Award, 
+import {
+  Award,
   Star,
   TrendingDown,
   Calendar,
@@ -23,55 +23,55 @@ export default function SuccessStoriesPage() {
   const successStories = [
     {
       id: 'priya-lost-25kg',
-      name: 'Priya Sharma',
+      name: 'Saeed Khan',
       weightLoss: '25 kg',
-      timeframe: '6 months',
+      timeframe: '7 months',
       image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342356/Before-After/1_d4fprb.png',
-      shortDescription: 'From struggling with PCOS to achieving her dream weight, Priya transformed her life completely.',
+      shortDescription: 'Saeed dropped 25 kg in 7 months by swapping desk snacks for smart plates, adding quick home workouts, and sticking to a simple routine that fit long coding hours.',
       age: 28,
       occupation: 'Software Engineer',
-      location: 'Mumbai',
+      location: 'Lucknow',
       beforeWeight: 85,
       afterWeight: 60,
       program: 'Complete Transform Program'
     },
     {
       id: 'rahul-lost-30kg',
-      name: 'Rahul Gupta',
-      weightLoss: '30 kg',
-      timeframe: '8 months',
-      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
-      shortDescription: 'Busy corporate executive who lost weight without compromising his demanding work schedule.',
-      age: 35,
-      occupation: 'Marketing Director',
-      location: 'Delhi',
+      name: 'Jyoti',
+      weightLoss: '16 kg',
+      timeframe: '4 months',
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/2_qc3myg.png',
+      shortDescription: 'Jyoti lost 16 kg in just 4 months by portion-balancing family meals, daily walks, and gentle strength work—no separate “diet food” required.',
+      age: 42,
+      occupation: 'Housewife',
+      location: 'Maharashtra',
       beforeWeight: 95,
       afterWeight: 65,
       program: 'Premium Transform Program'
     },
     {
       id: 'sneha-lost-18kg',
-      name: 'Sneha Patel',
-      weightLoss: '18 kg',
-      timeframe: '4 months',
+      name: 'Shubham Kumar',
+      weightLoss: '12 kg',
+      timeframe: '3 months',
       image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
-      shortDescription: 'New mother who regained her confidence and energy after postpartum weight struggles.',
-      age: 31,
-      occupation: 'Teacher',
-      location: 'Pune',
+      shortDescription: 'Shubham shed 12 kg in 3 months while juggling campaigns and late nights—leaning on meal timing, higher protein, and travel-friendly options.',
+      age: 25,
+      occupation: 'Digital Marketer',
+      location: 'Kashipur',
       beforeWeight: 78,
       afterWeight: 60,
       program: 'Women Care Program'
     },
     {
       id: 'amit-lost-22kg',
-      name: 'Amit Singh',
-      weightLoss: '22 kg',
-      timeframe: '5 months',
+      name: 'Rushikesh Jare',
+      weightLoss: '8.5 kg',
+      timeframe: '3 months',
       image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
-      shortDescription: 'Diabetes management along with sustainable weight loss through personalized nutrition.',
-      age: 42,
-      occupation: 'Bank Manager',
+      shortDescription: 'Bengaluru-based software developer, 26, who brought sugars under control and lost 8.5 kg in 3 months using office-friendly meals, step goals, and simple strength training.',
+      age: 26,
+      occupation: 'Software Developer',
       location: 'Bangalore',
       beforeWeight: 88,
       afterWeight: 66,
@@ -79,75 +79,88 @@ export default function SuccessStoriesPage() {
     },
     {
       id: 'kavya-lost-20kg',
-      name: 'Kavya Reddy',
-      weightLoss: '20 kg',
-      timeframe: '5 months',
+      name: 'Vaishali Upadhyay',
+      weightLoss: '7 kg',
+      timeframe: '3 months',
       image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/4_alxia4.png',
-      shortDescription: 'College student who transformed her lifestyle and achieved her fitness goals sustainably.',
-      age: 22,
-      occupation: 'Student',
-      location: 'Hyderabad',
+      shortDescription: 'At 25, an NGO worker from Delhi, Vaishali dropped 7 kg in 3 months with tiffin-ready menus, field-visit hacks, and weekend batch-cooking to keep weekdays effortless.',
+      age: 25,
+      occupation: 'NGO worker',
+      location: 'Delhi',
       beforeWeight: 75,
       afterWeight: 55,
       program: 'Essential Transform Program'
     },
     {
       id: 'vikram-lost-28kg',
-      name: 'Vikram Joshi',
-      weightLoss: '28 kg',
-      timeframe: '7 months',
+      name: 'Priya Bansal',
+      weightLoss: '7 kg',
+      timeframe: '3 months',
       image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/3_ug1tse.png',
-      shortDescription: 'IT professional who overcame thyroid issues and achieved remarkable transformation.',
-      age: 38,
-      occupation: 'Software Architect',
-      location: 'Chennai',
+      shortDescription: 'Priya, software developer from Gurgaon who navigated thyroid issues and still lost 7 kg in 3 months through protein-forward plates, sleep fixes, and steady steps.',
+      age: 27,
+      occupation: 'Software Developer',
+      location: 'Gurgaon',
       beforeWeight: 98,
       afterWeight: 70,
       program: 'Disease Management Program'
     },
     {
       id: 'meera-lost-15kg',
-      name: 'Meera Agarwal',
-      weightLoss: '15 kg',
+      name: 'Neha Goyal',
+      weightLoss: '7 kg',
       timeframe: '3 months',
       image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
-      shortDescription: 'Busy entrepreneur who found balance between work and health with our guidance.',
-      age: 33,
-      occupation: 'Business Owner',
-      location: 'Jaipur',
+      shortDescription: 'A 35-year-old banker in Dehradun who balanced long branch hours with structured meals and short workouts—dropping 7 kg in 3 months without extremes.',
+      age: 35,
+      occupation: 'Banker',
+      location: 'Dehradun',
       beforeWeight: 70,
       afterWeight: 55,
       program: 'Complete Transform Program'
     },
     {
       id: 'arjun-lost-35kg',
-      name: 'Arjun Mehta',
-      weightLoss: '35 kg',
-      timeframe: '10 months',
-      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/6_nicj27.png',
-      shortDescription: 'Incredible transformation journey from obesity to fitness enthusiast and marathon runner.',
+      name: 'Vishves Ravi',
+      weightLoss: '8 kg',
+      timeframe: '2 months',
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/6_gowz5z.png',
+      shortDescription: 'A 29-year-old civil engineer from Surat who lost 8 kg in 2 months while working on sites—using canteen swaps, hydration, and portable high-protein snacks.',
       age: 29,
-      occupation: 'Graphic Designer',
-      location: 'Ahmedabad',
+      occupation: 'Civil Engineer',
+      location: 'Surat',
       beforeWeight: 105,
       afterWeight: 70,
       program: 'Premium Transform Program'
     },
     {
       id: 'ritu-lost-24kg',
-      name: 'Ritu Sharma',
-      weightLoss: '24 kg',
-      timeframe: '6 months',
+      name: 'Savita Chaudhary',
+      weightLoss: '12 kg',
+      timeframe: '3 months',
       image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
-      shortDescription: 'Working mother who balanced family life while achieving her health and fitness goals.',
-      age: 36,
-      occupation: 'HR Manager',
-      location: 'Kolkata',
+      shortDescription: 'A 26-year-old dietitian in Delhi who led by example—losing 12 kg in 3 months with consistent logging, mindful portions, and a realistic training split.',
+      age: 26,
+      occupation: 'Dietian',
+      location: 'Delhi',
       beforeWeight: 82,
       afterWeight: 58,
       program: 'Women Care Program'
-  }
-
+    },
+    {
+      id: 'ritu-lost-24kg',
+      name: 'Nisha Pandey',
+      weightLoss: '8 kg',
+      timeframe: '3 months',
+      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/8_oh5mn1.png',
+      shortDescription: 'A 36-year-old dentist from Lucknow who trimmed 8 kg in 3 months by taming chair-side snacking, planning clinic-friendly lunches, and adding short evening walks.',
+      age: 36,
+      occupation: 'Dentist',
+      location: 'Lucknow',
+      beforeWeight: 82,
+      afterWeight: 58,
+      program: 'Women Care Program'
+    }
   ];
 
   // Calculate pagination
@@ -173,7 +186,7 @@ export default function SuccessStoriesPage() {
     }
   };
 
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to claim my free discovery call for The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -182,7 +195,7 @@ export default function SuccessStoriesPage() {
       {/* Hero Section */}
       <section className="relative py-12 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         <div className="absolute inset-0 bg-hero-pattern opacity-30" />
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-primary-100 text-primary-700">
@@ -194,7 +207,7 @@ export default function SuccessStoriesPage() {
               <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block"> Inspire Change </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Discover real transformation stories from our clients who achieved their health goals. 
+              Discover real transformation stories from our clients who achieved their health goals.
               Their journeys prove that lasting change is possible with the right guidance and support.
             </p>
           </div>
@@ -202,8 +215,8 @@ export default function SuccessStoriesPage() {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {[
-              { number: '500+', label: 'Transformations', icon: Users },
-              { number: '2000+', label: 'Kg Lost Collectively', icon: TrendingDown },
+              { number: '300+', label: 'Transformations', icon: Users },
+              { number: '500+', label: 'Kg Lost Collectively', icon: TrendingDown },
               { number: '98%', label: 'Success Rate', icon: Target },
               { number: '4.9/5', label: 'Client Rating', icon: Star }
             ].map((stat, index) => {
@@ -230,7 +243,7 @@ export default function SuccessStoriesPage() {
               Real People, Real Results
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Each story represents a unique journey of transformation, dedication, and success. 
+              Each story represents a unique journey of transformation, dedication, and success.
               Click on any story to read the complete transformation journey.
             </p>
           </div>
@@ -281,11 +294,10 @@ export default function SuccessStoriesPage() {
             <button
               onClick={prevPage}
               disabled={currentPage === 1}
-              className={`p-2 rounded-lg transition-colors ${
-                currentPage === 1
+              className={`p-2 rounded-lg transition-colors ${currentPage === 1
                   ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                   : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
-              }`}
+                }`}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -295,11 +307,10 @@ export default function SuccessStoriesPage() {
                 <button
                   key={page}
                   onClick={() => goToPage(page)}
-                  className={`w-10 h-10 rounded-lg font-medium transition-colors ${
-                    currentPage === page
+                  className={`w-10 h-10 rounded-lg font-medium transition-colors ${currentPage === page
                       ? 'bg-primary-500 text-white'
                       : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
-                  }`}
+                    }`}
                 >
                   {page}
                 </button>
@@ -309,11 +320,10 @@ export default function SuccessStoriesPage() {
             <button
               onClick={nextPage}
               disabled={currentPage === totalPages}
-              className={`p-2 rounded-lg transition-colors ${
-                currentPage === totalPages
+              className={`p-2 rounded-lg transition-colors ${currentPage === totalPages
                   ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                   : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
-              }`}
+                }`}
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -326,20 +336,25 @@ export default function SuccessStoriesPage() {
             Ready to Write Your Success Story?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Join hundreds of people who have already transformed their lives. Your journey to better health 
+            Join hundreds of people who have already transformed their lives. Your journey to better health
             starts with a simple conversation.
           </p>
           <div className="flex justify-center">
-            <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white px-8 py-4">
-              Book Your Call Now
-            </Button>
+            <a
+              href="https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors"
+            >
+              Book Your Free Call Today
+            </a>
           </div>
-          
+
           {/* Trust Indicators */}
           <div className="flex flex-wrap justify-center items-center gap-6 mt-8 text-sm text-primary-100">
             <div className="flex items-center">
               <Award className="h-5 w-5 mr-2" />
-              500+ Success Stories
+              300+ Success Stories
             </div>
             <div className="flex items-center">
               <Star className="h-5 w-5 mr-2" />

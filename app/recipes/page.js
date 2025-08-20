@@ -23,7 +23,7 @@ export const metadata = {
 };
 
 export default function RecipesPage() {
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to know more about The Balance Diet programs and recipes.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

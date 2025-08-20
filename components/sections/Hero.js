@@ -21,18 +21,20 @@ export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  
+
   // Client testimonial images from Cloudinary
   const heroImages = [
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342356/Before-After/1_d4fprb.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/2_qc3myg.png',
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342356/Before-After/1_d4fprb.png',
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/4_alxia4.png',
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/3_ug1tse.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/6_nicj27.png',
     'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/8_tzzijq.png'
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/8_oh5mn1.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
+    'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/6_gowz5z.png'
   ];
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to know more about The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -108,6 +110,12 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
+
+              <a 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button 
                 size="lg" 
                 className="bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all group h-12 sm:h-14 px-6 md:px-8 text-sm sm:text-base md:text-lg w-full sm:w-auto"
@@ -121,6 +129,8 @@ export function Hero() {
                 Start Your Transformation Journey Now!
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
+            </a>
+              
              
             </div>
 

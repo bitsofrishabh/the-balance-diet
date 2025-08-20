@@ -6,40 +6,49 @@ import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
-    {
-      question: "How quickly will I see results?",
-      answer: "Most clients start seeing noticeable changes within the first 2-3 weeks. Significant weight loss and health improvements typically occur within 4-6 weeks when following our personalized program consistently."
-    },
-    {
-      question: "Is the program suitable for people with medical conditions?",
-      answer: "Yes, our programs are designed to accommodate various health conditions including diabetes, PCOS, thyroid issues, and high blood pressure. We work closely with your healthcare provider and create meal plans that support your medical needs."
-    },
-    {
-      question: "What makes your approach different from other diet programs?",
-      answer: "We focus on Indian foods and realistic lifestyle changes rather than restrictive diets. Our approach includes personalized nutrition plans, regular coaching, habit formation, and ongoing support - not just a meal chart."
-    },
-    {
-      question: "Do I need to buy special foods or supplements?",
-      answer: "No, our meal plans use common Indian ingredients available in any local market. We may recommend basic supplements based on your individual needs, but expensive specialty foods are never required."
-    },
-    {
-      question: "How much time do I need to dedicate daily?",
-      answer: "The program is designed for busy lifestyles. You'll need about 15-20 minutes daily for meal prep planning and tracking. Weekly check-ins take 10-15 minutes. Everything is designed to fit into your existing routine."
-    },
-    {
-      question: "What if I travel frequently for work?",
-      answer: "We specialize in creating flexible plans for busy professionals. You'll get restaurant eating guidelines, travel-friendly meal options, and strategies for maintaining your progress regardless of your schedule."
-    },
-    {
-      question: "Is there ongoing support after I reach my goal?",
-      answer: "Absolutely! We provide maintenance guidance to help you sustain your results long-term. Many clients continue with our maintenance programs to ensure lasting success."
-    },
-    {
-      question: "What's included in the money-back guarantee?",
-      answer: "If you follow our program exactly as prescribed for 30 days and don't see measurable results, we'll refund 100% of your investment. No questions asked - your success is our commitment."
-    }
-  ];
+const faqs = [
+  {
+    question: "How quickly will I see results?",
+    answer:
+      "Most people feel changes in energy, appetite and bloating within 7–10 days. Visible inch loss usually shows up in 2–3 weeks. Meaningful, steady progress typically comes in 4–6 weeks when you follow the plan, sleep well, and stay consistent. On an average our clients lost 3-5kg in a month if you follow the program and guidance even at 80% also."
+  },
+  {
+    question: "Is the program suitable for people with medical conditions?",
+    answer:
+      "Yes. We regularly coach clients with diabetes, PCOS, thyroid issues and high BP. We’ll ask about your meds, labs and doctor’s advice, then tailor meals and activity to support your condition. We complement (not replace) your medical care."
+  },
+  {
+    question: "What makes your approach different from other diet programs?",
+    answer:
+      "No crash diets. We build plans around everyday Indian food and your routine, then coach the habits that make results stick. You’ll get personalized meals, weekly reviews, WhatsApp support and course-corrections—more than just a one-time ‘chart’."
+  },
+  {
+    question: "Do I need to buy special foods or supplements?",
+    answer:
+      "No. Your plan uses simple, local ingredients from any kirana or supermarket. Supplements are optional and suggested only if your diet/labs show a gap (e.g., vitamin D, B12). We don’t push expensive powders or sell products."
+  },
+  {
+    question: "How much time do I need to dedicate daily?",
+    answer:
+      "About 15–20 minutes a day for meal planning, logging and small habits. A quick weekly review (10–15 minutes) helps us adjust your plan. If you batch-cook, 60–90 minutes once a week can make weekdays effortless."
+  },
+  {
+    question: "What if I travel frequently for work?",
+    answer:
+      "We’ll give you hotel/restaurant plate guides, airport/snack options and no-cook meal ideas. Share your schedule and we’ll plan around flights and time zones. Even on the road, you’ll have simple choices to stay on track."
+  },
+  {
+    question: "Is there ongoing support after I reach my goal?",
+    answer:
+      "Yes. We create a maintenance plan with portion ranges, flexible ‘off’ days and a relapse-recovery playbook. You can keep monthly/quarterly check-ins or come back for tune-ups before festivals, trips or events."
+  },
+  {
+    question: "What's included in the money-back guarantee?",
+    answer:
+      "Follow your personalized plan for 30 days (daily logs + weekly check-ins). If you don’t see measurable progress—on weight, inches or agreed markers—we’ll refund 100% of your fee. No arguments. Your effort + our coaching = our responsibility."
+  }
+];
+
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -115,9 +124,15 @@ export function FAQ() {
               >
                 Ask on WhatsApp
               </a>
-              <button className="inline-flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors">
-                Book Free Call
-              </button>
+              
+             <a
+  href="https://calendly.com/the-balance-diet/health-assessment-call-with-rishabh-savita"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors"
+>
+  Book Free Call
+</a>
             </div>
           </div>
         </div>

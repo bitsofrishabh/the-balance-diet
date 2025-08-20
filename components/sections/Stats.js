@@ -11,7 +11,7 @@ export function Stats() {
   const stats = [
     {
       icon: Users,
-      number: '10,000+',
+      number: '300+',
       label: 'Lives Transformed',
       description: 'People who achieved their health goals'
     },
@@ -35,7 +35,7 @@ export function Stats() {
     },
     {
       icon: TrendingUp,
-      number: '25 lbs',
+      number: '15kg ',
       label: 'Average Loss',
       description: 'Weight lost by participants'
     },

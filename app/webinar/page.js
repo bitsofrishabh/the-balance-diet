@@ -23,7 +23,7 @@ export const metadata = {
 };
 
 export default function WebinarPage() {
-  const razorpayUrl = 'https://razorpay.me/@thebalancediet';
+  const razorpayUrl = 'https://rzp.io/rzp/14wcSgkB';
   const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to register for the free health transformation webinar.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -47,7 +47,7 @@ export default function WebinarPage() {
                 <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent block"> 90 Days or Less </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Join our exclusive free webinar and discover the proven system that has helped 500+ people 
+                Join our exclusive free webinar and discover the proven system that has helped 300+ people 
                 achieve sustainable weight loss and optimal health without restrictive diets or extreme workouts.
               </p>
 
@@ -56,11 +56,11 @@ export default function WebinarPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                   <div className="flex items-center justify-center">
                     <Calendar className="w-5 h-5 text-primary-600 mr-2" />
-                    <span className="font-semibold">Every Saturday</span>
+                    <span className="font-semibold">24th Aug</span>
                   </div>
                   <div className="flex items-center justify-center">
                     <Clock className="w-5 h-5 text-primary-600 mr-2" />
-                    <span className="font-semibold">7:00 PM IST</span>
+                    <span className="font-semibold">11:00 AM IST</span>
                   </div>
                   <div className="flex items-center justify-center">
                     <Users className="w-5 h-5 text-primary-600 mr-2" />
@@ -81,10 +81,7 @@ export default function WebinarPage() {
                     Register for Free Webinar
                   </Button>
                 </a>
-                <Button variant="outline" size="lg" className="px-8 py-4">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Book Personal Call
-                </Button>
+                
               </div>
             </div>
 
@@ -92,18 +89,13 @@ export default function WebinarPage() {
             <div className="relative">
               <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-8 shadow-2xl">
                 <img
-                  src="https://res.cloudinary.com/djdej77pl/image/upload/v1755572982/Grey_and_Yellow_Modern_Geometric_Online_Business_Webinar_Instagram_Post_t4rgi1.png"
+                  src="https://res.cloudinary.com/djdej77pl/image/upload/v1755692562/Grey_and_Yellow_Modern_Geometric_Online_Business_Webinar_Instagram_Post_2_qualwb.png"
                   alt="Health Transformation Webinar"
                   className="w-full h-auto rounded-2xl shadow-xl"
                 />
                 
                 {/* Floating Stats */}
-                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary-600">500+</div>
-                    <div className="text-xs text-gray-600">Attendees</div>
-                  </div>
-                </div>
+              
 
                 <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg">
                   <div className="text-center">
@@ -223,12 +215,12 @@ export default function WebinarPage() {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {[
-                'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
+                'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/2_qc3myg.png',
                 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
                 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
                 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
                 'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
-                'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/8_tzzijq.png'
+                'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/8_oh5mn1.png'
               ].map((image, index) => (
                 <div key={index} className="overflow-hidden hover:scale-105 transition-all duration-300">
                   <img

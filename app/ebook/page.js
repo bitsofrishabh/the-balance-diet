@@ -23,7 +23,7 @@ import {
 
 export default function EbookPage() {
   // Razorpay payment link
-  const razorpayUrl = 'https://razorpay.me/@thebalancediet';
+  const razorpayUrl = 'https://rzp.io/rzp/14wcSgkB';
 
   // All testimonial images
   const allTestimonialImages = [
@@ -174,7 +174,7 @@ export default function EbookPage() {
                 {/* Floating Stats */}
                 <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary-600">10K+</div>
+                    <div className="text-2xl font-bold text-primary-600">2K+</div>
                     <div className="text-xs text-gray-600">Downloads</div>
                   </div>
                 </div>
@@ -305,16 +305,7 @@ export default function EbookPage() {
           </Link>
 
           {/* Purchase CTA */}
-          <div>
-            <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4"
-              >
-                Yes, I want to get fit
-              </Button>
-            </a>
-          </div>
+       
         </div>
       </section>
     </div>

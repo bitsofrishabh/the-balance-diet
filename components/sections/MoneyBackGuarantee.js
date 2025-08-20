@@ -97,8 +97,6 @@ export function MoneyBackGuarantee() {
                 Secure & Confidential
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </section>
   );

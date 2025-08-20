@@ -369,7 +369,7 @@ export default function ServicesPage() {
     setShowResult(false);
   };
 
-  const whatsappNumber = '+1234567890';
+  const whatsappNumber = '+919149081034';
   const whatsappMessage = 'Hi! I would like to claim my free discovery call for The Balance Diet programs.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -404,7 +404,7 @@ export default function ServicesPage() {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             {[
-              { number: '500+', label: 'Success Stories' },
+              { number: '300+', label: 'Success Stories' },
               { number: '15+', label: 'Specialized Programs' },
               { number: '98%', label: 'Client Satisfaction' },
               { number: '24/7', label: 'Support Available' }
@@ -930,7 +930,7 @@ export default function ServicesPage() {
             </div>
             <div className="flex items-center">
               <Users className="h-5 w-5 mr-2" />
-              500+ Success Stories
+              300+ Success Stories
             </div>
           </div>
         </div>

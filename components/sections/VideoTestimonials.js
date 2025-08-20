@@ -60,6 +60,12 @@ export function VideoTestimonials() {
       embedUrl: 'https://www.youtube.com/embed/lcW6oskuIx0',
       title: 'Pooja - 6kg & 10 Inches Lost',
       caption: 'Pooja lost 6kg weight and 10 inches from belly with our targeted approach.'
+    },
+    {
+      id: 'CvA51a-rFkk',
+      embedUrl: 'https://www.youtube.com/embed/CvA51a-rFkk',
+      title: 'Prachi lost 3.7 kg in 1 month',
+      caption: 'Prachi lost 3.7kg in 1 month for her marriages, she seen result in her bloating and skin care.'
     }
   ];
 
