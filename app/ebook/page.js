@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import Script from 'next/script';
 import {
   BookOpen,
   Download,
@@ -89,6 +90,33 @@ export default function EbookPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <>
+  <Script id="fb-pixel" strategy="afterInteractive">
+    {`!function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1085557582642393');
+    fbq('track', 'PageView');`}
+  </Script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style={{ display: 'none' }}
+      src="https://www.facebook.com/tr?id=1085557582642393&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
+
+  {/* existing page content */}
+</>
+
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         <div className="absolute inset-0 bg-hero-pattern opacity-30" />
