@@ -108,53 +108,10 @@ export function Hero() {
               ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-
-              <a 
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button 
-                size="lg" 
-                className="bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all group h-12 sm:h-14 px-6 md:px-8 text-sm sm:text-base md:text-lg w-full sm:w-auto"
-                onClick={() => {
-                  const healthAssessmentSection = document.getElementById('health-assessment');
-                  if (healthAssessmentSection) {
-                    healthAssessmentSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Start Your Transformation Journey Now!
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-              
-             
-            </div>
+           
 
             {/* Social Proof */}
-            <div className="flex items-center space-x-4 sm:space-x-8 pt-4">
-              <div className="flex items-center space-x-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-8 h-8 bg-gradient-to-r from-primary-400 to-primary-500 rounded-full border-2 border-white flex items-center justify-center">
-                      <Users className="w-4 h-4 text-white" />
-                    </div>
-                  ))}
-                </div>
-                <span className="text-sm text-gray-600">300+ transformations</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <div className="flex space-x-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span className="text-sm text-gray-600">4.9/5 rating</span>
-              </div>
-            </div>
+           
           </div>
 
           {/* Right Column - Image Carousel */}
