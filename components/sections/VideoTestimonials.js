@@ -66,8 +66,14 @@ export function VideoTestimonials() {
       embedUrl: 'https://www.youtube.com/embed/CvA51a-rFkk',
       title: 'Prachi lost 3.7 kg in 1 month',
       caption: 'Prachi lost 3.7kg in 1 month for her marriages, she seen result in her bloating and skin care.'
+    },
+    {
+      id: 'Jfz74NVIZCo',
+      embedUrl: 'https://www.youtube.com/embed/Jfz74NVIZCo',
+      title: 'Pallavi Lost 5.5 Kg in a Month',
+      caption: 'Pallavi Shares how her bloating, Acid Reflux along with Inch loss got improved in just 1 month.'
     }
-  ];
+    ];
 
   const nextVideo = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 4) % videoTestimonials.length);
