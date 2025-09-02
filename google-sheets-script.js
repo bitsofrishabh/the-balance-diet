@@ -39,6 +39,10 @@ function doPost(e) {
     // Add the data to the sheet
     sheet.appendRow(rowData);
     
+    // Log the received data for debugging
+    console.log('Received form data:', data);
+    console.log('Mobile number received:', data.mobile);
+    
     // Return success response
     return ContentService
       .createTextOutput(JSON.stringify({

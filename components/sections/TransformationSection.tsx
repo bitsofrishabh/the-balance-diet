@@ -74,6 +74,13 @@ export function TransformationSection() {
         }),
       });
 
+      // Log the data being sent for debugging
+      console.log('Sending form data:', {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        source: 'Website Lead Form',
+      });
+
       setIsSubmitted(true);
       setFormData({
         name: '',
