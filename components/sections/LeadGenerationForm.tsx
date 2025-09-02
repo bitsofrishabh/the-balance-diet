@@ -58,7 +58,7 @@ export function LeadGenerationForm() {
     try {
       // TODO: replace with your deployed Apps Script URL
       const GOOGLE_SCRIPT_URL =
-        'https://script.google.com/macros/s/AKfycby5yssX2FjTrKMuZtZVNg5AH_BiHfGnAXp4sMx2bKwzpfVFsmqg6F6u-yRgeC9yHwtrKQ/exec';
+        'https://script.google.com/macros/s/AKfycbwNoNvJfOih2FUfquQVYSyvlOtFwDk-FAwI7C9GCBMBeLBR9xfPahFM67sOdwJgwa96/exec';
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
