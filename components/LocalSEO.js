@@ -1,9 +1,11 @@
+'use client';
+
 import { useEffect } from 'react';
 
 export function LocalSEO({ 
   businessName = "The Balance Diet",
   address = {
-    streetAddress: "123 Health Street",
+    streetAddress: "",
     addressLocality: "Delhi",
     addressRegion: "Delhi",
     postalCode: "110001",
@@ -21,7 +23,7 @@ export function LocalSEO({
     "Thyroid Management",
     "Women's Health Nutrition"
   ],
-  serviceArea = ["Delhi", "Gurgaon", "Noida", "Faridabad", "Ghaziabad"],
+  serviceArea = ["Delhi", "Gurgaon", "Noida", "Faridabad", "Ghaziabad", "Greater Noida","Mumbai","Bangalore","Chennai","Hyderabad","Pune","Kolkata"],
   openingHours = [
     "Mo-Fr 09:00-18:00",
     "Sa 09:00-16:00"

@@ -1,4 +1,4 @@
-import { MapPin, Users, Award, Clock } from 'lucide-react';
+import { MapPin, Users, Award, Clock, Phone } from 'lucide-react';
 import { NAP, NAP_DATA } from './NAP';
 
 export function LocalContent() {
