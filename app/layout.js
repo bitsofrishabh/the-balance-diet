@@ -4,6 +4,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { LocalSEO } from '@/components/LocalSEO';
 import { MicrodataNAP } from '@/components/NAP';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
