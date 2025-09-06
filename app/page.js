@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <LocalContent />
+      {/* <LocalContent /> */}
       <HowItWorks />
       <ClientTestimonials />
       <WeightLossServices />
