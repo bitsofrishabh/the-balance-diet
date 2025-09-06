@@ -82,10 +82,10 @@ export default function RootLayout({ children }) {
                 "longitude": "77.2090"
               },
               "areaServed": [
-                {"@type": "City", "name": "Delhi"},
-                {"@type": "City", "name": "Gurgaon"},
-                {"@type": "City", "name": "Noida"},
-                {"@type": "City", "name": "Faridabad"}
+                { "@type": "City", "name": "Delhi" },
+                { "@type": "City", "name": "Gurgaon" },
+                { "@type": "City", "name": "Noida" },
+                { "@type": "City", "name": "Faridabad" }
               ],
               "priceRange": "₹₹",
               "aggregateRating": {
@@ -96,6 +96,15 @@ export default function RootLayout({ children }) {
             })
           }}
         />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FNNY5RCC4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-6FNNY5RCC4');
+        </script>
       </head>
       <body className={inter.className}>
         <LocalSEO />
@@ -105,7 +114,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
-        
+
         {/* Microsoft Clarity */}
         <script
           type="text/javascript"
@@ -119,7 +128,7 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-    
+
       </body>
     </html>
   );
