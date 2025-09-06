@@ -97,16 +97,20 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FNNY5RCC4"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-
-          gtag('config', 'G-6FNNY5RCC4');
-        </script>
       </head>
       <body className={inter.className}>
+         <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         <LocalSEO />
         <MicrodataNAP />
         <Navigation />
