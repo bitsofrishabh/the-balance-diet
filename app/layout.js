@@ -7,6 +7,7 @@ import { MicrodataNAP } from '@/components/NAP';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
+const GA_ID = 'G-6FNNY5RCC4';
 
 export const metadata = {
   title: {
