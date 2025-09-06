@@ -2,40 +2,104 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { LocalSEO } from '@/components/LocalSEO';
+import { MicrodataNAP } from '@/components/NAP';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
-    default: 'The Balance Diet - Your Journey to Wellness Starts Here',
+    default: 'The Balance Diet - Top Nutritionist in Delhi NCR | Weight Loss Expert',
     template: '%s | The Balance Diet'
   },
-  description: 'Transform your health with personalized nutrition plans, expert guidance, and proven weight loss strategies. Start your wellness journey today with our science-based approach.',
-  keywords: 'weight loss, nutrition, health coaching, diet plans, wellness, fitness, healthy eating, transformation, balance diet',
+  description: 'Leading nutritionist in Delhi, Gurgaon, Noida & Faridabad. Expert weight loss coaching, PCOS management, diabetes diet planning. 300+ successful transformations. Book consultation today!',
+  keywords: 'nutritionist Delhi, weight loss coach Delhi NCR, dietitian Gurgaon, PCOS diet plan, diabetes nutritionist, thyroid diet expert, nutrition consultant Noida, health coach Faridabad',
   authors: [{ name: 'The Balance Diet Team' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://thebalancediet.com',
     siteName: 'The Balance Diet',
-    title: 'The Balance Diet - Your Journey to Wellness Starts Here',
-    description: 'Transform your health with personalized nutrition plans, expert guidance, and proven weight loss strategies.',
+    title: 'The Balance Diet - Top Nutritionist in Delhi NCR | Weight Loss Expert',
+    description: 'Leading nutritionist in Delhi, Gurgaon, Noida & Faridabad. Expert weight loss coaching, PCOS management, diabetes diet planning. 300+ successful transformations.',
+    images: [
+      {
+        url: 'https://thebalancediet.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'The Balance Diet - Nutritionist in Delhi NCR',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Balance Diet - Your Journey to Wellness Starts Here',
-    description: 'Transform your health with personalized nutrition plans, expert guidance, and proven weight loss strategies.',
+    title: 'The Balance Diet - Top Nutritionist in Delhi NCR',
+    description: 'Leading nutritionist in Delhi, Gurgaon, Noida & Faridabad. Expert weight loss coaching, PCOS management, diabetes diet planning.',
+    images: ['https://thebalancediet.com/twitter-image.jpg'],
   },
-  robots: {
-    index: true,
-    follow: true,
+  alternates: {
+    canonical: 'https://thebalancediet.com',
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Local Business Schema - Critical for Local SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://thebalancediet.com/#business",
+              "name": "The Balance Diet",
+              "description": "Leading nutritionist in Delhi NCR providing personalized weight loss programs, PCOS management, and diabetes diet planning.",
+              "url": "https://thebalancediet.com",
+              "telephone": "+91-9149081034",
+              "email": "rishabhkec17@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Delhi",
+                "addressRegion": "Delhi",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "28.6139",
+                "longitude": "77.2090"
+              },
+              "areaServed": [
+                {"@type": "City", "name": "Delhi"},
+                {"@type": "City", "name": "Gurgaon"},
+                {"@type": "City", "name": "Noida"},
+                {"@type": "City", "name": "Faridabad"}
+              ],
+              "priceRange": "₹₹",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "150"
+              }
+            })
+          }}
+        />
+      </head>
       <body className={inter.className}>
+        <LocalSEO />
+        <MicrodataNAP />
         <Navigation />
         <main className="min-h-screen mt-1">
           {children}

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { NAP } from '@/components/NAP';
 import { 
   Heart, 
   Mail, 
@@ -78,19 +79,18 @@ export function Footer() {
           {/* Get In Touch */}
           <div>
             <h3 className="font-semibold mb-4">Get In Touch</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Phone className="h-4 w-4 text-primary-400" />
-                <span>+91-9149081034</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail className="h-4 w-4 text-primary-400" />
-                <span>rishabhkec17@gmail.com</span>
-              </div>
-              <div className="flex items-start space-x-3 text-gray-300">
-                <MapPin className="h-4 w-4 text-primary-400 mt-0.5" />
-                <span>Delhi</span>
-              </div>
+            <NAP 
+              showName={false}
+              showEmail={true}
+              className="text-gray-300 space-y-3 text-sm"
+            />
+            
+            {/* Service Areas */}
+            <div className="mt-4">
+              <h4 className="font-medium text-gray-300 mb-2">Service Areas:</h4>
+              <p className="text-sm text-gray-400">
+                Delhi • Gurgaon • Noida • Faridabad • Greater Delhi NCR
+              </p>
             </div>
           </div>
 
