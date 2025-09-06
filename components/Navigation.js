@@ -77,14 +77,14 @@ export function Navigation() {
             >
               Success Stories
             </Link>
-            <Link
+            {/* <Link
               href="/webinar"
               className={`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
               }`}
             >
               Webinar
-            </Link>
+            </Link> */}
             <Link
               href="/ebook"
               className={`text-sm font-medium transition-colors hover:text-primary-600 ${

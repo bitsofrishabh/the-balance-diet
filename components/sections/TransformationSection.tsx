@@ -61,7 +61,7 @@ export function TransformationSection() {
     try {
       // TODO: replace with your deployed Apps Script URL
       const GOOGLE_SCRIPT_URL =
-        'https://script.google.com/macros/s/AKfycbw5hp-urd3G7-kEquq721b2JjP0S4r5_UjMAwR17YXupLl8veqLdt_HK27kVqKUBVulOQ/exec';
+        'https://script.google.com/macros/s/AKfycbx3ccixdOYdi9oQaMKIZ9iWUHaep3U2x8w-E0UpkmtD7XDtNiOAGd9yZEZHcybWA_MHbg/exec';
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
