@@ -45,7 +45,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <img
-              src="https://res.cloudinary.com/djdej77pl/image/upload/v1755512878/Logo_1_r9bvu1.png"
+              src="https://ik.imagekit.io/5b8rploye/Brand%20Logo%20(3).png?updatedAt=1757231331780"
               alt="The Balance Diet Logo"
               className="h-16 md:h-20 object-contain group-hover:scale-105 transition-transform"
             />

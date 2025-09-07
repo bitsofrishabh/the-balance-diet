@@ -24,18 +24,19 @@ export function Hero() {
   
 
   // Client testimonial images from Cloudinary
-  const heroImages = [
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/2_qc3myg.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342356/Before-After/1_d4fprb.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/4_alxia4.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/3_ug1tse.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/8_oh5mn1.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755623211/Before-After/6_gowz5z.png'
-  ];
+const heroImages = [
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/7.png?updatedAt=1757225608028',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/9.png?updatedAt=1757225607978',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/5.png?updatedAt=1757225607925',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/4.png?updatedAt=1757225607892',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/6.png?updatedAt=1757225607851',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/Client%20Before-After%20Collection.png?updatedAt=1757225607813',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/10.png?updatedAt=1757225607404',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/8.png?updatedAt=1757225607323',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/3.png?updatedAt=1757225606337',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/1.png?updatedAt=1757225607681'
+];
+
 
   useEffect(() => {
     setIsVisible(true);

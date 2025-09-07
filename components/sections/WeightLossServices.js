@@ -17,21 +17,21 @@ export function WeightLossServices() {
     {
       title: 'Weight Management',
       description: 'Our customized programs support you in finding healthy habits that optimize both physical and mental well-being.',
-      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755512661/6_cegyzc.png',
+      image: 'https://ik.imagekit.io/5b8rploye/1.png?updatedAt=1757234490528',
       bgColor: 'bg-gradient-to-br from-orange-400 to-orange-500',
       services: ['Weight Loss', 'Weight Gain']
     },
     {
       title: 'Disease Management',
       description: 'Our team offers personalised disease management creating customised nutrition plans, incorporating healthy habits, and empowering you with knowledge to manage your condition and live a full, active life.',
-      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755512661/7_dblzdh.png',
+      image: 'https://ik.imagekit.io/5b8rploye/2.png?updatedAt=1757234490471',
       bgColor: 'bg-gradient-to-br from-teal-400 to-teal-500',
       services: ['Thyroid', 'PCOS/PCOD', 'Diabetes', 'Cardiac',]
     },
     {
       title: 'Women Care Diet',
       description: 'We provide personalised dietary plans specifically designed for pregnancy, lactation, postpartum, and even menopause. Let us guide you with the right nutrition to feel your best and support your body throughout life\'s precious milestones.',
-      image: 'https://res.cloudinary.com/djdej77pl/image/upload/v1755512661/8_tyeqdf.png',
+      image: 'https://ik.imagekit.io/5b8rploye/3.png?updatedAt=1757234489851',
       bgColor: 'bg-gradient-to-br from-pink-400 to-pink-500',
       services: ['Pregnancy', 'Lactation', 'Postpartum', 'Menopause']
     }

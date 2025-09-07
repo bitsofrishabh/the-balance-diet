@@ -28,41 +28,43 @@ export default function EbookPage() {
 
   // All testimonial images
   const allTestimonialImages = [
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/2_oernfq.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342360/Before-After/9_j68upl.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/10_kr7dzl.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/7_gbfnq9.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342359/Before-After/5_zc4maw.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/8_tzzijq.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342358/Before-After/4_alxia4.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/3_ug1tse.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342357/Before-After/6_nicj27.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342356/Before-After/1_d4fprb.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/18_lnkgus.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/26_bjuggp.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/3_ehvb1y.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/20_h7xzck.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/24_z2vd1g.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342245/Faceless%20Feedback/1_cpbkjw.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/4_cpg0mo.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/17_dbftrk.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/8_qpm5sj.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342246/Faceless%20Feedback/25_znaonj.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/9_ebylbc.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342246/Faceless%20Feedback/5_ipj1fd.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/7_qicf3v.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342247/Faceless%20Feedback/6_rcounj.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/10_vvhrjn.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/14_jeabde.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/15_rlwmql.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/13_j8hdmk.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342248/Faceless%20Feedback/11_rqoigu.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/19_fhq2r6.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/21_acyun9.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/22_jkoupj.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342244/Faceless%20Feedback/23_pzfnzl.png',
-    'https://res.cloudinary.com/djdej77pl/image/upload/v1755342249/Faceless%20Feedback/12_nsws6o.png',
-  ];
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/7.png?updatedAt=1757225608028',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/9.png?updatedAt=1757225607978',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/5.png?updatedAt=1757225607925',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/4.png?updatedAt=1757225607892',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/6.png?updatedAt=1757225607851',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/Client%20Before-After%20Collection.png?updatedAt=1757225607813',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/10.png?updatedAt=1757225607404',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/8.png?updatedAt=1757225607323',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/3.png?updatedAt=1757225606337',
+  'https://ik.imagekit.io/5b8rploye/Client%20Before-After%20Collection/1.png?updatedAt=1757225607681',
+ 'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/26.png?updatedAt=1757225637713',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/22.png?updatedAt=1757225637530',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/9.png?updatedAt=1757225642903',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/6.png?updatedAt=1757225642856',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/7.png?updatedAt=1757225642830',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/8.png?updatedAt=1757225642812',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/4.png?updatedAt=1757225642215',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/5.png?updatedAt=1757225642200',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/24.png?updatedAt=1757225638303',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/3.png?updatedAt=1757225638284',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/25.png?updatedAt=1757225638278',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/23.png?updatedAt=1757225638053',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/21.png?updatedAt=1757225637458',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/2.png?updatedAt=1757225637195',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/19.png?updatedAt=1757225637417',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/20.png?updatedAt=1757225637174',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/18.png?updatedAt=1757225631704',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/15.png?updatedAt=1757225631681',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/13.png?updatedAt=1757225631661',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/11.png?updatedAt=1757225631634',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/12.png?updatedAt=1757225631615',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/10.png?updatedAt=1757225631627',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/1.png?updatedAt=1757225631593',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/17.png?updatedAt=1757225631619',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/14.png?updatedAt=1757225631596',
+  'https://ik.imagekit.io/5b8rploye/Client%20Face-Less%20Feedback/16.png?updatedAt=1757225631584',
+];
 
   const [currentImages, setCurrentImages] = useState([]);
 
@@ -193,7 +195,7 @@ export default function EbookPage() {
               <div className="relative bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl p-8 shadow-2xl">
                 <div className="transform rotate-3 hover:rotate-0 transition-transform duration-300">
                   <img
-                    src="https://res.cloudinary.com/djdej77pl/image/upload/v1755538875/Green_Illustrated_Healthy_Eating_eBook_Cover_1_aqtcdq.png"
+                    src="https://ik.imagekit.io/5b8rploye/Green%20Illustrated%20Healthy%20Eating%20eBook%20Cover.png?updatedAt=1757233895012"
                     alt="The Balance Diet E-book Cover"
                     className="w-full h-auto rounded-2xl shadow-xl"
                   />
