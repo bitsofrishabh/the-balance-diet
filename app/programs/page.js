@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Navigation } from '@/components/Navigation';
 import {
   Check,
   Star,
@@ -27,6 +28,7 @@ import {
 export default function ProgramsPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Navigation />
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-emerald-50 via-white to-blue-50 overflow-hidden">
         <div className="absolute inset-0 bg-hero-pattern opacity-30" />
