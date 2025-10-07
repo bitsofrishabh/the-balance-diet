@@ -131,10 +131,10 @@ export default function ProgramsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              The Grand Slam Offer Includes
+              What's Included in Your Transformation
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A comprehensive transformation system worth over $5,000 - yours for a fraction of the cost
+              A comprehensive transformation system designed to help you achieve lasting results
             </p>
           </div>
 
@@ -153,55 +153,46 @@ export default function ProgramsPage() {
                   {
                     title: 'Daily Personal Support',
                     description: 'Stay motivated and accountable with check-ins every single day',
-                    value: '$997',
                     icon: MessageCircle
                   },
                   {
                     title: 'Unlimited Zoom Consultations',
                     description: 'Book as many video calls as needed through our scheduling system',
-                    value: '$1,497',
                     icon: Video
                   },
                   {
                     title: 'Travelling Diet Plan',
                     description: 'Stay on track even when on the road with flexible meal options',
-                    value: '$197',
                     icon: Calendar
                   },
                   {
                     title: '100+ Recipe Guide Book',
                     description: 'Delicious, easy-to-make recipes for every meal and occasion',
-                    value: '$147',
                     icon: BookOpen
                   },
                   {
                     title: 'Workout Reference Videos',
                     description: 'Complete exercise library with form guides and modifications',
-                    value: '$297',
                     icon: Dumbbell
                   },
                   {
                     title: 'Diwali Detox Guide',
                     description: 'Special protocols for festivals and celebrations without derailing progress',
-                    value: '$97',
                     icon: Sparkles
                   },
                   {
                     title: '1-Month Maintenance Plan',
                     description: 'Keep the weight off with structured maintenance after goal achievement',
-                    value: '$247',
                     icon: TrendingUp
                   },
                   {
                     title: 'Community Support',
                     description: 'Private group access with peers on the same transformation journey',
-                    value: '$297',
                     icon: Users
                   },
                   {
                     title: 'Access to 3 Expert Coaches',
                     description: 'Multiple specialists ensuring all your questions are answered quickly',
-                    value: '$497',
                     icon: Award
                   }
                 ].map((item, index) => {
@@ -214,10 +205,7 @@ export default function ProgramsPage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-start justify-between mb-1">
-                          <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                          <span className="text-emerald-600 font-bold text-sm ml-2">{item.value}</span>
-                        </div>
+                        <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
                         <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
                       </div>
                     </div>
@@ -225,22 +213,6 @@ export default function ProgramsPage() {
                 })}
               </div>
 
-              {/* Total Value */}
-              <div className="mt-8 pt-8 border-t-2 border-gray-200">
-                <div className="flex items-center justify-between text-center">
-                  <div>
-                    <p className="text-sm text-gray-600 mb-1">Total Package Value</p>
-                    <p className="text-4xl font-bold text-gray-400 line-through">$4,273</p>
-                  </div>
-                  <ArrowRight className="h-8 w-8 text-gray-400" />
-                  <div>
-                    <p className="text-sm text-emerald-600 font-semibold mb-1">Your Investment Today</p>
-                    <p className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                      $997
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
