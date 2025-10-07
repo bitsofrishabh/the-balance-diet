@@ -1,8 +1,10 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Check, 
-  Star, 
+import {
+  Check,
+  Star,
   Users,
   Clock,
   Target,
@@ -10,308 +12,350 @@ import {
   Award,
   Phone,
   ArrowRight,
-  Shield
+  Shield,
+  Video,
+  MessageCircle,
+  BookOpen,
+  Dumbbell,
+  Gift,
+  Zap,
+  TrendingUp,
+  Calendar,
+  Sparkles
 } from 'lucide-react';
 
-export const metadata = {
-  title: 'Programs & Pricing - Choose Your Health Transformation Plan',
-  description: 'Explore our comprehensive health transformation programs designed to fit your goals, lifestyle, and budget. Transparent pricing with proven results.',
-};
-
 export default function ProgramsPage() {
-  const programs = [
-    {
-      name: 'Essential Transform',
-      price: 297,
-      originalPrice: 397,
-      duration: '8 weeks',
-      description: 'Perfect for those ready to start their health journey with essential tools and guidance.',
-      featured: false,
-      features: [
-        'Personalized nutrition plan',
-        'Weekly group coaching calls',
-        'Basic meal planning templates',
-        'Progress tracking tools',
-        'Private community access',
-        'Email support',
-        'Recipe database access',
-        'Basic health assessments'
-      ],
-      bonus: ['Free recipe book', 'Meal prep guide'],
-      ideal: 'Beginners ready to start their transformation',
-      results: 'Average 15-20 lbs weight loss',
-      testimonial: {
-        name: 'Lisa M.',
-        text: 'Lost 18 lbs and feel amazing!',
-        rating: 5
-      }
-    },
-    {
-      name: 'Complete Transform',
-      price: 597,
-      originalPrice: 797,
-      duration: '12 weeks',
-      description: 'Our most popular program with comprehensive support and personalized coaching.',
-      featured: true,
-      features: [
-        'Everything in Essential Transform',
-        'Bi-weekly 1-on-1 coaching sessions',
-        'Custom meal plans & shopping lists',
-        'Exercise program design',
-        'Supplement recommendations',
-        'Priority support & chat access',
-        'Advanced health assessments',
-        'Habit tracking & accountability',
-        'Stress management techniques',
-        'Sleep optimization guide'
-      ],
-      bonus: ['Free discovery call', 'Bonus recipe collection', '30-day meal plans', 'Exercise video library'],
-      ideal: 'Serious about transformation with dedicated support',
-      results: 'Average 25-30 lbs weight loss',
-      testimonial: {
-        name: 'Michael R.',
-        text: 'Best investment I\'ve made in my health!',
-        rating: 5
-      }
-    },
-    {
-      name: 'Premium Transform',
-      price: 997,
-      originalPrice: 1297,
-      duration: '16 weeks',
-      description: 'Premium program with maximum support, advanced testing, and lifetime access.',
-      featured: false,
-      features: [
-        'Everything in Complete Transform',
-        'Weekly 1-on-1 coaching sessions',
-        'Advanced metabolic testing',
-        'Functional health assessments',
-        'Custom supplement protocols',
-        'Unlimited messaging support',
-        'Emergency coaching calls',
-        'Lifestyle optimization plan',
-        'Maintenance program included',
-        'Lifetime community access',
-        'Annual check-in sessions'
-      ],
-      bonus: ['Free health panel testing', 'Premium supplement starter kit', 'Lifetime recipe updates', 'VIP community access'],
-      ideal: 'Those wanting maximum results and support',
-      results: 'Average 35+ lbs weight loss',
-      testimonial: {
-        name: 'Sarah K.',
-        text: 'Transformed my entire life, not just my weight!',
-        rating: 5
-      }
-    }
-  ];
-
-  const addOns = [
-    {
-      name: 'Metabolic Testing',
-      price: 197,
-      description: 'Comprehensive metabolic analysis to optimize your nutrition plan'
-    },
-    {
-      name: 'Supplement Protocol',
-      price: 97,
-      description: 'Personalized supplement recommendations based on your needs'
-    },
-    {
-      name: 'Meal Prep Service',
-      price: 147,
-      description: 'Pre-made meals delivered to your door (monthly)'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-emerald-50 via-white to-blue-50 overflow-hidden">
         <div className="absolute inset-0 bg-hero-pattern opacity-30" />
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-primary-100 text-primary-700">
-              <Award className="w-4 h-4 mr-2" />
-              Transparent Pricing
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-emerald-100 text-emerald-700 border-0">
+              <Sparkles className="w-4 h-4 mr-2" />
+              The Grand Slam Offer
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Choose Your
-              <span className="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent"> Transformation </span>
-              Program
+              Your Complete
+              <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent"> Health Transformation </span>
+              Package
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-              Select the program that best fits your goals, lifestyle, and budget. 
-              All programs include our proven methodology and dedicated support.
+              Everything you need to lose 10-15 kg in 3 months with unlimited support,
+              expert guidance, and our groundbreaking 50% refund guarantee.
             </p>
 
             {/* Trust Badges */}
             <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-600">
               <div className="flex items-center">
-                <Shield className="h-5 w-5 text-primary-500 mr-2" />
-                30-Day Money Back Guarantee
+                <Shield className="h-5 w-5 text-emerald-500 mr-2" />
+                50% Money Back on Success
               </div>
               <div className="flex items-center">
-                <Users className="h-5 w-5 text-primary-500 mr-2" />
-                10,000+ Success Stories
+                <Users className="h-5 w-5 text-emerald-500 mr-2" />
+                5,000+ Transformations
               </div>
               <div className="flex items-center">
-                <Star className="h-5 w-5 text-primary-500 mr-2" />
-                4.9/5 Average Rating
+                <Star className="h-5 w-5 text-emerald-500 mr-2" />
+                Results Guaranteed
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Programs Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Specialized Programs Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
-              <div key={index} className={`relative bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${program.featured ? 'ring-2 ring-primary-500 scale-105' : ''}`}>
-                {/* Featured Badge */}
-                {program.featured && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
-                      Most Popular
-                    </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Specialized Programs for Your Unique Needs
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Each program is customized for specific health goals and challenges
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                title: 'Brides to Be',
+                icon: Heart,
+                description: 'Look stunning on your special day with our specialized pre-wedding transformation program',
+                color: 'from-pink-500 to-rose-500',
+                bgColor: 'bg-pink-50'
+              },
+              {
+                title: 'PCOS/PCOD',
+                icon: Target,
+                description: 'Science-backed nutrition and lifestyle plan designed specifically for hormonal balance',
+                color: 'from-purple-500 to-indigo-500',
+                bgColor: 'bg-purple-50'
+              },
+              {
+                title: 'Thyroid',
+                icon: Zap,
+                description: 'Metabolic optimization program tailored for thyroid conditions and energy restoration',
+                color: 'from-blue-500 to-cyan-500',
+                bgColor: 'bg-blue-50'
+              }
+            ].map((program, index) => {
+              const IconComponent = program.icon;
+              return (
+                <div
+                  key={index}
+                  className={`${program.bgColor} rounded-2xl p-8 border-2 border-transparent hover:border-gray-200 transition-all duration-300 hover:shadow-lg`}
+                >
+                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${program.color} mb-4`}>
+                    <IconComponent className="h-8 w-8 text-white" />
                   </div>
-                )}
-
-                <div className="p-8">
-                  {/* Header */}
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      {program.name}
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      {program.description}
-                    </p>
-                    
-                    {/* Pricing */}
-                    <div className="mb-4">
-                      <div className="flex items-center justify-center space-x-2">
-                        <span className="text-4xl font-bold text-gray-900">
-                          ${program.price}
-                        </span>
-                        <div className="text-left">
-                          <div className="text-sm text-gray-500 line-through">
-                            ${program.originalPrice}
-                          </div>
-                          <div className="text-sm text-primary-600 font-semibold">
-                            {program.duration}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="text-sm text-gray-500 mt-2">
-                        One-time payment • No recurring fees
-                      </div>
-                    </div>
-
-                    {/* Ideal For */}
-                    <div className="bg-gray-50 rounded-lg p-3 mb-4">
-                      <div className="text-sm font-semibold text-gray-700 mb-1">Ideal for:</div>
-                      <div className="text-sm text-gray-600">{program.ideal}</div>
-                    </div>
-
-                    {/* Expected Results */}
-                    <div className="bg-primary-50 rounded-lg p-3 mb-6">
-                      <div className="text-sm font-semibold text-primary-700 mb-1">Expected Results:</div>
-                      <div className="text-sm text-primary-600">{program.results}</div>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className="space-y-4 mb-8">
-                    <h4 className="font-semibold text-gray-900">What's Included:</h4>
-                    <ul className="space-y-3">
-                      {program.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start">
-                          <Check className="h-5 w-5 text-primary-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span className="text-sm text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Bonus */}
-                  <div className="bg-accent-50 rounded-lg p-4 mb-6">
-                    <h4 className="font-semibold text-accent-700 mb-2">Bonus Included:</h4>
-                    <ul className="space-y-1">
-                      {program.bonus.map((bonus, bonusIndex) => (
-                        <li key={bonusIndex} className="text-sm text-accent-600 flex items-center">
-                          <Star className="h-4 w-4 mr-2 fill-current" />
-                          {bonus}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Testimonial */}
-                  <div className="bg-gray-50 rounded-lg p-4 mb-6">
-                    <div className="flex items-center mb-2">
-                      <div className="flex space-x-1">
-                        {[...Array(program.testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-700 italic mb-2">
-                      "{program.testimonial.text}"
-                    </p>
-                    <div className="text-sm font-semibold text-gray-600">
-                      - {program.testimonial.name}
-                    </div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <Button 
-                    className={`w-full py-3 ${program.featured 
-                      ? 'bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700' 
-                      : 'bg-gray-900 hover:bg-gray-800'
-                    }`}
-                    size="lg"
-                  >
-                    Get Started Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-
-                  <div className="text-center mt-4">
-                    <button className="text-sm text-primary-600 hover:text-primary-700 underline">
-                      Questions? Book a free call
-                    </button>
-                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {program.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {program.description}
+                  </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Add-ons Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Optional Add-Ons
+      {/* Value Stack Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              The Grand Slam Offer Includes
             </h2>
-            <p className="text-gray-600">
-              Enhance your transformation with these additional services
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A comprehensive transformation system worth over $5,000 - yours for a fraction of the cost
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {addOns.map((addon, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 text-center">
-                <h3 className="font-semibold text-gray-900 mb-2">{addon.name}</h3>
-                <div className="text-2xl font-bold text-primary-600 mb-3">
-                  ${addon.price}
+          {/* Core Deliverables */}
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden mb-8">
+            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 px-8 py-6">
+              <h3 className="text-2xl font-bold text-white flex items-center">
+                <Gift className="mr-3 h-7 w-7" />
+                Core Transformation Package
+              </h3>
+            </div>
+
+            <div className="p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: 'Daily Personal Support',
+                    description: 'Stay motivated and accountable with check-ins every single day',
+                    value: '$997',
+                    icon: MessageCircle
+                  },
+                  {
+                    title: 'Unlimited Zoom Consultations',
+                    description: 'Book as many video calls as needed through our scheduling system',
+                    value: '$1,497',
+                    icon: Video
+                  },
+                  {
+                    title: 'Travelling Diet Plan',
+                    description: 'Stay on track even when on the road with flexible meal options',
+                    value: '$197',
+                    icon: Calendar
+                  },
+                  {
+                    title: '100+ Recipe Guide Book',
+                    description: 'Delicious, easy-to-make recipes for every meal and occasion',
+                    value: '$147',
+                    icon: BookOpen
+                  },
+                  {
+                    title: 'Workout Reference Videos',
+                    description: 'Complete exercise library with form guides and modifications',
+                    value: '$297',
+                    icon: Dumbbell
+                  },
+                  {
+                    title: 'Diwali Detox Guide',
+                    description: 'Special protocols for festivals and celebrations without derailing progress',
+                    value: '$97',
+                    icon: Sparkles
+                  },
+                  {
+                    title: '1-Month Maintenance Plan',
+                    description: 'Keep the weight off with structured maintenance after goal achievement',
+                    value: '$247',
+                    icon: TrendingUp
+                  },
+                  {
+                    title: 'Community Support',
+                    description: 'Private group access with peers on the same transformation journey',
+                    value: '$297',
+                    icon: Users
+                  },
+                  {
+                    title: 'Access to 3 Expert Coaches',
+                    description: 'Multiple specialists ensuring all your questions are answered quickly',
+                    value: '$497',
+                    icon: Award
+                  }
+                ].map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <div key={index} className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                      <div className="flex-shrink-0">
+                        <div className="p-3 rounded-lg bg-emerald-100">
+                          <IconComponent className="h-6 w-6 text-emerald-600" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-start justify-between mb-1">
+                          <h4 className="font-semibold text-gray-900">{item.title}</h4>
+                          <span className="text-emerald-600 font-bold text-sm ml-2">{item.value}</span>
+                        </div>
+                        <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Total Value */}
+              <div className="mt-8 pt-8 border-t-2 border-gray-200">
+                <div className="flex items-center justify-between text-center">
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Total Package Value</p>
+                    <p className="text-4xl font-bold text-gray-400 line-through">$4,273</p>
+                  </div>
+                  <ArrowRight className="h-8 w-8 text-gray-400" />
+                  <div>
+                    <p className="text-sm text-emerald-600 font-semibold mb-1">Your Investment Today</p>
+                    <p className="text-5xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                      $997
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm text-gray-600 mb-4">{addon.description}</p>
-                <Button variant="outline" size="sm" className="w-full">
-                  Add to Program
-                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* The Grand Slam Guarantee */}
+          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl shadow-xl overflow-hidden border-2 border-yellow-200">
+            <div className="p-8">
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="flex-shrink-0">
+                  <div className="p-4 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500">
+                    <Shield className="h-10 w-10 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                    The Grand Slam Guarantee
+                  </h3>
+                  <p className="text-lg text-gray-700 mb-4">
+                    We're so confident in our program that we put our money where our mouth is.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 mb-6">
+                <div className="flex items-start space-x-3">
+                  <Check className="h-6 w-6 text-emerald-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-xl mb-2">
+                      Lose 10-15 kg in 3 Months = Get 50% Back
+                    </h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      When you achieve your goal of losing 10-15 kg within the first 3 months by following the program,
+                      we'll refund 50% of your program fee. That means you get half your money back simply for succeeding.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6">
+                <h4 className="font-semibold text-gray-900 mb-3">Why This Works:</h4>
+                <ul className="space-y-2">
+                  {[
+                    'It removes all the risk from your decision',
+                    'It shows our absolute confidence in the program',
+                    'It gives you extra motivation to stick with the plan',
+                    'You either transform your body OR get your money back'
+                  ].map((point, index) => (
+                    <li key={index} className="flex items-start">
+                      <Star className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0 fill-current" />
+                      <span className="text-gray-700">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <p className="text-sm text-gray-600 mt-4 text-center">
+                No gimmicks. No fine print. Just results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Real People, Real Results
+            </h2>
+            <p className="text-xl text-gray-600">
+              Join thousands who have transformed their lives
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Priya S.',
+                role: 'Bride Transformation',
+                result: 'Lost 14 kg in 10 weeks',
+                image: '👰',
+                quote: 'I looked absolutely stunning on my wedding day. The program was worth every penny, and getting 50% back was the cherry on top!'
+              },
+              {
+                name: 'Anjali M.',
+                role: 'PCOS Journey',
+                result: 'Lost 12 kg, cycles regulated',
+                image: '💪',
+                quote: 'Not only did I lose weight, but my PCOS symptoms improved dramatically. The daily support kept me going when I wanted to quit.'
+              },
+              {
+                name: 'Neha K.',
+                role: 'Thyroid Success',
+                result: 'Lost 15 kg, energy restored',
+                image: '⚡',
+                quote: 'I thought my thyroid would always hold me back. This program proved me wrong. I have more energy than I did 10 years ago!'
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                <div className="flex items-center mb-4">
+                  <div className="text-4xl mr-4">{testimonial.image}</div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  </div>
+                </div>
+                <div className="bg-emerald-100 rounded-lg px-3 py-2 mb-4 inline-block">
+                  <p className="text-sm font-semibold text-emerald-700">{testimonial.result}</p>
+                </div>
+                <div className="flex mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 italic leading-relaxed">
+                  "{testimonial.quote}"
+                </p>
               </div>
             ))}
           </div>
@@ -328,44 +372,118 @@ export default function ProgramsPage() {
           <div className="space-y-6">
             {[
               {
-                question: "What if I'm not satisfied with my program?",
-                answer: "We offer a 30-day money-back guarantee. If you're not completely satisfied within the first 30 days, we'll refund your investment in full."
+                question: "How does the 50% refund guarantee work?",
+                answer: "Simple: Follow the program, achieve your 10-15 kg weight loss goal within 3 months, and we'll refund 50% of your program fee. No complicated terms, no video testimonial required (though we'd love to hear your story!)."
               },
               {
-                question: "Can I upgrade my program later?",
-                answer: "Absolutely! You can upgrade to a higher tier program at any time and only pay the difference."
+                question: "What if I don't lose 10-15 kg in 3 months?",
+                answer: "That's okay! You keep all the resources, continue with unlimited support, and keep working toward your goal. The program doesn't end - we're with you until you succeed."
               },
               {
-                question: "Do you offer payment plans?",
-                answer: "Yes, we offer 3-month and 6-month payment plans for all programs. Contact us for details."
+                question: "Is unlimited Zoom really unlimited?",
+                answer: "Yes, but with fair use. Book calls through our scheduling system whenever you need guidance, accountability, or have questions. We've never had a client abuse this, because they see results and don't need excessive calls."
               },
               {
-                question: "What makes your programs different?",
-                answer: "Our programs are based on proven science, personalized to your unique needs, and include ongoing support throughout your journey."
+                question: "Which specialization should I choose?",
+                answer: "During your onboarding call, we'll assess your specific situation and recommend the best program track for you - whether that's our Bride, PCOS/PCOD, or Thyroid specialization."
+              },
+              {
+                question: "Can I really eat during festivals and celebrations?",
+                answer: "Absolutely! Our Diwali Detox Guide and flexible meal plans are designed for real life. We teach you how to enjoy celebrations without derailing your progress."
+              },
+              {
+                question: "Do I need special equipment for the workouts?",
+                answer: "No expensive equipment needed. Our workout videos include bodyweight exercises and modifications using common household items. Gym access is optional."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-3 text-lg">{faq.question}</h3>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600">
+      {/* Urgency Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Still Have Questions?
+          <Badge className="mb-4 bg-red-500 text-white border-0">
+            <Clock className="w-4 h-4 mr-2" />
+            Limited Availability
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Only 10 Spots Available This Month
           </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Book a free discovery call to discuss which program is right for you and get all your questions answered.
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Due to the high-touch nature of our unlimited support model, we can only accept
+            10 new clients per month to maintain quality. Don't miss your chance.
           </p>
-          <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4">
-            <Phone className="mr-2 h-5 w-5" />
-            Book Free Discovery Call
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-6 text-lg">
+              <ArrowRight className="mr-2 h-5 w-5" />
+              Claim Your Spot Now
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-6 text-lg">
+              <Phone className="mr-2 h-5 w-5" />
+              Book Free Call
+            </Button>
+          </div>
+          <p className="text-sm text-gray-400 mt-6">
+            7 spots remaining as of today
+          </p>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Ready to Transform Your Life?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            This is the last weight loss program you'll ever need.
+            With our Grand Slam Guarantee, you have nothing to lose except the weight.
+          </p>
+          <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Here's What Happens Next:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              {[
+                {
+                  step: '1',
+                  title: 'Book Your Call',
+                  description: 'Schedule a free discovery call to see if you qualify for the program'
+                },
+                {
+                  step: '2',
+                  title: 'Get Your Plan',
+                  description: 'Receive your personalized transformation plan and start immediately'
+                },
+                {
+                  step: '3',
+                  title: 'Transform & Win',
+                  description: 'Lose 10-15 kg in 3 months and get 50% of your investment back'
+                }
+              ].map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-emerald-600 to-blue-600 text-white flex items-center justify-center font-bold">
+                    {item.step}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
+                    <p className="text-sm text-gray-600">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white px-12 py-6 text-xl">
+            Yes, I Want The Grand Slam Offer
+            <ArrowRight className="ml-2 h-6 w-6" />
           </Button>
+          <p className="text-sm text-gray-500 mt-4">
+            No credit card required for discovery call
+          </p>
         </div>
       </section>
     </div>
