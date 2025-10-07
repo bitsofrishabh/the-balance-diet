@@ -76,7 +76,7 @@ export default function AboutPage() {
               <div className="lg:col-span-3">
                 <div className="relative">
                   <img
-                    src="https://ik.imagekit.io/5b8rploye/2.png?updatedAt=1757231332061"
+                    src="https://ik.imagekit.io/5b8rploye/2.png?updatedAt=1759860393354"
                     alt="Rishabh Singh - Founder"
                     className="w-64 h-64 mx-auto rounded-full object-cover shadow-2xl border-4 border-primary-100"
                   />
@@ -162,7 +162,7 @@ export default function AboutPage() {
               <div className="lg:col-span-3 order-1 lg:order-2">
                 <div className="relative">
                   <img
-                    src="https://ik.imagekit.io/5b8rploye/1.png?updatedAt=1757231332111"
+                    src="https://ik.imagekit.io/5b8rploye/1.png?updatedAt=1759860393409"
                     alt="Dt. Savita Choudhary - Co-founder"
                     className="w-64 h-64 mx-auto rounded-full object-cover shadow-2xl border-4 border-secondary-100"
                   />
