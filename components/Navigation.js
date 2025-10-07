@@ -70,6 +70,14 @@ export function Navigation() {
               Home
             </Link>
             <Link
+              href="/programs"
+              className={`text-sm font-medium transition-colors hover:text-primary-600 ${
+                isScrolled ? 'text-gray-700' : 'text-gray-900'
+              }`}
+            >
+              Programs
+            </Link>
+            <Link
               href="/success-stories"
               className={`text-sm font-medium transition-colors hover:text-primary-600 ${
                 isScrolled ? 'text-gray-700' : 'text-gray-900'
@@ -142,6 +150,13 @@ export function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/programs"
+                className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Programs
               </Link>
               <Link
                 href="/success-stories"
