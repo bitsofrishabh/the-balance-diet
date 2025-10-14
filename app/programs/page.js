@@ -69,65 +69,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Specialized Programs Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Specialized Programs for Your Unique Needs
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Each program is customized for specific health goals and challenges
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: 'Brides to Be',
-                icon: Heart,
-                description: 'Look stunning on your special day with our specialized pre-wedding transformation program',
-                color: 'from-pink-500 to-rose-500',
-                bgColor: 'bg-pink-50'
-              },
-              {
-                title: 'PCOS/PCOD',
-                icon: Target,
-                description: 'Science-backed nutrition and lifestyle plan designed specifically for hormonal balance',
-                color: 'from-purple-500 to-indigo-500',
-                bgColor: 'bg-purple-50'
-              },
-              {
-                title: 'Thyroid',
-                icon: Zap,
-                description: 'Metabolic optimization program tailored for thyroid conditions and energy restoration',
-                color: 'from-blue-500 to-cyan-500',
-                bgColor: 'bg-blue-50'
-              }
-            ].map((program, index) => {
-              const IconComponent = program.icon;
-              return (
-                <div
-                  key={index}
-                  className={`${program.bgColor} rounded-2xl p-8 border-2 border-transparent hover:border-gray-200 transition-all duration-300 hover:shadow-lg`}
-                >
-                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${program.color} mb-4`}>
-                    <IconComponent className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    {program.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {program.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Value Stack Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -138,86 +80,70 @@ export default function ProgramsPage() {
             </p>
           </div>
 
-          {/* Core Deliverables */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden mb-8">
-            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 px-8 py-6">
-              <h3 className="text-2xl font-bold text-white flex items-center">
-                <Gift className="mr-3 h-7 w-7" />
-                Core Transformation Package
-              </h3>
+          {/* New layout with Video and Features */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            {/* Left Column: YouTube Video */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+              <div className="aspect-[9/16] relative">
+                <iframe
+                  src="https://www.youtube.com/embed/I1OaG-R3uAw"
+                  title="Program Features"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full aspect-video rounded-t-3xl"
+                ></iframe>
+              </div>
+              <div className="p-6 bg-gray-50">
+                 <h3 className="text-lg font-bold text-gray-900">Watch Our Program Features</h3>
+                 <p className="text-sm text-gray-600 mt-1">See what makes our program so effective for real people.</p>
+              </div>
             </div>
 
-            <div className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  {
-                    title: 'Daily Personal Support',
-                    description: 'Stay motivated and accountable with check-ins every single day',
-                    icon: MessageCircle
-                  },
-                  {
-                    title: 'Unlimited Zoom Consultations',
-                    description: 'Book as many video calls as needed through our scheduling system',
-                    icon: Video
-                  },
-                  {
-                    title: 'Travelling Diet Plan',
-                    description: 'Stay on track even when on the road with flexible meal options',
-                    icon: Calendar
-                  },
-                  {
-                    title: '100+ Recipe Guide Book',
-                    description: 'Delicious, easy-to-make recipes for every meal and occasion',
-                    icon: BookOpen
-                  },
-                  {
-                    title: 'Workout Reference Videos',
-                    description: 'Complete exercise library with form guides and modifications',
-                    icon: Dumbbell
-                  },
-                  {
-                    title: 'Diwali Detox Guide',
-                    description: 'Special protocols for festivals and celebrations without derailing progress',
-                    icon: Sparkles
-                  },
-                  {
-                    title: '1-Month Maintenance Plan',
-                    description: 'Keep the weight off with structured maintenance after goal achievement',
-                    icon: TrendingUp
-                  },
-                  {
-                    title: 'Community Support',
-                    description: 'Private group access with peers on the same transformation journey',
-                    icon: Users
-                  },
-                  {
-                    title: 'Access to 3 Expert Coaches',
-                    description: 'Multiple specialists ensuring all your questions are answered quickly',
-                    icon: Award
-                  }
-                ].map((item, index) => {
-                  const IconComponent = item.icon;
-                  return (
-                    <div key={index} className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                      <div className="flex-shrink-0">
-                        <div className="p-3 rounded-lg bg-emerald-100">
-                          <IconComponent className="h-6 w-6 text-emerald-600" />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
-                        <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
-                      </div>
+            {/* Right Column: Core Deliverables */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+                <div className="bg-gradient-to-r from-emerald-600 to-blue-600 px-8 py-6">
+                    <h3 className="text-2xl font-bold text-white flex items-center">
+                        <Gift className="mr-3 h-7 w-7" />
+                        Core Transformation Package
+                    </h3>
+                </div>
+                <div className="p-8">
+                    <div className="space-y-4">
+                        {[
+                            { title: 'Daily Personal Support', description: 'Stay motivated and accountable with check-ins every single day', icon: MessageCircle },
+                            { title: 'Unlimited Zoom Consultations', description: 'Book as many video calls as needed through our scheduling system', icon: Video },
+                            { title: 'Travelling Diet Plan', description: 'Stay on track even when on the road with flexible meal options', icon: Calendar },
+                            { title: '100+ Recipe Guide Book', description: 'Delicious, easy-to-make recipes for every meal and occasion', icon: BookOpen },
+                            { title: 'Workout Reference Videos', description: 'Complete exercise library with form guides and modifications', icon: Dumbbell },
+                            { title: 'Diwali Detox Guide', description: 'Special protocols for festivals and celebrations without derailing progress', icon: Sparkles },
+                            { title: '1-Month Maintenance Plan', description: 'Keep the weight off with structured maintenance after goal achievement', icon: TrendingUp },
+                            { title: 'Community Support', description: 'Private group access with peers on the same transformation journey', icon: Users },
+                            { title: 'Access to 3 Expert Coaches', description: 'Multiple specialists ensuring all your questions are answered quickly', icon: Award }
+                        ].map((item, index) => {
+                            const IconComponent = item.icon;
+                            return (
+                                <div key={index} className="flex items-start space-x-3">
+                                    <div className="flex-shrink-0 pt-1">
+                                      <div className="p-2 rounded-lg bg-emerald-100">
+                                        <IconComponent className="h-5 w-5 text-emerald-600" />
+                                      </div>
+                                    </div>
+                                    <div className="flex-1">
+                                        <h4 className="font-semibold text-gray-800">{item.title}</h4>
+                                        <p className="text-sm text-gray-600">{item.description}</p>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
-                  );
-                })}
-              </div>
-
+                </div>
             </div>
           </div>
 
           {/* The Grand Slam Guarantee */}
-          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl shadow-xl overflow-hidden border-2 border-yellow-200">
+          <div className="mt-16 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl shadow-xl overflow-hidden border-2 border-yellow-200">
             <div className="p-8">
               <div className="flex items-start space-x-4 mb-6">
                 <div className="flex-shrink-0">
@@ -274,6 +200,8 @@ export default function ProgramsPage() {
           </div>
         </div>
       </section>
+
+    
 
       {/* Social Proof Section */}
       <section className="py-16 bg-white">
