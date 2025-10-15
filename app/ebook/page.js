@@ -21,6 +21,8 @@ import {
   Phone,
   ArrowRight,
 } from 'lucide-react';
+import { serverEvent, event as fpixelEvent } from '@/lib/fpixel';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function EbookPage() {
   // Razorpay payment link
@@ -73,6 +75,31 @@ export default function EbookPage() {
     const shuffled = [...allTestimonialImages].sort(() => Math.random() - 0.5);
     setCurrentImages(shuffled.slice(0, 4));
   };
+
+    const handlePurchaseClick = () => {
+    const eventId = uuidv4();
+    const eventData = {
+        currency: 'INR',
+        value: 99.00,
+        content_name: 'The Complete Guide to Healthy Weight Loss E-book',
+    };
+    
+    // Facebook Pixel Event (Client-side)
+    fpixelEvent('Purchase', eventData, { eventID: eventId });
+
+    // Facebook Conversions API Event (Server-side)
+    serverEvent('Purchase', {
+        eventId,
+        customData: {
+            currency: 'INR',
+            value: 99.00,
+        }
+    });
+
+    // Redirect to payment link
+    window.open(razorpayUrl, '_blank');
+  };
+
 
   // Initialize and auto-shuffle every 5 seconds
   useEffect(() => {
@@ -166,11 +193,9 @@ export default function EbookPage() {
 
               {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
+                <Button onClick={handlePurchaseClick} size="lg" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4">
                     Yes, I want to get fit in just ₹99/-
-                  </Button>
-                </a>
+                </Button>
               </div>
 
               {/* Trust Indicators */}
@@ -228,7 +253,7 @@ export default function EbookPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What's Inside the E-Book</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What&apos;s Inside the E-Book</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive content designed to guide you through every step of your weight loss journey
             </p>
@@ -272,7 +297,7 @@ export default function EbookPage() {
             </p>
 
             <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 mb-8">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">What You'll Get:</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">What You&apos;ll Get:</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 {[
                   'Personalized health assessment',
@@ -288,14 +313,13 @@ export default function EbookPage() {
               </div>
             </div>
 
-            <a href={razorpayUrl} target="_blank" rel="noopener noreferrer">
-              <Button
+            <Button
+                onClick={handlePurchaseClick}
                 size="lg"
                 className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 px-8 py-4 text-lg"
               >
                 Yes, I want to get fit
-              </Button>
-            </a>
+            </Button>
 
             <p className="text-sm text-gray-500 mt-4">💡 Consultation will be scheduled within 24 hours of purchase</p>
           </div>
@@ -341,3 +365,4 @@ export default function EbookPage() {
     </div>
   );
 }
+
