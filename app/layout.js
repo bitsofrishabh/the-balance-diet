@@ -1,5 +1,4 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { LocalSEO } from '@/components/LocalSEO';
@@ -7,7 +6,6 @@ import { MicrodataNAP } from '@/components/NAP';
 import Script from 'next/script';
 import { FacebookPixel } from '@/components/FacebookPixel';
 
-const inter = Inter({ subsets: ['latin'] });
 const GA_ID = 'G-6FNNY5RCC4';
 
 export const metadata = {
@@ -101,7 +99,7 @@ export default function RootLayout({ children }) {
         />
 
       </head>
-      <body className={inter.className}>
+      <body>
          <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
